@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 
+
 class Single_echelon_simulation:
     """ Simulates a single echelon inventory system.
     
@@ -104,18 +105,18 @@ class Single_echelon_simulation:
             
         self.current_IL -= period_demand
         
-
-        # Orders are placed
+        # Updating IP
         IP = self.current_IL + self.current_in_transit
-        if IP <= self.R:
-            self.arriving_stock[period+self.L] = self.Q
-            self.current_in_transit = self.current_in_transit + self.Q
-
         
-        # Update results
+        # Update historics
         self.IL[period] = self.current_IL
         self.IP[period] = IP
         self.in_transit[period] = self.current_in_transit
+
+        # Sending orders
+        if IP <= self.R:
+            self.arriving_stock[period+self.L+1] = self.Q
+            self.current_in_transit = self.current_in_transit + self.Q
 
     def run(self):
         # Run-in period
@@ -134,19 +135,28 @@ class Single_echelon_simulation:
     def get_item_fill_rate(self):
         return self.total_items_delivered_from_stock/self.total_items_demanded
 
+    def generate_dataframe(self) -> pd.DataFrame:
+        """This function generates a pandas dataframe.
+
+        The dataframe holds: Demand, IL, IP, In Transit stock and Arriving stock
+        
+        """
+
+        df = pd.DataFrame()
+        df['Demand'] = self.demand_array
+        df['IL'] = self.IL
+        df['IP'] = self.IP
+        df['In transit'] = self.in_transit
+        df['Arriving stock'] = self.arriving_stock[0:-self.L]
+        return df
+
 
 def main():
-    mySim = Single_echelon_simulation(50,30,'Poisson',10,0,5, 100000)
+    mySim = Single_echelon_simulation(R=50,Q=100,demand_type='Poisson',
+        period_demand_mu=10,period_demand_sigma = 0,lead_time = 5, no_periods = 10000)
     mySim.run()
 
-    df = pd.DataFrame()
-    df['Demand'] = mySim.demand_array
-    df['IL'] = mySim.IL
-    df['IP'] = mySim.IP
-    df['In transit'] = mySim.in_transit
-    df['Arriving stock'] = mySim.arriving_stock[0:-mySim.L]
-
-    print(df)
+    #mySim.generate_dataframe().to_excel("myDataFrame.xlsx")
     print(f'The item fill rate is: {mySim.get_item_fill_rate()}')
 
 
