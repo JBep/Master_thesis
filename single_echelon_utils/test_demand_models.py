@@ -44,6 +44,7 @@ def test_NBD():
 def test_Poisson():
     L,E_z,threshold = 5,10,1e-4
     prob_array_1 = demand_prob_arr_poisson(L,E_z,threshold)
+    
 
     mu = E_z*L
     
