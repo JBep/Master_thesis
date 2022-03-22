@@ -1,6 +1,6 @@
-import pandas as pd
+#import pandas as pd
 import numpy as np
-from single_echelon_utils.inventory_level_computation import IL_distribution_normal
+from inventory_level_computation import IL_distribution_normal
 
 def fill_rate_compound_poisson_demand(demand_size_probability_array: np.array, pos_IL_probability_array: np.array) -> float:
     """Calculates the item fill rate under compound poisson demand.
@@ -26,9 +26,8 @@ def fill_rate_compound_poisson_demand(demand_size_probability_array: np.array, p
     item_fill_rate = numerator/denominator
     return item_fill_rate
 
-def fill_rate_normal_demand(R: int, Q: int, mean_normal: int std_dev_normal: int, x: int) -> float:
-     """Calculates the item fill rate under normal demand.
-    
+def fill_rate_normal_demand(R: int, Q: int, mean_normal: int, std_dev_normal: int, x: int):
+    """Calculates the item fill rate under normal demand.
     reference: Axsäter (2006) Inventory control 2nd edition, equation 5.52
     params:
         R: Reorder point
@@ -37,12 +36,12 @@ def fill_rate_normal_demand(R: int, Q: int, mean_normal: int std_dev_normal: int
         std_dev_normal: standard deviation of normal lead time demand
         IL: inventory level
     return:
-        Item fill rate: float decimal between 0 and 1.
-
+       Item fill rate: float decimal between 0 and 1.
     """
-    fill_rate_continuous_demand = IL_distribution_normal(R: int, Q: int, mean_normal: int std_dev_normal: int, x=0)
 
-    return fill_rate_continuous_demand()
+    fill_rate_continuous_normal = IL_distribution_normal(R, Q, mean_normal, std_dev_normal, x=0)
+
+    return fill_rate_continuous_normal
 
 #To-do
 def ready_rate_continuous_demand() -> float:
