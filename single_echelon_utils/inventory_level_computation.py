@@ -1,4 +1,5 @@
 import numpy as np
+from scipy import stats 
 from demand_models import *
 
 def probability_IL_compound_poisson(R: int,Q: int,demand_probability_array: np.array,j: int) -> float:
@@ -57,6 +58,40 @@ def IL_probability_array_compound_poisson(R: int, Q: int, L: int, E_z: float,
         demand_probability_array = demand_probability_array_compound_poisson(L, mu, sigma2)
         IL_probabilies_array.append(probability_IL_compound_poisson(R,Q,demand_probability_array,j))
 
+#To-do
+def IL_distribution_normal(R: int, Q: int, mean_normal: int, std_dev_normal: int, x: int) -> float: 
+    """Computes an array of IL probabilities.
+    
+    Params:
+        R: Reorder point
+        Q: order quantity
+        mean_normal: mean of normal lead time demand
+        std_dev_normal: standard deviation of normal lead time demand
+        x: inventory level
+
+    Returns:
+        Probability of IL<=x
+    """
+    
+    x1 = (R-x-mean_normal)/std_dev_normal
+    x2 = (R+Q-x-mean_normal)/std_dev_normal
+
+    IL_dist = (std_dev_normal/Q)*(loss_function(x1)-loss_function(x2))
+
+    return IL_dist
+
+def loss_function(x: int):
+    """Computes loss function G(x)
+    
+    Params:
+        x: variable
+
+    Returns:
+        Loss function
+    """
+    function = stats.norm.pdf(x)-x*(1-stats.norm.cdf(x))
+
+    return function
 
 def main():
     print("HI")
