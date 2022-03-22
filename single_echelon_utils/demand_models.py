@@ -1,18 +1,68 @@
+from decimal import DivisionByZero
 import numpy as np
+import math
 
-def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: float) -> np.array:
+
+def lead_time_mean(E_z, L) -> float:
+    """Calculates the lead time demand mean.
+    
+    Multiplies L with E_z.
+    """
+    mu = L*E_z
+    return mu
+
+def lead_time_variance_M1(V_z, L) -> float:
+    """Calculates lead time demand variance by using assumption of constant L."""
+    
+    sigma2 = L*V_z
+    return sigma2
+
+def lead_time_variance_M2(V_z, E_z, V_L, E_L) -> float:
+    """Calculates lead time demand variance under stochastic lead times."""
+    if V_L == None:
+        raise ValueError("Supply lead time variance if using method M2.")
+    sigma2 = V_z*E_L + E_z**2 * V_L
+
+    return sigma2
+
+
+def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: float) -> np.ndarray:
     #TO-DO, not prio 1.
     pass
 
-def demand_probability_array_poisson():
+def demand_prob_arr_poisson(L: int, E_z: float, threshold = 1e-4) -> np.ndarray:
+    """Returns probability array for poisson demand.
+    
+    params:
+        L: Lead time.
+        E_z: Mean demand during a time unit.
+        threshold: Computations stop when cumulative demand reaches 1-threshold.
+        """
+    mu = lead_time_mean(E_z,L)
+
+    demand_prob_arr = []
+    cumulative_prob = 0
+
+    #while probability > threshold: #Potential bug: What if prob of low demands is super low?
+    k = 0
+    while cumulative_prob < 1-threshold:
+        p_k = (math.pow(mu,k)/math.factorial(k))*np.exp(-mu)
+        print(f"np.exp is {np.exp(-mu)}")
+        print(f"Cumulative prob after {k} values is: {cumulative_prob}, p_k is: {p_k}, k is {k}")
+        cumulative_prob += p_k
+        demand_prob_arr.append(p_k)
+        k += 1
+
+    return np.array(demand_prob_arr)
+
+    
+
+
     #TO-DO
     pass
 
-def demand_probability_array_normal():
-    #TO-DO
-    pass
 
-def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold = 1e-4) -> np.array:
+def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold = 1e-4, lead_time_demand_method = "M1", lead_time_variance = None) -> np.ndarray:
     """Computes the array of demand probabilities under negative binomial dist 
     (logarithmic compound poisson).
     
@@ -25,24 +75,47 @@ def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold 
         L: Lead time
         E_z: Mean demand during one time unit.
         V_z: Variance of demand during one time unit.
-        threshold: Demand with probability less than this is deemed to be zero.
+        threshold: Computations stop when cumulative demand reaches 1-threshold.
+        lead_time_demand_method: "M1" or "M2" methods of computing lead time demand variance.
+
+    Returns:
+        np.array of probabilities of demand index. Demands of length(np.array) and 
+        larger is approximated to zero.
     
     """
 
     # First find params r and p.
-    p = 1 - (E_z/V_z)
-    r = E_z*(1-p)/p
-  
+    # Lead time demand mean and variance.
+    mu = lead_time_mean(E_z= E_z,L = L)
+    if lead_time_demand_method == "M1":
+        sigma2 = lead_time_variance_M1(V_z = V_z,L = L)
+    elif lead_time_demand_method == "M2":
+        sigma2 = lead_time_variance_M2(V_z = V_z,E_z = E_z, V_L = lead_time_variance,E_L=L)
+    else:
+        raise ValueError("lead_time_demand_method needs to be 'M1' or 'M2'")
+
+    try:
+        p = 1 - (mu/sigma2)
+    
+    except DivisionByZero:
+        raise DivisionByZero("Variance needs to be larger than mean in the NBD-distribution.")
+
+    if p < 0:
+        raise ValueError("Variance needs to be smaller than mean in the NBD-distribution.")
+
+    r = mu*(1-p)/p
     demand_prob_arr = []
 
     # First do k = 0
-    demand_prob_arr.append((1-p)**r)
+    P_D_0 = (1-p)**r
+    demand_prob_arr.append(P_D_0)
     
     # Then do for k = 1,2,...
-    p = 1
+    cumulative_prob = P_D_0 
     k = 1
-    while p > threshold: #Potential bug: What if prob of low demands is super low?
-        P_D_k = 0
+    #while probability > threshold: #Potential bug: What if prob of low demands is super low?
+    while cumulative_prob < 1-threshold:
+        P_D_k = 1
         temp = 0
         while temp < k:
             P_D_k *= (r + temp)
@@ -50,7 +123,7 @@ def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold 
 
         P_D_k = (P_D_k / np.math.factorial(k))*((1-p)**r)*(p**k)
 
-        p = P_D_k
+        cumulative_prob += P_D_k
         demand_prob_arr.append(P_D_k)
         k += 1
 
@@ -58,7 +131,7 @@ def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold 
 
 
 def main():
-    print(demand_prob_arr_negative_binomial(5,1,20))
-
+    #print(demand_prob_arr_negative_binomial(5,1,20))
+    print(demand_prob_arr_poisson(L=5,E_z=10))
 if __name__ == "__main__":
     main()
