@@ -2,6 +2,8 @@ from decimal import DivisionByZero
 import numpy as np
 import math
 
+## Test change
+
 
 def lead_time_mean(E_z, L) -> float:
     """Calculates the lead time demand mean.
@@ -165,7 +167,7 @@ def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold 
 
     # First find params r and p.
     # Lead time demand mean and variance.
-    mu = lead_time_mean(E_z= E_z,L = L)
+    mu = lead_time_mean(E_z,L )
     if lead_time_demand_method == "M1":
         sigma2 = lead_time_variance_M1(V_z = V_z,L = L)
     elif lead_time_demand_method == "M2":
@@ -174,8 +176,7 @@ def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold 
         raise ValueError("lead_time_demand_method needs to be 'M1' or 'M2'")
 
     try:
-        p = 1 - (mu/sigma2)
-    
+        p = 1 - (mu/sigma2) 
     except DivisionByZero:
         raise DivisionByZero("Variance needs to be larger than mean in the NBD-distribution.")
 
