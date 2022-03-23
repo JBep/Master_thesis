@@ -40,6 +40,7 @@ def test_NBD():
     assert any(abs(diff) > diff_threshold), "Differences is larger than: {diff_threshold} for some value."
     #print(diff)        
 
+# Testing poisson.
 
 def test_Poisson():
     L,E_z,threshold = 5,10,1e-4
