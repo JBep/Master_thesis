@@ -39,7 +39,7 @@ def fill_rate_normal_demand(R: int, Q: int, mean_normal: int, std_dev_normal: in
        Item fill rate: float decimal between 0 and 1.
     """
 
-    fill_rate_continuous_normal = IL_distribution_normal(R, Q, mean_normal, std_dev_normal, x=0)
+    fill_rate_continuous_normal = 1 - IL_distribution_normal(R, Q, mean_normal, std_dev_normal, x=0)
 
     return fill_rate_continuous_normal
 
