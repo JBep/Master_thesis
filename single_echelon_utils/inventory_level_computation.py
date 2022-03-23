@@ -96,8 +96,6 @@ def loss_function(x: int):
     return function
 
 def main():
-    fill_rate = IL_distribution_normal(14, 6, 7.84, 5.3, 0)
-    print(fill_rate)
     pass
 
 if __name__ == "__main__":
