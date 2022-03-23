@@ -43,9 +43,9 @@ def fill_rate_normal_demand(R: int, Q: int, mean_normal: float, std_dev_normal: 
 
     return fill_rate_continuous_normal
 
-#To-do
-def ready_rate_continuous_demand() -> float:
-    pass
+#This service level is the same as fill rate for continous normal lead time demand.
+def ready_rate_continuous_demand(R: int, Q: int, mean_normal: float, std_dev_normal: float) -> float:
+    return fill_rate_normal_demand(R, Q, mean_normal, std_dev_normal)
 
 def fill_rate_poisson_demand(pos_IL_probability_array: np.array) -> float:
     """Calculates the item fill rate for poisson demand
