@@ -1,5 +1,6 @@
 from demand_models import *
 import numpy as np
+import random
 
 # Testing negative binomial
 
@@ -82,9 +83,62 @@ def test_Poisson():
     #print(diff)      
 
 
+def test_compound_poisson(lam = 1, comp_dist_arr = [0.5,0.5], L = 5, threshold = 1e-4):
+    # Computing E_z and V_z according to Axsäter eq 5.4 and 5.6
+    j_arr = np.arange(start=1,stop=len(comp_dist_arr)+1)   
+    E_z = lam*j_arr.dot(comp_dist_arr)
+
+    j2_arr = np.power(j_arr,2*np.ones(shape = len(j_arr))) 
+    V_z = lam*j2_arr.dot(comp_dist_arr)
+
+    prob_array = demand_probability_array_empiric_compound_poisson(L,E_z,V_z,comp_dist_arr,customer_threshold = threshold)
+    
+    print(f"Probability array is: {prob_array}")
+    # Test return-type
+    print("Testing type.")
+    assert type(prob_array) is np.ndarray, f"Return-type should be np.array, it is: {type(prob_array)}"
+
+    # Test that probabilities is close to 1.
+    print("Testing cumulative probability.")
+    assert np.sum(prob_array) >= 1-threshold and np.sum(prob_array) <= 1, f"The probabilities doesn't add to one, they add to: {np.sum(prob_array)}."
+    print(f"The cumulative probability is: {np.sum(prob_array)}")
+    
+    # Simulation test
+    sim_size = 10000
+    simulation_run_customers = np.random.poisson(lam = lam, size = sim_size)
+    simulation_run = np.zeors_like(simulation_run_customers)
+    
+    for k in simulation_run_customers:
+        for customer in range(k):
+            rand_number = np.random.uniform()
+            demand_size_temp = 1
+            p = 0
+            for prob in comp_dist_arr:
+                p += prob
+                if prob > 0 and rand_number <= p:
+                    demand_size = demand_size_temp
+                demand_size_temp += 1
+
+            simulation_run[k] += demand_size
+
+    simulation_count = [0]*len(prob_array)
+    simulation_prob = [0]*len(prob_array)
+    for i in range(len(prob_array)):
+        print(f"simulating demand value: {i}")
+        for value in simulation_run:
+            if value == i:
+                simulation_count[i] += 1
+            simulation_prob[i] = simulation_count[i]/sim_size
+
+    diff = simulation_prob - prob_array
+
+    diff_threshold = 1e-3
+    assert any(abs(diff) > diff_threshold), "Differences is larger than: {diff_threshold} for some value."
+    #print(diff)  
+
 
 def main():
-    test_Poisson()
+    test_compound_poisson()
 
 if __name__ == "__main__":
     main()
