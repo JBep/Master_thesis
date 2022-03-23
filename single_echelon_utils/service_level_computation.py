@@ -26,7 +26,7 @@ def fill_rate_compound_poisson_demand(demand_size_probability_array: np.array, p
     item_fill_rate = numerator/denominator
     return item_fill_rate
 
-def fill_rate_normal_demand(R: int, Q: int, mean_normal: int, std_dev_normal: int, x: int):
+def fill_rate_normal_demand(R: int, Q: int, mean_normal: float, std_dev_normal: float):
     """Calculates the item fill rate under normal demand.
     reference: Axsäter (2006) Inventory control 2nd edition, equation 5.52
     params:
@@ -39,7 +39,7 @@ def fill_rate_normal_demand(R: int, Q: int, mean_normal: int, std_dev_normal: in
        Item fill rate: float decimal between 0 and 1.
     """
 
-    fill_rate_continuous_normal = IL_distribution_normal(R, Q, mean_normal, std_dev_normal, x=0)
+    fill_rate_continuous_normal = 1 - IL_distribution_normal(R, Q, mean_normal, std_dev_normal, x=0)
 
     return fill_rate_continuous_normal
 
@@ -84,3 +84,11 @@ def cycle_service_compound_demand():
 
 def cycle_service_normal_demand():
     pass
+
+def main():
+    fill_rate = fill_rate_normal_demand(14, 6, 7.84, 5.3)
+    print(fill_rate)
+    pass
+
+if __name__ == "__main__":
+    main()
