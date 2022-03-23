@@ -24,9 +24,11 @@ def probability_IL_compound_poisson(R: int,Q: int,demand_probability_array: np.a
     return 1/Q*demand_prob_sum
 
 def IL_prob_array_discrete_positive():
+    #TO-DO
     pass
 
 def IL_prob_array_discrete_negative():
+    # Implement if needed, probably not.
     pass
 
 # Re-work this into the above ones.
