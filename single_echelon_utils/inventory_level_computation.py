@@ -60,7 +60,7 @@ def IL_probability_array_compound_poisson(R: int, Q: int, L: int, E_z: float,
         demand_probability_array = demand_probability_array_compound_poisson(L, mu, sigma2)
         IL_probabilies_array.append(probability_IL_compound_poisson(R,Q,demand_probability_array,j))
 
-#To-do
+
 def IL_distribution_normal(R: int, Q: int, mean_normal: int, std_dev_normal: int, x: int) -> float: 
     """Computes an array of IL probabilities.
     
@@ -96,7 +96,6 @@ def loss_function(x: int):
     return function
 
 def main():
-    print("HI")
     pass
 
 if __name__ == "__main__":
