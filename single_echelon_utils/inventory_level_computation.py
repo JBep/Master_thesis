@@ -2,63 +2,41 @@ import numpy as np
 from scipy import stats 
 from demand_models import *
 
-def probability_IL_compound_poisson(R: int,Q: int,demand_probability_array: np.array,j: int) -> float:
-    """Calculates the probability of IL equals j under compound poisson demand.
-
-    Assumes compound poisson stationary lead time demand and an (R,Q)-policy
-
-    Reference: Axsäter (2006) Inventory control 2nd edition, equation 5.36
+def IL_prob_array_discrete_positive(R: int, Q: int,demand_probability_array: np.ndarray) -> float:
+    """Calculates the inventory level distribution for all positive values.
     
-    params:
+    Assumes discrete demand distribution.
+    Reference: Axsäter (2006) Inventory control, eq 5.36
+
+    Params: 
         R: Re-order point.
         Q: Order quantity.
-        demand_probability_array: np.array of probabilities of demand 
+        demand_probability_array: np.ndarray of probabilities of demand 
             equal to d, (d = index).
+
+    Returns:
+        np.ndarray of probabilities of IL equal to j, (j = index), 0 <= j <= R+Q.
     """
+    # Assert that there won't be any indexes out of bound:
+    diff = R+Q+1-len(demand_probability_array)
+    if diff > 0:
+        demand_probability_array = np.pad(demand_probability_array, pad_width = (0, diff))
 
-    demand_prob_sum = 0
-    k = max(R+1,j)
-    for k in range(max(R+1,j),R+Q):
-        demand_prob_sum = demand_prob_sum + demand_probability_array[k-j]
 
-    return 1/Q*demand_prob_sum
+    IL_prob_array = np.zeros(R+Q+1)
+    for j in range(R+Q+1):
+        demand_prob_sum = 0
+        k = max(R+1,j)
+        for k in range(max(R+1,j),R+Q+1):
+            demand_prob_sum = demand_prob_sum + demand_probability_array[k-j]
 
-def IL_prob_array_discrete_positive():
-    #TO-DO
-    pass
+        IL_prob_array[j] = 1/Q*demand_prob_sum
+    
+    return IL_prob_array
 
 def IL_prob_array_discrete_negative():
     # Implement if needed, probably not.
     pass
-
-# Re-work this into the above ones.
-def IL_probability_array_compound_poisson(R: int, Q: int, L: int, E_z: float, 
-    V_z: float, compounding_dist: str, positive = 1, threshold = 1e-4) -> np.array:
-    """Computes an array of IL probabilities.
-    
-    Params:
-        R: Reorder point
-        Q: order quantity
-        L: Lead time.
-        E_z: mean demand during a time unit.
-        V_z: variance of demand during a time unit.
-        positive: If 1, returns probabilities of positive IL=j (j=index), 
-            f -1, returns probabilities of negative IL = j (j = -index).
-        threshold: when probability goes below the threshold, all IL above is 
-            assumed to have probability zero.
-
-    Returns:
-        Array of IL probabilities.
-    """
-    if positive != 1 or positive != -1:
-        raise ValueError("Positive needs to be 1 or -1.")
-
-    IL_probabilies_array = []
-    p = 1
-    j = 0
-    while p > threshold:
-        demand_probability_array = demand_probability_array_compound_poisson(L, mu, sigma2)
-        IL_probabilies_array.append(probability_IL_compound_poisson(R,Q,demand_probability_array,j))
 
 
 def IL_distribution_normal(R: int, Q: int, mean_normal: int, std_dev_normal: int, x: int) -> float: 
