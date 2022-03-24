@@ -30,7 +30,8 @@ def lead_time_variance_M2(V_z, E_z, V_L, E_L) -> float:
 
 def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: float, 
     compounding_dist_arr:np.ndarray, customer_threshold = 1e-4, lead_time_demand_method = "M1", lead_time_variance = None) -> np.ndarray:
-    """"Compound poisson distribution with empiric compounding.
+    """"WORK IN PROGRESS
+    Compound poisson distribution with empiric compounding.
 
     Params:
         L: Lead-time
