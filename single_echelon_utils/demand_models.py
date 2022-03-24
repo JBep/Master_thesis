@@ -5,7 +5,7 @@ import math
 ## Test change
 
 
-def lead_time_mean(E_z, L) -> float:
+def lead_time_demand_mean(E_z, L) -> float:
     """Calculates the lead time demand mean.
     
     Multiplies L with E_z.
@@ -13,13 +13,13 @@ def lead_time_mean(E_z, L) -> float:
     mu = L*E_z
     return mu
 
-def lead_time_variance_M1(V_z, L) -> float:
+def lead_time_demand_variance_M1(V_z, L) -> float:
     """Calculates lead time demand variance by using assumption of constant L."""
     
     sigma2 = L*V_z
     return sigma2
 
-def lead_time_variance_M2(V_z, E_z, V_L, E_L) -> float:
+def lead_time_demand_variance_M2(V_z, E_z, V_L, E_L) -> float:
     """Calculates lead time demand variance under stochastic lead times."""
     if V_L == None:
         raise ValueError("Supply lead time variance if using method M2.")
@@ -127,8 +127,6 @@ def demand_prob_arr_poisson(L: int, E_z: float, threshold = 1e-4) -> np.ndarray:
     k = 0
     while cumulative_prob < 1-threshold:
         p_k = (math.pow(mu,k)/math.factorial(k))*np.exp(-mu)
-        print(f"np.exp is {np.exp(-mu)}")
-        print(f"Cumulative prob after {k} values is: {cumulative_prob}, p_k is: {p_k}, k is {k}")
         cumulative_prob += p_k
         demand_prob_arr.append(p_k)
         k += 1
@@ -210,6 +208,8 @@ def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold 
 
     return np.array(demand_prob_arr)
 
+def demand_size_arr_logarithmic():
+    pass
 
 def main():
     #print(demand_prob_arr_negative_binomial(5,1,20))
