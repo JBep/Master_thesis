@@ -49,11 +49,11 @@ def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: f
     """
 
     # First estimate lead time demand mean and variance.
-    mu = lead_time_mean(E_z= E_z,L = L)
+    mu = lead_time_demand_mean(E_z= E_z,L = L)
     if lead_time_demand_method == "M1":
-        sigma2 = lead_time_variance_M1(V_z = V_z,L = L)
+        sigma2 = lead_time_demand_variance_M1(V_z = V_z,L = L)
     elif lead_time_demand_method == "M2":
-        sigma2 = lead_time_variance_M2(V_z = V_z,E_z = E_z, V_L = lead_time_variance,E_L=L)
+        sigma2 = lead_time_demand_variance_M2(V_z = V_z,E_z = E_z, V_L = lead_time_variance,E_L=L)
     else:
         raise ValueError("lead_time_demand_method needs to be 'M1' or 'M2'")
 
@@ -118,7 +118,7 @@ def demand_prob_arr_poisson(L: int, E_z: float, threshold = 1e-4) -> np.ndarray:
         E_z: Mean demand during a time unit.
         threshold: Computations stop when cumulative demand reaches 1-threshold.
         """
-    mu = lead_time_mean(E_z,L)
+    mu = lead_time_demand_mean(E_z,L)
 
     demand_prob_arr = []
     cumulative_prob = 0
@@ -166,11 +166,11 @@ def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold 
 
     # First find params r and p.
     # Lead time demand mean and variance.
-    mu = lead_time_mean(E_z,L )
+    mu = lead_time_demand_mean(E_z,L )
     if lead_time_demand_method == "M1":
-        sigma2 = lead_time_variance_M1(V_z = V_z,L = L)
+        sigma2 = lead_time_demand_variance_M1(V_z = V_z,L = L)
     elif lead_time_demand_method == "M2":
-        sigma2 = lead_time_variance_M2(V_z = V_z,E_z = E_z, V_L = lead_time_variance,E_L=L)
+        sigma2 = lead_time_demand_variance_M2(V_z = V_z,E_z = E_z, V_L = lead_time_variance,E_L=L)
     else:
         raise ValueError("lead_time_demand_method needs to be 'M1' or 'M2'")
 
@@ -208,8 +208,39 @@ def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold 
 
     return np.array(demand_prob_arr)
 
-def demand_size_arr_logarithmic():
-    pass
+def demand_size_arr_logarithmic(mu: float, sigma2:float, threshold = 1e-4) -> np.ndarray:
+    """Calculates the logarithmic compounding distribution array.'
+
+    reference: Axsäter 2006, eq. 5.13, 5.7
+    
+    params:
+        mu: demand mean during a time unit (or the lead time).
+        sigma2: demand variance during a time unit (or the lead time).
+        
+    returns: 
+        numpy.ndarray of probabilities, index 0 is probability for demand = 0.
+    """
+
+    try:
+        alpha = 1 - (mu/sigma2) 
+    except DivisionByZero:
+        raise DivisionByZero("Variance needs to be larger than mean in the NBD-distribution.")
+
+    if alpha < 0:
+        raise ValueError("Variance needs to be smaller than mean in the NBD-distribution.")
+
+    f_j_arr = [0] # Probability of demand = 0 is 0.
+    cumulative_prob = 0
+    j = 1
+
+    while cumulative_prob < 1-threshold:
+        p = -math.pow(alpha,j)/(j*math.log(1-alpha))
+        f_j_arr.append(p)
+        cumulative_prob += p
+        j += 1
+
+
+    return np.array(f_j_arr) 
 
 def main():
     #print(demand_prob_arr_negative_binomial(5,1,20))

@@ -1,5 +1,6 @@
 #import pandas as pd
 import numpy as np
+import math
 from inventory_level_computation import IL_distribution_normal
 
 def fill_rate_compound_poisson_demand(demand_size_probability_array: np.array, pos_IL_probability_array: np.array) -> float:
@@ -18,10 +19,14 @@ def fill_rate_compound_poisson_demand(demand_size_probability_array: np.array, p
     """
 
     numerator, denominator = 0,0
-    for f_k,k in enumerate(demand_size_probability_array[1:]):
-        for p_IL_equals_j,j in enumerate(pos_IL_probability_array[1:]):
-            numerator = numerator + np.min(j,k)*f_k*p_IL_equals_j
-            denominator = denominator + k*f_k
+    for idx_k,f_k in enumerate(demand_size_probability_array[1:]):
+        k = idx_k + 1
+        denominator += k*f_k
+        
+        for idx_j,p_IL_equals_j in enumerate(pos_IL_probability_array[1:]):
+            j = idx_j +1
+            numerator += min(j,k)*f_k*p_IL_equals_j
+            
 
     item_fill_rate = numerator/denominator
     return item_fill_rate
@@ -86,7 +91,7 @@ def cycle_service_normal_demand():
     pass
 
 def main():
-    fill_rate = fill_rate_normal_demand(14, 6, 7.84, 5.3)
+    fill_rate = fill_rate_compound_poisson_demand(14, 6, 7.84, 5.3)
     print(fill_rate)
     pass
 
