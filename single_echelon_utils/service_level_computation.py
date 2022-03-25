@@ -1,6 +1,6 @@
 #import pandas as pd
 import numpy as np
-from inventory_level_computation import IL_distribution_normal
+from inventory_level_computation import *
 
 def fill_rate_compound_poisson_demand(demand_size_probability_array: np.array, pos_IL_probability_array: np.array) -> float:
     """Calculates the item fill rate under compound poisson demand.
@@ -34,7 +34,6 @@ def fill_rate_normal_demand(R: int, Q: int, mean_normal: float, std_dev_normal: 
         Q: order quantity
         mean_normal: mean of normal lead time demand
         std_dev_normal: standard deviation of normal lead time demand
-        IL: inventory level
     return:
        Item fill rate: float decimal between 0 and 1.
     """
@@ -76,6 +75,31 @@ def ready_rate_discrete_demand(pos_IL_probability_array: np.array) -> float:
     """
 
     return np.sum(pos_IL_probability_array)
+
+def undershoot_adjustment_normal(R: int, Q: int, mean_normal: int, std_dev_normal: int, demand_prob_array: np.array) -> float:
+    """Calculates fill rate with undershoot adjustment U1 in BM (2014)
+    
+    params:
+     R: Reorder point
+     Q: order quantity
+     mean_normal: mean of normal lead time demand
+     std_dev_normal: standard deviation of normal lead time demand
+     u: undershoot at retailer
+     demand_probability_array: demand probability array 
+
+    return: fill rate with undershoot adjustment
+    """
+    
+    fill_rate_adj_normal = 0
+
+    # calculates fill rate using eq. 21 in BM (2014).
+    for u in range(0, Q):
+        fill_rate_adj_normal = fill_rate_adj_normal + fill_rate_normal_demand(R-u, Q, mean_normal, std_dev_normal) * prob_undershoot_normal(u, Q, demand_prob_array)
+        print(f"fill rate: {fill_rate_normal_demand(R-u, Q, mean_normal, std_dev_normal)}")
+        print(f"prob undershoot: {prob_undershoot_normal(u, Q, demand_prob_array)}")
+        print(f"adjusted fill rate: {fill_rate_adj_normal}")
+    
+    return fill_rate_adj_normal
 
 # Maybe:
 

@@ -73,14 +73,13 @@ def loss_function(x: int):
 
     return function
 
-# Går Oi göra generell??
-def prob_undershoot_compound_possion(u: int, Q: int, demand_probability_array: np.array) -> float:
-    """Computes an array of IL probabilities.
+def prob_undershoot_normal(u: int, Q: int, demand_prob_array: np.array) -> float:
+    """Computes probability for undershoot u
     
     Params:
         u: undershoot at retailer
         Q: order quantity at retailer 
-        demand_probability_array: demand probability array 
+       demand_prob_array: demand probability array 
 
     Returns:
         
@@ -88,20 +87,12 @@ def prob_undershoot_compound_possion(u: int, Q: int, demand_probability_array: n
     #Create variable for undershoot prob
     undershoot_prob = 0
 
-    #Calculate probability of an undershoot of size u using eq. 19 in BM (2014)
-    for k in range(u+1, u+Q):
-        undershoot_prob = undershoot_prob + (1/Q)*demand_probability_array(k)
-
+    #Calculate probability of an undershoot of size u using eq. 20 in BM (2014) (u+Q+1 to compenate for only going to u+Q-1)
+    for k in range(u+1, u+Q+1):
+        undershoot_prob = undershoot_prob + (1/Q)*demand_prob_array(k)
+        #print(undershoot_prob)
+    
     return undershoot_prob 
-
-#TO-DO
-def prob_undershoot_normal():
-    pass
-
-#TO-DO
-def prob_undershoot_compound_poisson():
-    pass
-
 
 def main():
     pass
