@@ -7,9 +7,15 @@ def test_fill_rate_normal(R, Q, mean_normal, std_dev_normal):
     fill_rate = fill_rate_normal_demand(R, Q, mean_normal, std_dev_normal)
     print(fill_rate)
 
+#Testing service level for adjusted normal demand manually
+
+def test_fill_rate_adj_normal(R, Q, mean_normal, std_dev_normal, demand_prob_array) -> float:
+    normal = undershoot_adjustment_normal(R, Q, mean_normal, std_dev_normal, demand_prob_array)
+    print(normal)
+
 def main():
+    test_fill_rate_adj_normal(14, 6, 7.84, 5.3, #insert array)
     test_fill_rate_normal(14, 6, 7.84, 5.3)
-    pass
 
 if __name__ == "__main__":
     main()

@@ -73,6 +73,27 @@ def loss_function(x: int):
 
     return function
 
+def prob_undershoot_normal(u: int, Q: int, demand_prob_array: np.array) -> float:
+    """Computes probability for undershoot u
+    
+    Params:
+        u: undershoot at retailer
+        Q: order quantity at retailer 
+       demand_prob_array: demand probability array 
+
+    Returns:
+        
+    """
+    #Create variable for undershoot prob
+    undershoot_prob = 0
+
+    #Calculate probability of an undershoot of size u using eq. 20 in BM (2014) (u+Q+1 to compenate for only going to u+Q-1)
+    for k in range(u+1, u+Q+1):
+        undershoot_prob = undershoot_prob + (1/Q)*demand_prob_array(k)
+        #print(undershoot_prob)
+    
+    return undershoot_prob 
+
 def main():
     pass
 
