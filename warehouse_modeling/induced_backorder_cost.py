@@ -1,4 +1,5 @@
 import numpy as np
+import math
 
 def norm_sigma(my: float, sigma: float, l: float) -> float:
     """Normalization of sigma
@@ -73,7 +74,7 @@ def induced_backorder_cost_opt(h: float, Q: int, p: int, l: int, my: float, sigm
     g_Q_p = g_factor(h, Q, p, my, l)
     k_Q_p = k_factor(h, Q, p, my, l)
 
-    beta_opt = h * g_Q_p * norm_sigma(my, sigma, l)**k_Q_p
+    beta_opt = h * g_Q_p * math.pow(norm_sigma(my, sigma, l),k_Q_p)
 
     return beta_opt
 

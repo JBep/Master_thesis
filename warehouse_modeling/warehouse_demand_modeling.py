@@ -1,4 +1,6 @@
-import scipy.stats
+from scipy import stats
+import math
+import numpy as np
 
 def delta_func_normal_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: float, n: int) -> float:
     """Computes the delta-function value of n for a specific dealer.
@@ -16,12 +18,25 @@ def delta_func_normal_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma
         sigma: standard deviance of demand per one time unit.
 
     """
-    a = 
+    a = Q_dealer * stats.norm.cdf( ((n+1)*Q_dealer - mu*L_warehouse) / (sigma*math.sqrt(L_warehouse)) )
+    
+    b = sigma*math.sqrt(L_warehouse) * ( stats.norm.pdf( ((n+1)*Q_dealer-mu*L_warehouse) / (sigma*math.sqrt(L_warehouse)) ) 
+        - stats.norm.pdf( (n*Q_dealer-mu*L_warehouse) / (sigma*math.sqrt(L_warehouse)) ) )
 
-    delta = a + b + c + d
-    pass
+    c = (n*Q_dealer-mu*L_warehouse) * ( stats.norm.cdf( ((n+1)*Q_dealer - mu*L_warehouse) / (sigma*math.sqrt(L_warehouse)) )
+        - stats.norm.cdf( (n*Q_dealer-mu*L_warehouse) / (sigma*math.sqrt(L_warehouse)) ) )
 
-def f_func_normal_demand():
+    delta = 1/Q_dealer * (a + b + c)
+    return delta
+
+def f_func_normal_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: float, threshold = 1e-6) -> np.ndarray:
+    cumulative_prob = 0
+    u = 0
+    probability_array = []
+
+    while cumulative_prob < 1 - threshold:
+        probability_array    
+
     pass
 
 def warehouse_demand_variance_term_normal_demand():
@@ -38,3 +53,10 @@ def warehouse_demand_variance_term_comp_poisson_demand():
 
 def warehouse_demand_approximation(mu_L:float, sigma2_L:float):
     pass
+
+def main():
+    for n in range(15):
+        print(f"For n = {n}, delta = {delta_func_normal_demand(Q_dealer = 2,L_warehouse = 5,mu = 1,sigma = 2, n=n)}")
+
+if __name__ == "__main__":
+    main()
