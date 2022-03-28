@@ -174,14 +174,7 @@ def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold 
     else:
         raise ValueError("lead_time_demand_method needs to be 'M1' or 'M2'")
 
-    try:
-        p = 1 - (mu/sigma2) 
-    except DivisionByZero:
-        raise DivisionByZero("Variance needs to be larger than mean in the NBD-distribution.")
-
-    if p < 0:
-        raise ValueError("Variance needs to be smaller than mean in the NBD-distribution.")
-
+    p = logarithmic_alpha(mu,sigma2)
     r = mu*(1-p)/p
     demand_prob_arr = []
 
@@ -208,27 +201,20 @@ def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold 
 
     return np.array(demand_prob_arr)
 
-def demand_size_arr_logarithmic(mu: float, sigma2:float, threshold = 1e-4) -> np.ndarray:
+def demand_size_arr_logarithmic(E_z: float, V_z:float, threshold = 1e-4) -> np.ndarray:
     """Calculates the logarithmic compounding distribution array.'
 
     reference: Axsäter 2006, eq. 5.13, 5.7
     
     params:
-        mu: demand mean during a time unit (or the lead time).
-        sigma2: demand variance during a time unit (or the lead time).
+        E_z: demand mean during a time unit (or the lead time).
+        V_z: demand variance during a time unit (or the lead time).
         
     returns: 
         numpy.ndarray of probabilities, index 0 is probability for demand = 0.
     """
 
-    try:
-        alpha = 1 - (mu/sigma2) 
-    except DivisionByZero:
-        raise DivisionByZero("Variance needs to be larger than mean in the NBD-distribution.")
-
-    if alpha < 0:
-        raise ValueError("Variance needs to be smaller than mean in the NBD-distribution.")
-
+    alpha = logarithmic_alpha(E_z,V_z)
     f_j_arr = [0] # Probability of demand = 0 is 0.
     cumulative_prob = 0
     j = 1
@@ -239,8 +225,51 @@ def demand_size_arr_logarithmic(mu: float, sigma2:float, threshold = 1e-4) -> np
         cumulative_prob += p
         j += 1
 
-
     return np.array(f_j_arr) 
+
+def logarithmic_alpha(E_z: float, V_z:float) -> float:
+    """Calculates the alpha-value for the logarithmic distribution.
+    
+    Same as p-value for the NBD-dist.
+    
+    Params:
+        E_z: demand mean during a time unit (or the lead time).
+        V_z: demand variance during a time unit (or the lead time).
+        
+    returns: 
+        alpha for logarithmic dist. (or p-value for NBD)
+  
+    """
+    try:
+        alpha = 1 - (E_z/V_z) 
+    except DivisionByZero:
+        raise DivisionByZero("Variance needs to be larger than mean in the NBD-distribution.")
+
+    if alpha < 0:
+        raise ValueError("Variance needs to be smaller than mean in the NBD-distribution.")
+
+    return alpha
+
+def logarithmic_compound_params(mu: float, sigma2:float):
+    """Calculates the alpha-value for the logarithmic distribution.
+    
+    Same as p-value for the NBD-dist.
+    
+    Params:
+        mu: demand mean during the lead time.
+        sigma2: demand variance during a time unit (or the lead time).
+        
+    returns: 
+        lam, alpha - For compound poisson dist with logarithmic compounding. 
+    """
+
+    alpha = logarithmic_alpha(mu,sigma2)
+    
+    lam = -mu * ((1-alpha)*math.log(1-alpha))/alpha
+
+    return lam, alpha
+
+
 
 def main():
     #print(demand_prob_arr_negative_binomial(5,1,20))

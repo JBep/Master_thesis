@@ -126,7 +126,7 @@ def main():
         demand_type = 'Poisson', demand_mean = 5)
     print(f"Poisson values: R = {R}, Q = {Q}, IFR = {fill_rate}, E_IL = {E_IL}")
 
-    R,Q,fill_rate,E_IL = dealer_R_optimization(Q=10,L_est = 5,fill_rate_target = 0.95, 
+    R,Q,fill_rate,E_IL = dealer_R_optimization(Q=5,L_est = 4,fill_rate_target = 0.25, 
         demand_type = 'NBD', demand_mean = 5, demand_variance = 10)
     print(f"NBD values: R = {R}, Q = {Q}, IFR = {fill_rate}, E_IL = {E_IL}")
 
