@@ -246,7 +246,7 @@ def logarithmic_alpha(E_z: float, V_z:float) -> float:
         raise DivisionByZero("Variance needs to be larger than mean in the NBD-distribution.")
 
     if alpha < 0:
-        raise ValueError("Variance needs to be smaller than mean in the NBD-distribution.")
+        raise ValueError("Variance needs to be larger than mean in the NBD-distribution.")
 
     return alpha
 

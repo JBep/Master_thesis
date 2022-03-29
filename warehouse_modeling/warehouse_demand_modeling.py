@@ -11,6 +11,7 @@ sys.path.append(parentdir)
 from single_echelon_utils.demand_models import *
 
 IMPLEMENTED_DEMAND_TYPES = ["Normal","NBD"]
+THRESHOLD = 1e-4
 
 def delta_func_Normal_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: float, n: int) -> float:
     """Computes the delta-function value of n for a specific dealer.
@@ -55,7 +56,7 @@ def delta_func_NBD_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: f
     delta = 1/Q_dealer * prob_sum
     return delta
 
-def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: float, demand_type: str, threshold = 1e-4) -> np.ndarray:
+def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: float, demand_type: str) -> np.ndarray:
     """Computes the pmf array for all possible subbatches u (u = n*q_i) demanded 
     at the warehouse by a dealer (retailer).
 
@@ -72,13 +73,14 @@ def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: fl
     reference: Berling and Marklund (2014) eq. 8. or Berling and Marklund (2013)
         eq. 10. Notation from B&M 2014.
 
+    When cumulative probability reaches above 1-THRESHOLD, THRESHOLD is 1e-4, the iteration stops.
+        All u's above are assumed to have probability 0.
+
     params:
         Q_dealer: Batch quantity at dealer in units.
         L_warehouse: lead time to warehouse, assumed constant.
         mu: mean demand per one time unit.
         sigma: standard deviance of demand per one time unit.
-        threshold: When cumulative probability reaches above 1-threshold the iteration stops.
-            All u's above are assumed to have probability 0.
         demand_type: Check "IMPLEMENTED_DEMAND_TYPES" for available inputs.
 
     returns:
@@ -96,7 +98,7 @@ def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: fl
     # u = 1*q_i,2*q_i,3*q_i ...
     n = 1
     d_n_1 = f_0
-    while cumulative_prob < 1 - threshold:
+    while cumulative_prob < 1 - THRESHOLD:
         d_n =  globals()[delta_func_str](Q_dealer,L_warehouse,mu,sigma,n)
         f_u = d_n-d_n_1 
         probability_array.append(f_u)
@@ -112,14 +114,15 @@ def warehouse_demand_variance_term(Q_dealer:int,Q_subbatch:int,L_warehouse:float
     """Calculates the subbatch demand variance term from a dealer.
     
     reference: Berling and Marklund (2014) p. 3336
+
+    When cumulative probability reaches above 1-THRESHOLD, THRESHOLD is 1e-4, the iteration stops.
+        All u's above are assumed to have probability 0.
     
     params:
         Q_dealer: Batch quantity at dealer in units.
         L_warehouse: lead time to warehouse, assumed constant.
         mu: mean demand per one time unit.
         sigma: standard deviance of demand per one time unit.
-        threshold: When cumulative probability reaches above 1-threshold the iteration stops.
-            All u's above are assumed to have probability 0.
         demand_type: Check "IMPLEMENTED_DEMAND_TYPES" for available inputs.
 
     returns:
@@ -154,9 +157,9 @@ def warehouse_demand_mean_approximation(dealer_mean_demand: np.ndarray, L_wareho
         Mean estimate of warehouse subbatch demand.
         """
 
-    return sum(dealer_mean_demand)*L_warehouse/Q_subbatch
+    return np.sum(dealer_mean_demand)*L_warehouse/Q_subbatch
 
-def warehouse_demand_variance_approximation(Q_dealer_array: np.ndarray, mu_dealer_array: np.ndarray, sigma_dealer_array: np.ndarray, L_warehouse: float, Q_subbatch: int) -> float:
+def warehouse_demand_variance_approximation(Q_dealer_array: np.ndarray, mu_dealer_array: np.ndarray, sigma_dealer_array: np.ndarray, demand_type_array: np.ndarray, L_warehouse: float, Q_subbatch: int) -> float:
     """Computes the warehouse demand variance estimate.
     
     reference: Berling and Marklund 2014 p. 3336
@@ -170,15 +173,73 @@ def warehouse_demand_variance_approximation(Q_dealer_array: np.ndarray, mu_deale
         warehouse demand variance. 
     """
 
+    warehouse_demand_variance = 0
 
-    #for dealer in X
-    pass
+    for Q,mu,sigma,demand_type in zip(Q_dealer_array,mu_dealer_array,sigma_dealer_array,demand_type_array):
+        warehouse_demand_variance += warehouse_demand_variance_term(Q,Q_subbatch,L_warehouse,mu,sigma,demand_type)
+    
+    return warehouse_demand_variance
 
 def warehouse_demand_approximation(mu_L:float, sigma2_L:float):
     pass
 
-def warehouse_subbatch_demand_probability_array():
-    pass
+def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_dealer_array: np.ndarray, sigma_dealer_array: np.ndarray, demand_type_array: np.ndarray, L_warehouse: float, Q_subbatch: int):
+    """Computes the warehouse subbatch demand probability array estimates.
+    
+    reference: Berling and Marklund 2014 p. 3336
+    
+    params:
+        Q_dealer_array: Dealers batch-quantities in units. 
+        mu_dealer_array: Dealers mean demand.
+        sigma_dealer_array: Dealers demand variances.
+        L_warehouse: Warehouse leadtime.
+        Q_subbatch: Subbatch size (smallest common divisor of Q's)
+
+    returns: 
+        Warehouse subbatch demand probability array with probabilities of u = 0,1,2,...
+    """
+    mu_L = warehouse_demand_mean_approximation(mu_dealer_array,L_warehouse,Q_subbatch)
+    sigma2_L = warehouse_demand_variance_approximation(Q_dealer_array,mu_dealer_array,sigma_dealer_array,demand_type_array,L_warehouse,Q_subbatch)
+
+    variance_coeff = sigma2_L/mu_L
+    stdev_coeff = math.sqrt(sigma2_L)/mu_L
+
+    if sigma2_L/mu_L > 1:
+        #NBD-dist
+        probability_arr = demand_prob_arr_negative_binomial(L_warehouse,mu_L,sigma2_L)
+
+    else:
+        if math.sqrt(sigma2_L)/mu_L < 0.25:
+            # Normal approx
+            F = lambda x: stats.norm.cdf(x, loc = mu_L, scale = math.sqrt(sigma2_L)) 
+        else: 
+            # Gamma approx
+            F = lambda x: stats.gamma.cdf(x, loc = mu_L, scale = math.sqrt(sigma2_L))
+
+        probability_list = []
+
+        # Separately handling f_u (u = 0)
+        f_0 = F(0.5)
+        probability_list.append(f_0)
+
+        cumulative_prob = f_0
+
+        u = 1
+        f_u_1 = f_0 # Keeping last computed value.
+        while cumulative_prob < 1-THRESHOLD:
+            #Discrete approximation
+            f_u = F(u+0.5)-f_u_1
+            probability_list.append(f_u)
+            cumulative_prob += f_u
+
+            u += 1
+            f_u_1 = f_u
+
+        probability_arr = np.array(probability_list)
+
+    return probability_arr
+   
+    
 
 def main():
     print("\n -------------------------------- \n")
@@ -211,3 +272,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
