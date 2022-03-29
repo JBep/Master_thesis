@@ -46,9 +46,9 @@ def k_factor(h: float, Q_norm: int, p_norm: float, my: float, l: float):
     k_a = max(0.7, min(0.9, 0.6*p_norm**0.075))
     k_b = min(0.2, 0.4*p_norm**(-0.35))
     K = max(1.3, min(2, 2.5*p_norm**(-0.15)))
-    print(k_a)
-    print(k_b)
-    print(K)
+    print(f"k_a: {k_a}")
+    print(f"k_b: {k_b}")
+    print(f"K: {K}")
 
     #calculate k factor
     k_factor = max(1, min(k_a*Q_norm**k_b, K))
@@ -75,6 +75,28 @@ def induced_backorder_cost_opt(h: float, Q: int, p: int, l: int, my: float, sigm
     k_Q_p = k_factor(h, Q, p, my, l)
 
     beta_opt = h * g_Q_p * math.pow(norm_sigma(my, sigma, l),k_Q_p)
+    print(f"beta_opt: {beta_opt}")
 
     return beta_opt
 
+#Has not been tested
+def weighting_backorder_cost(my_i: np.array, my_0: float, beta_opt_array: np.array) -> float:
+    """Weighting optimal induced backorder for non-identical retailers
+    
+     my_i = mean lead time demand at retailer i-1
+     my_0 = mean lead time demand at supplying warehouse
+     beta_opt_array = optimal beta at retailer i-1
+
+    return:
+        Weighted optimal induced backorder cost
+
+    """
+    weighted_beta_opt = 0
+    c = 0
+
+    for k in range(0, len(my_i)):
+        weighted_beta_opt = weighted_beta_opt + (my_i[c]/my_0) * beta_opt_array[c]
+        c = c + 1
+
+    return weighted_beta_opt
+    
