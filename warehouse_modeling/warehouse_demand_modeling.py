@@ -1,6 +1,7 @@
 from scipy import stats
 import math
 import numpy as np
+import pandas as pd
 
 import os, sys
 currentdir = os.path.dirname(os.path.realpath(__file__))
@@ -107,7 +108,7 @@ def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: fl
 
     return np.array(probability_array)
 
-def warehouse_demand_subbatch_variance(Q_dealer:int,Q_subbatch:int,L_warehouse:float,mu:float,sigma:float,demand_type:str):
+def warehouse_demand_variance_term(Q_dealer:int,Q_subbatch:int,L_warehouse:float,mu:float,sigma:float,demand_type:str):
     """Calculates the subbatch demand variance term from a dealer.
     
     reference: Berling and Marklund (2014) p. 3336
@@ -141,8 +142,42 @@ def warehouse_demand_subbatch_variance(Q_dealer:int,Q_subbatch:int,L_warehouse:f
 
     return f_nq.dot(np.array(mu_nq_square))
 
+def warehouse_demand_mean_approximation(dealer_mean_demand: np.ndarray, L_warehouse: float, Q_subbatch:int):
+    """Calculates warehouse mean.
+    
+    params:
+        dealer_mean_demand: Array containing all dealer mean demand estimations.
+        L_warehouse: Constant lead time from outside supplier to warehouse.
+        Q_subbatch: Size of the subbatch (smallest common divisor among batch-sizes).
+
+    returns:
+        Mean estimate of warehouse subbatch demand.
+        """
+
+    return sum(dealer_mean_demand)*L_warehouse/Q_subbatch
+
+def warehouse_demand_variance_approximation(Q_dealer_array: np.ndarray, mu_dealer_array: np.ndarray, sigma_dealer_array: np.ndarray, L_warehouse: float, Q_subbatch: int) -> float:
+    """Computes the warehouse demand variance estimate.
+    
+    reference: Berling and Marklund 2014 p. 3336
+    
+    params:
+        Q_dealer_array: Dealers batch-quantities in units. 
+        mu_dealer_array: Dealers mean demand.
+        sigma_dealer_array: Dealers demand variances.
+
+    returns: 
+        warehouse demand variance. 
+    """
+
+
+    #for dealer in X
+    pass
 
 def warehouse_demand_approximation(mu_L:float, sigma2_L:float):
+    pass
+
+def warehouse_subbatch_demand_probability_array():
     pass
 
 def main():
@@ -158,7 +193,7 @@ def main():
 
     print("\n")
     print("Testing warehouse demand subbatch variance, Normal demand.")
-    print(f"Variance is: {warehouse_demand_subbatch_variance(Q_dealer = 2, Q_subbatch=1, L_warehouse = 5, mu = 1, sigma = 2, demand_type = 'Normal')}")
+    print(f"Variance is: {warehouse_demand_variance_term(Q_dealer = 2, Q_subbatch=1, L_warehouse = 5, mu = 1, sigma = 2, demand_type = 'Normal')}")
 
     print("\n -------------------------------- \n")
     print("Testing delta_func_NBD_demand:")
@@ -172,7 +207,7 @@ def main():
 
     print("\n")
     print("Testing warehouse demand subbatch variance, NBD demand.")
-    print(f"Variance is: {warehouse_demand_subbatch_variance(Q_dealer = 2, Q_subbatch=1, L_warehouse = 5, mu = 1, sigma = 2, demand_type = 'NBD')}")
+    print(f"Variance is: {warehouse_demand_variance_term(Q_dealer = 2, Q_subbatch=1, L_warehouse = 5, mu = 1, sigma = 2, demand_type = 'NBD')}")
 
 if __name__ == "__main__":
     main()
