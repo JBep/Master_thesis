@@ -1,6 +1,8 @@
+import pandas as pd
+
 from demand_models import *
 from service_level_computation import *
-import pandas as pd
+from inventory_level_computation import *
 
 def fill_rate_test_NBD(test_cases: pd.DataFrame, test_case_no: int):
     demand_arr = demand_prob_arr_negative_binomial(L = test_cases.at[test_case_no-1,"L"],E_z = test_cases.at[test_case_no-1,"demand_mean"] ,V_z = test_cases.at[test_case_no-1,'demand_variance'])
@@ -56,7 +58,7 @@ def main():
         fill_rate_test_NBD(my_test_cases,test_case)
 
     print(my_test_cases)
-
+    #my_test_cases.to_excel("/Users/jakobbengtsson/Desktop/test_SE_data.xlsx", sheet_name = "Analytical model")
 
 
 

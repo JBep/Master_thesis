@@ -8,6 +8,7 @@ currentdir = os.path.dirname(os.path.realpath(__file__))
 parentdir = os.path.dirname(currentdir)
 sys.path.append(parentdir)
 
+
 from single_echelon_utils.demand_models import *
 
 IMPLEMENTED_DEMAND_TYPES = ["Normal","NBD","Poisson"]
@@ -226,8 +227,6 @@ def warehouse_demand_variance_approximation(Q_dealer_array: np.ndarray, mu_deale
     
     return warehouse_demand_variance
 
-def warehouse_demand_approximation(mu_L:float, sigma2_L:float):
-    pass
 
 def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_dealer_array: np.ndarray, sigma_dealer_array: np.ndarray, demand_type_array: np.ndarray, L_warehouse: float, Q_subbatch: int):
     """Computes the warehouse subbatch demand probability array estimates.
@@ -243,24 +242,27 @@ def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_d
 
     returns: 
         Warehouse subbatch demand probability array with probabilities of u = 0,1,2,...
+        and warehouse demand type, warehouse mean subbatch demand, 
+        warehouse subbarch demand variance.
     """
     mu_L = warehouse_demand_mean_approximation(mu_dealer_array,L_warehouse,Q_subbatch)
-    sigma2_L = warehouse_demand_variance_approximation(Q_dealer_array,mu_dealer_array,sigma_dealer_array,demand_type_array,L_warehouse,Q_subbatch)
-
-    variance_coeff = sigma2_L/mu_L
-    stdev_coeff = math.sqrt(sigma2_L)/mu_L
+    sigma2_L = warehouse_demand_variance_approximation(Q_dealer_array,mu_dealer_array,
+        sigma_dealer_array,demand_type_array,L_warehouse,Q_subbatch)
 
     if sigma2_L/mu_L > 1:
         #NBD-dist
         probability_arr = demand_prob_arr_negative_binomial(L_warehouse,mu_L,sigma2_L)
+        warehouse_demand_type = "NBD"
 
     else:
         if math.sqrt(sigma2_L)/mu_L < 0.25:
             # Normal approx
             F = lambda x: stats.norm.cdf(x, loc = mu_L, scale = math.sqrt(sigma2_L)) 
+            warehouse_demand_type = "Normal"
         else: 
             # Gamma approx
             F = lambda x: stats.gamma.cdf(x, loc = mu_L, scale = math.sqrt(sigma2_L))
+            warehouse_demand_type = "Gamma"
 
         probability_list = []
 
@@ -283,7 +285,7 @@ def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_d
 
         probability_arr = np.array(probability_list)
 
-    return probability_arr
+    return probability_arr, warehouse_demand_type, mu_L, sigma2_L
    
     
 
