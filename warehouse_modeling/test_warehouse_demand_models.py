@@ -50,6 +50,44 @@ def main():
 
     print("\n------------------------------ \n")
     test_warehouse_subbatch_demand_probability_array()
+
+    print("\n -------------------------------- \n")
+    print("Testing delta_func_normal_demand:")
+    for n in range(5):
+        print(f"For n = {n}, delta = {delta_func_Normal_demand(Q_dealer = 2,L_warehouse = 5,mu = 1,sigma = 2, n=n)}")
+
+    print("\n")
+    print("Testing pmf-func w. normal.:")
+    print(f"Probability arr: {pmf_func_warehouse_subbatch_demand(Q_dealer = 2, L_warehouse = 5, mu = 1, sigma = 2,demand_type = 'Normal')}")
+    print(f"Sum of array is: {np.sum(pmf_func_warehouse_subbatch_demand(Q_dealer = 2, L_warehouse = 5, mu = 1, sigma = 2,demand_type= 'Normal'))}")
+
+    print("\n")
+    print("Testing warehouse demand subbatch variance, Normal demand.")
+    print(f"Variance is: {warehouse_demand_variance_term(Q_dealer = 2, Q_subbatch=1, L_warehouse = 5, mu = 1, sigma = 2, demand_type = 'Normal')}")
+
+    print("\n -------------------------------- \n")
+    print("Testing delta_func_NBD_demand:")
+    for n in range(5):
+        print(f"For n = {n}, delta = {delta_func_NBD_demand(Q_dealer = 2,L_warehouse = 5,mu = 1,sigma = 2, n=n)}")
+
+    print("\n")
+    print("Testing pmf-func w. NBD.:")
+    print(f"Probability arr: {pmf_func_warehouse_subbatch_demand(Q_dealer = 2, L_warehouse = 5, mu = 1, sigma = 2,demand_type = 'NBD')}")
+    print(f"Sum of array is: {np.sum(pmf_func_warehouse_subbatch_demand(Q_dealer = 2, L_warehouse = 5, mu = 1, sigma = 2,demand_type= 'NBD'))}")
+
+    print("\n")
+    print("Testing warehouse demand subbatch variance, NBD demand.")
+    print(f"Variance is: {warehouse_demand_variance_term(Q_dealer = 2, Q_subbatch=1, L_warehouse = 5, mu = 1, sigma = 2, demand_type = 'NBD')}")
+
+    print("\n")
+    print("Testing pmf-func w. Poisson.:")
+    print(f"Probability arr: {pmf_func_warehouse_subbatch_demand(Q_dealer = 2, L_warehouse = 5, mu = 1, sigma = 1, demand_type = 'Poisson')}")
+    print(f"Sum of array is: {np.sum(pmf_func_warehouse_subbatch_demand(Q_dealer = 2, L_warehouse = 5, mu = 1, sigma = 1, demand_type= 'Poisson'))}")
+
+    print("\n")
+    print("Testing warehouse demand subbatch variance, Poisson demand.")
+    print(f"Variance is: {warehouse_demand_variance_term(Q_dealer = 2, Q_subbatch=1, L_warehouse = 5, mu = 1,  sigma = 1, demand_type = 'Poisson')}")
+
     
     print("All tests finished!")
 
