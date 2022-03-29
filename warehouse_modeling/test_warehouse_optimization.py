@@ -12,7 +12,7 @@ def test_warehouse_optimization():
     L_warehouse = 3
     Q_subbatch = 2
 
-    prob_arr = warehouse_subbatch_demand_probability_array(Q_dealer_arr,dealer_mu_arr,dealer_sigma_arr,demand_type_arr,L_warehouse,Q_subbatch)
+    prob_arr,_,_,_ = warehouse_subbatch_demand_probability_array(Q_dealer_arr,dealer_mu_arr,dealer_sigma_arr,demand_type_arr,L_warehouse,Q_subbatch)
    
     R_opt = warehouse_optimization(100, 3, prob_arr, 2, 100)
     print(f"Optimal R: {R_opt}")
@@ -26,7 +26,7 @@ def test_negative_inventory():
     L_warehouse = 3
     Q_subbatch = 2
 
-    prob_arr = warehouse_subbatch_demand_probability_array(Q_dealer_arr,dealer_mu_arr,dealer_sigma_arr,demand_type_arr,L_warehouse,Q_subbatch)
+    prob_arr,_,_,_ = warehouse_subbatch_demand_probability_array(Q_dealer_arr,dealer_mu_arr,dealer_sigma_arr,demand_type_arr,L_warehouse,Q_subbatch)
     print(f"Demand prob is: {prob_arr}")
 
     print(f" negative inventory: {negative_inventory(2, 4, 1, prob_arr)}")
@@ -40,7 +40,7 @@ def test_positive_inventory():
     L_warehouse = 3
     Q_subbatch = 2
 
-    prob_arr = warehouse_subbatch_demand_probability_array(Q_dealer_arr,dealer_mu_arr,dealer_sigma_arr,demand_type_arr,L_warehouse,Q_subbatch)
+    prob_arr,_,_,_ = warehouse_subbatch_demand_probability_array(Q_dealer_arr,dealer_mu_arr,dealer_sigma_arr,demand_type_arr,L_warehouse,Q_subbatch)
     #print(f"Demand prob is: {prob_arr}")
 
     print(f" positive inventory: {positive_inventory(1000, 4, 2, prob_arr)}")
@@ -54,7 +54,7 @@ def test_total_cost():
     L_warehouse = 3
     Q_subbatch = 2
 
-    prob_arr = warehouse_subbatch_demand_probability_array(Q_dealer_arr,dealer_mu_arr,dealer_sigma_arr,demand_type_arr,L_warehouse,Q_subbatch)
+    prob_arr,_,_,_ = warehouse_subbatch_demand_probability_array(Q_dealer_arr,dealer_mu_arr,dealer_sigma_arr,demand_type_arr,L_warehouse,Q_subbatch)
     print(total_cost(2, 4, 1, prob_arr, 5, 3))
 
 def main():
