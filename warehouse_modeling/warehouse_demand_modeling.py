@@ -10,7 +10,7 @@ sys.path.append(parentdir)
 
 from single_echelon_utils.demand_models import *
 
-IMPLEMENTED_DEMAND_TYPES = ["Normal","NBD"]
+IMPLEMENTED_DEMAND_TYPES = ["Normal","NBD","Poisson"]
 THRESHOLD = 1e-4
 
 def delta_func_Normal_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: float, n: int) -> float:
@@ -41,7 +41,53 @@ def delta_func_Normal_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma
     return delta
 
 def delta_func_NBD_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: float, n: int):
+    """Computes the delta-function value of n for a specific dealer with NBD demand.
+    
+    The delta-value is interpreted as the probability of a dealer ordering at most
+    n orders during the warehouse lead time. Assumes demand faced by dealer to be
+    normally distributed.
+
+    reference: Berling and Marklund (2014) eq. 7.
+    
+    params:
+        Q_dealer: Batch quantity at dealer in units.
+        L_warehouse: lead time to warehouse, assumed constant.
+        mu: mean demand per one time unit at the dealer.
+        sigma: standard deviance of demand per one time unit at the dealer.
+
+    """
     demand_probability_arr = demand_prob_arr_negative_binomial(L_warehouse,mu,math.pow(sigma,2))
+    max_demand = len(demand_probability_arr)
+
+    # Somewhere here is prbably a good place to find bugs
+    prob_sum = 0
+    for x in range(1,Q_dealer+1):
+        d = n*Q_dealer+x-1
+        if d >= max_demand:
+            prob_sum += np.sum(demand_probability_arr)
+        else:
+            prob_sum += np.sum(demand_probability_arr[:d])
+
+    delta = 1/Q_dealer * prob_sum
+    return delta
+
+def delta_func_Poisson_demand(Q_dealer: int, L_warehouse: float, mu: float, n: int, sigma: float, ):
+    """Computes the delta-function value of n for a specific dealer of Poisson demand.
+    
+    The delta-value is interpreted as the probability of a dealer ordering at most
+    n orders during the warehouse lead time. Assumes demand faced by dealer to be
+    normally distributed.
+
+    reference: Berling and Marklund (2014) eq. 7.
+    
+    params:
+        Q_dealer: Batch quantity at dealer in units.
+        L_warehouse: lead time to warehouse, assumed constant.
+        mu: mean demand per one time unit at the dealer.
+        sigma: standard deviance of demand per one time unit at the dealer.
+
+    """
+    demand_probability_arr = demand_prob_arr_poisson(L_warehouse,mu)
     max_demand = len(demand_probability_arr)
 
     # Somewhere here is prbably a good place to find bugs
@@ -91,7 +137,7 @@ def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: fl
     probability_array = []
 
     # Doing u = 0, (n = 0), separately.
-    f_0 = globals()[delta_func_str](Q_dealer,L_warehouse,mu,sigma,0)
+    f_0 = globals()[delta_func_str](Q_dealer = Q_dealer,L_warehouse = L_warehouse, mu = mu, n = 0, sigma = sigma)
     probability_array.append(f_0)
     cumulative_prob += f_0
 
@@ -99,7 +145,7 @@ def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: fl
     n = 1
     d_n_1 = f_0
     while cumulative_prob < 1 - THRESHOLD:
-        d_n =  globals()[delta_func_str](Q_dealer,L_warehouse,mu,sigma,n)
+        d_n =  globals()[delta_func_str](Q_dealer = Q_dealer,L_warehouse = L_warehouse, mu = mu, n = n, sigma = sigma)
         f_u = d_n-d_n_1 
         probability_array.append(f_u)
         cumulative_prob += f_u
