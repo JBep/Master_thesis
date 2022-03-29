@@ -36,7 +36,7 @@ def test_warehouse_subbatch_demand_probability_array():
     L_warehouse = 3
     Q_subbatch = 2
 
-    prob_arr = warehouse_subbatch_demand_probability_array(Q_dealer_arr,dealer_mu_arr,dealer_sigma_arr,demand_type_arr,L_warehouse,Q_subbatch)
+    prob_arr,dist = warehouse_subbatch_demand_probability_array(Q_dealer_arr,dealer_mu_arr,dealer_sigma_arr,demand_type_arr,L_warehouse,Q_subbatch)
     print(f"Demand prob is: {prob_arr}")
 
     cumulative_prob = np.sum(prob_arr)

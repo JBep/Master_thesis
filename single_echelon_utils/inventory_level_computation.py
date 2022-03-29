@@ -1,6 +1,5 @@
 import numpy as np
 from scipy import stats 
-from demand_models import *
 
 def IL_prob_array_discrete_positive(R: int, Q: int,demand_probability_array: np.ndarray) -> float:
     """Calculates the inventory level distribution for all positive values.
