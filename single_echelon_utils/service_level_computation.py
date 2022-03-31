@@ -2,8 +2,10 @@
 import numpy as np
 import math
 
-if __name__ == "__main__":
-    from inventory_level_computation import *
+import os, sys
+currentdir = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(currentdir)
+from inventory_level_computation import *
 
 def fill_rate_compound_poisson_demand(demand_size_probability_array: np.array, pos_IL_probability_array: np.array) -> float:
     """Calculates the item fill rate under compound poisson demand.
