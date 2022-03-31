@@ -25,8 +25,11 @@ def negative_inventory(Q: int, Q_0: int, R_0: int, f_u_arr: np.ndarray):
     neg_inv = 0
 
     for y in range(R_0+1, R_0+Q_0+1): #index och sen värde
-        for u,f_u in enumerate(f_u_arr):
-            neg_inv += (u-y)*f_u
+        u = y
+        len_f_u_arr = len(f_u_arr)
+        while u < len_f_u_arr:
+            neg_inv += (u-y)*f_u_arr[u]
+            u += 1
 
     return (Q/Q_0)*neg_inv
 
