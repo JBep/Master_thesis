@@ -15,6 +15,8 @@ def find_smallest_divisor(integer_array: np.ndarray):
 
     return divisor
 
+def main():
+    print(f"Smallest divisor is: {find_smallest_divisor([8,8,8,4,4,8])}")
                 
-
-print(f"Smallest divisor is: {find_smallest_divisor([8,8,8,4,4,8])}")
+if __name__ == "__main__":
+    main()
