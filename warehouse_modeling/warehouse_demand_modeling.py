@@ -232,6 +232,8 @@ def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_d
     """Computes the warehouse subbatch demand probability array estimates.
     
     reference: Berling and Marklund 2014 p. 3336
+
+    OBSERVE! Subbatch demand is not equal to unit demand, e.g. mu_unit = mu_subbatch*subbatch_size.
     
     params:
         Q_dealer_array: Dealers batch-quantities in units. 
