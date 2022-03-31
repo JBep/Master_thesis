@@ -1,5 +1,7 @@
 import numpy as np
-from warehouse_demand_modeling import warehouse_subbatch_demand_probability_array
+
+if __name__ == "__main__":
+    from warehouse_demand_modeling import warehouse_subbatch_demand_probability_array
 
 def positive_inventory(Q: int, Q_0: int, R_0: int, f_u: np.array):
     
