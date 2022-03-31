@@ -19,6 +19,7 @@ def lead_time_demand_variance_M1(V_z, L) -> float:
     sigma2 = L*V_z
     return sigma2
 
+#kan vara fel, kolla!
 def lead_time_demand_variance_M2(V_z, E_z, V_L, E_L) -> float:
     """Calculates lead time demand variance under stochastic lead times."""
     if V_L == None:
