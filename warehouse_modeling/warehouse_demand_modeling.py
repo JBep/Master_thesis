@@ -263,7 +263,9 @@ def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_d
             warehouse_demand_type = "Normal"
         else: 
             # Gamma approx
-            F = lambda x: stats.gamma.cdf(x, loc = mu_L, scale = math.sqrt(sigma2_L))
+            beta = mu_L/sigma2_L
+            alpha = mu_L*beta
+            F = lambda x: stats.gamma.cdf(x, a = alpha, scale = 1-beta)
             warehouse_demand_type = "Gamma"
 
         probability_list = []

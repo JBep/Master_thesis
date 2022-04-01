@@ -186,16 +186,25 @@ def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold 
     # Then do for k = 1,2,...
     cumulative_prob = P_D_0 
     k = 1
-    #while probability > threshold: #Potential bug: What if prob of low demands is super low?
+    logarithm_list = np.array([math.log(i) for i in range(1,1000)]) # idx i holds value log(i+1)
+   
     while cumulative_prob < 1-threshold:
+        # This algorithm might seem complicated, however, as the NBD has factorial terms
+        # which gets out of hand quickly, some trickery is needed as to avoid 
+        # return values of inf or nan. This algorithm should hold for demand of
+        # up the approximately mean 150 or so, which should be plenty for the task at hand!
+        
+        denominator_log = np.sum(logarithm_list[:k]) # denominator_log = log(k!)
+        d = math.exp(denominator_log/k) # d = e^(log(k!)/k) = (k!)^(1/k)
+
         P_D_k = 1
         temp = 0
         while temp < k:
-            P_D_k *= (r + temp)
+            P_D_k *= (r + temp)/d
             temp += 1
 
-        P_D_k = (P_D_k / np.math.factorial(k))*((1-p)**r)*(p**k)
-
+        P_D_k *= math.pow(1-p,r)*math.pow(p,k)
+        
         cumulative_prob += P_D_k
         demand_prob_arr.append(P_D_k)
         k += 1
