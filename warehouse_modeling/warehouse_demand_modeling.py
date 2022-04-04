@@ -12,7 +12,7 @@ sys.path.append(parentdir)
 from single_echelon_utils.demand_models import *
 
 IMPLEMENTED_DEMAND_TYPES = ["Normal","NBD","Poisson"]
-THRESHOLD = 1e-4
+THRESHOLD = 1e-6
 
 def delta_func_Normal_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: float, n: int) -> float:
     """Computes the delta-function value of n for a specific dealer.
@@ -263,9 +263,9 @@ def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_d
             warehouse_demand_type = "Normal"
         else: 
             # Gamma approx
-            beta = mu_L/sigma2_L
-            alpha = mu_L*beta
-            F = lambda x: stats.gamma.cdf(x, a = alpha, scale = 1-beta)
+            rate = mu_L/sigma2_L
+            alpha = mu_L*rate
+            F = lambda x: stats.gamma.cdf(x, a = alpha, scale = 1/rate)
             warehouse_demand_type = "Gamma"
 
         probability_list = []
@@ -280,12 +280,13 @@ def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_d
         f_u_1 = f_0 # Keeping last computed value.
         while cumulative_prob < 1-THRESHOLD:
             #Discrete approximation
-            f_u = F(u+0.5)-f_u_1
+            f_u_2 = F(u+0.5)
+            f_u = f_u_2-f_u_1
             probability_list.append(f_u)
             cumulative_prob += f_u
 
             u += 1
-            f_u_1 = f_u
+            f_u_1 = f_u_2
 
         probability_arr = np.array(probability_list)
 
