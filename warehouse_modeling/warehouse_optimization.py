@@ -7,6 +7,8 @@ if __name__ == "__main__":
 def positive_inventory(Q: int, Q_0: int, R_0: int, f_u_arr: np.ndarray):
     """Calculates the expected positive inventory-level at the RDC.
     
+    reference BM 2014 eq. 10
+    
     params:
         Q: Subbatch size.
         Q_0: Order quantity in units of subbatches.
@@ -33,6 +35,8 @@ def positive_inventory(Q: int, Q_0: int, R_0: int, f_u_arr: np.ndarray):
 
 def negative_inventory(Q: int, Q_0: int, R_0: int, f_u_arr: np.ndarray):
     """Calculates the expected negative inventory-level at the RDC.
+
+    reference: BM 2014 eq. 11
     
     params:
         Q: Subbatch size.
