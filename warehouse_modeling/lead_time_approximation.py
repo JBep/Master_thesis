@@ -7,7 +7,7 @@ def waiting_time(exp_backorders: float, L_warehouse: float,
     reference: Berling and Marklund 2014 eq. 16
     
     params:
-        exp_backorders: Expected amount of backorders at the warhouse.
+        exp_backorders: Expected amount of backorders at the warehouse.
         L_warehouse: Warehouse lead time.
         mean_lead_time_subbatch_demand_warhouse: Mean lead time demand at the warehouse.
         Q_subbatch: Size of the subbatch.
