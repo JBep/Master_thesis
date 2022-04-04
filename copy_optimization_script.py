@@ -12,8 +12,8 @@ from single_echelon_utils.dealer_optimization import *
 
 from utils import *
 
-excel_path_indata = "/Volumes/GoogleDrive/.shortcut-targets-by-id/10oYqI9u7nCLK0q7xF2CvGGIQVokusjaI/Exjobb/9. Analytical modeling/test_indata.xlsx"
-indata_sheet = "test_case_1"
+excel_path_indata = "/Users/AlexanderLarsson/documents/VSCode/test_indata.xlsx"
+indata_sheet = "test_case_5_whNBD_poisson"
 indataDF = pd.read_excel(excel_path_indata,indata_sheet)
 outdataDF = indataDF.copy()
 indataDF
@@ -109,7 +109,7 @@ outdataDF.loc[outdataDF["Type"] == "Dealer", "Total expected costs"] = outdataDF
 outdataDF.loc[outdataDF["Type"] == "RDC", "Expected holding costs per time unit"] = h_rdc*outdataDF.get(outdataDF["Type"] == "RDC").get("Expected stock on hand").to_numpy()
 outdataDF.loc[outdataDF["Type"] == "RDC", "Total expected costs"] = outdataDF.get(outdataDF["Type"] == "RDC").get("Expected holding costs per time unit").to_numpy()
 
-excel_path_outdata = "/Volumes/GoogleDrive/.shortcut-targets-by-id/10oYqI9u7nCLK0q7xF2CvGGIQVokusjaI/Exjobb/9. Analytical modeling/test_outdata.xlsx"
+excel_path_outdata = "/Users/AlexanderLarsson/documents/VSCode/outdata.xlsx"
 outdataDF.to_excel(excel_path_outdata,sheet_name = "Outdata_latest_testrun")
 
 outdataDF

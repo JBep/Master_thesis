@@ -112,9 +112,9 @@ def dealer_R_optimization_Normal(Q: int, L_est: float, fill_rate_target: float, 
         R += 1
         fill_rate = fill_rate_normal_demand(R,Q,lt_demand_mean,np.sqrt(lt_demand_variance))
     
-    #Computing E_IL = IL
+    # Computing E_IL = IL
     # Not implemented, (this formula is the fucker).
-    exp_stock_on_hand = None
+    exp_stock_on_hand = 0
 
     return (R, Q, fill_rate, exp_stock_on_hand)
 

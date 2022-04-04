@@ -18,13 +18,21 @@ def test_g_factor(h, Q, p, my, l):
 
 #Testing weighting optimal induced backorder costs for non-identical retailers
 def test_weighting_backorder_cost():
-    retailer_demands_arr = [1,2,3,4]
-    retailer_backorder_costs_array = []
-    retailer_backorder_costs_array.append(induced_backorder_cost_opt(1, 1, 1, 1, 100, 1))
-    retailer_backorder_costs_array.append(induced_backorder_cost_opt(1, 1, 1, 1, 100, 1))
-    retailer_backorder_costs_array.append(induced_backorder_cost_opt(1, 1, 1, 1, 100, 1))
-    retailer_backorder_costs_array.append(induced_backorder_cost_opt(1, 1, 1, 1, 100, 1))
-    warehouse_demand = 5
+    retailer_demands_arr = [1,1,1,1,1,1,1,1,1,1]
+    retailer_backorder_costs_array = [19,19,19,19,19,19,19,19,19,19]
+    retailer_backorder_costs_array.append(induced_backorder_cost_opt(1, 10, 19, 10, 1, 1.1))
+    print(induced_backorder_cost_opt(1, 10, 19, 10, 1, 1.1))
+    retailer_backorder_costs_array.append(induced_backorder_cost_opt(1, 10, 19, 10, 1, 1.2))
+    print(induced_backorder_cost_opt(1, 10, 19, 10, 1, 1.2))
+    retailer_backorder_costs_array.append(induced_backorder_cost_opt(1, 10, 19, 10, 1, 1.3))
+    retailer_backorder_costs_array.append(induced_backorder_cost_opt(1, 10, 19, 10, 1, 1.4))
+    retailer_backorder_costs_array.append(induced_backorder_cost_opt(1, 10, 19, 10, 1, 1.5))
+    retailer_backorder_costs_array.append(induced_backorder_cost_opt(1, 10, 19, 10, 1, 1.6))
+    retailer_backorder_costs_array.append(induced_backorder_cost_opt(1, 10, 19, 10, 1, 1.7))
+    retailer_backorder_costs_array.append(induced_backorder_cost_opt(1, 10, 19, 10, 1, 1.8))
+    retailer_backorder_costs_array.append(induced_backorder_cost_opt(1, 10, 19, 10, 1, 1.9))
+    retailer_backorder_costs_array.append(induced_backorder_cost_opt(1, 10, 19, 10, 1, 2.0))
+    warehouse_demand = 3
     weighted_backorder_opt = weighting_backorder_cost(retailer_demands_arr, warehouse_demand, retailer_backorder_costs_array)
     print(weighted_backorder_opt)
 
