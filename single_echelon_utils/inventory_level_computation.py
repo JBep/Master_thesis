@@ -37,6 +37,23 @@ def IL_prob_array_discrete_negative():
     # Implement if needed, probably not.
     pass
 
+def expected_backorders_discrete(R,Q,leadtime_demand_mean,exp_stock_on_hand):
+    """Returns expected backorders for discrete demand distributions.
+    
+    params: 
+        R: reorder point.
+        Q: order quantity.
+        leadtime_demand_mean: mean demand during the lead time.
+        exp_stock_on_hand: expected positive inventory level (stock-on-hand).
+        
+    returns:
+        Expected amount of backorders.
+    """
+
+    exp_backorders = exp_stock_on_hand - (R+(Q+1)/2-leadtime_demand_mean) 
+
+    return exp_backorders
+
 
 def IL_distribution_normal(R: int, Q: int, mean_normal: int, std_dev_normal: int, x: int) -> float: 
     """Computes an array of IL probabilities.

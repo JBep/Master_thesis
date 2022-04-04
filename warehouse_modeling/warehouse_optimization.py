@@ -5,6 +5,16 @@ if __name__ == "__main__":
     from warehouse_demand_modeling import warehouse_subbatch_demand_probability_array
 
 def positive_inventory(Q: int, Q_0: int, R_0: int, f_u_arr: np.ndarray):
+    """Calculates the expected positive inventory-level at the RDC.
+    
+    params:
+        Q: Subbatch size.
+        Q_0: Order quantity in units of subbatches.
+        R_0: Reorder point at the RDC.
+        f_u_arr: Subbatch demand probability at the RDC.
+        
+    returns:
+        Expected positive inventory level (stock-on-hand)."""
     
     pos_inv = 0
 
@@ -22,6 +32,17 @@ def positive_inventory(Q: int, Q_0: int, R_0: int, f_u_arr: np.ndarray):
 
 
 def negative_inventory(Q: int, Q_0: int, R_0: int, f_u_arr: np.ndarray):
+    """Calculates the expected negative inventory-level at the RDC.
+    
+    params:
+        Q: Subbatch size.
+        Q_0: Order quantity in units of subbatches.
+        R_0: Reorder point at the RDC.
+        f_u_arr: Subbatch demand probability at the RDC.
+        
+    returns:
+        Expected negative inventory level (backorders)."""
+
     neg_inv = 0
 
     for y in range(R_0+1, R_0+Q_0+1): #index och sen värde

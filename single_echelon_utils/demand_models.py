@@ -4,6 +4,7 @@ import math
 
 ## Test change
 
+THRESHOLD = 1e-6
 
 def lead_time_demand_mean(E_z, L) -> float:
     """Calculates the lead time demand mean.
@@ -30,7 +31,7 @@ def lead_time_demand_variance_M2(V_z, E_z, V_L, E_L) -> float:
 
 
 def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: float, 
-    compounding_dist_arr:np.ndarray, customer_threshold = 1e-4, lead_time_demand_method = "M1", lead_time_variance = None) -> np.ndarray:
+    compounding_dist_arr:np.ndarray, customer_threshold = THRESHOLD, lead_time_demand_method = "M1", lead_time_variance = None) -> np.ndarray:
     """"WORK IN PROGRESS
     Compound poisson distribution with empiric compounding.
 
@@ -110,7 +111,7 @@ def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: f
 
     pass
 
-def demand_prob_arr_poisson(L: int, E_z: float, threshold = 1e-4) -> np.ndarray:
+def demand_prob_arr_poisson(L: int, E_z: float, threshold = THRESHOLD) -> np.ndarray:
     """Returns probability array for poisson demand.
     Axsäter 5.1
     
@@ -141,7 +142,7 @@ def demand_prob_arr_poisson(L: int, E_z: float, threshold = 1e-4) -> np.ndarray:
     pass
 
 
-def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold = 1e-4, 
+def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold = THRESHOLD, 
     lead_time_demand_method = "M1", lead_time_variance = None) -> np.ndarray:
     """Computes the array of demand probabilities under negative binomial dist 
     (logarithmic compound poisson).
@@ -211,7 +212,7 @@ def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold 
 
     return np.array(demand_prob_arr)
 
-def demand_size_arr_logarithmic(E_z: float, V_z:float, threshold = 1e-4) -> np.ndarray:
+def demand_size_arr_logarithmic(E_z: float, V_z:float, threshold = THRESHOLD) -> np.ndarray:
     """Calculates the logarithmic compounding distribution array.'
 
     reference: Axsäter 2006, eq. 5.13, 5.7

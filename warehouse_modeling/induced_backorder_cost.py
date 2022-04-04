@@ -17,12 +17,12 @@ def norm_sigma(my: float, sigma: float, l: float) -> float:
     return sigma_norm
 
 #Calculate g factor with input normalized Q and p (is necessary for testing against tabulated numbers, maybe remove later)
-def g_factor(h: float, Q_norm: int, p_norm: float, my: float, l: float):
+def g_factor(h: float, Q: int, p: float, my: float, l: float):
     #normalize Q
-    #Q_norm = Q*100*my/l
+    Q_norm = Q*100*my/l
 
     #normalize p
-    #p_norm = p/h
+    p_norm = p/h
     
     #calculate ga, gb and G
     g_a = min(0.015*p_norm, max(0.65/np.sqrt(p_norm), 0.05))
@@ -35,12 +35,12 @@ def g_factor(h: float, Q_norm: int, p_norm: float, my: float, l: float):
     return g_factor
    
 #Calculate k factor with input normalized Q and p (is necessary for testing against tabulated numbers, maybe remove later)
-def k_factor(h: float, Q_norm: int, p_norm: float, my: float, l: float):
+def k_factor(h: float, Q: int, p: float, my: float, l: float):
      #normalize Q
-    #Q_norm = Q*100*my/l
+    Q_norm = Q*100*my/l
 
     #normalize p
-    #p_norm = p/h
+    p_norm = p/h
 
     #calculate ka, kb, K
     k_a = max(0.7, min(0.9, 0.6*p_norm**0.075))
@@ -53,19 +53,19 @@ def k_factor(h: float, Q_norm: int, p_norm: float, my: float, l: float):
     return k_factor
 
 def induced_backorder_cost_opt(h: float, Q: int, p: int, l: int, my: float, sigma: float) -> float:
-    """Calculates optimal induced backorder cost.
+    """Calculates optimal induced backorder cost faced by RDC from one dealer/retailer.
     
     params:
-        h = holding cost.
-        Q = order quantity.
-        p = shortage cost per unit.
-        l = transportation time.
-        my = expected demand per time unit.
-        sigma = standard deviation of demand per time unit.
+        h = holding cost at the dealer.
+        Q = order quantity of the dealer.
+        p = shortage cost per unit at the dealer.
+        l = transportation time for an order from the RDC to the dealer.
+        my = expected demand per time unit at the dealer.
+        sigma = standard deviation of demand per time unit at the dealer.
   
 
     return:
-        Item fill rate: float decimal between 0 and 1.
+        Beta: induced backorder cost from a dealer at the warehouse.
 
     """
     #calculate g and k factor
