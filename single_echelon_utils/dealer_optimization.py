@@ -8,6 +8,9 @@ from demand_models import *
 
 def dealer_R_optimization(Q, L_est, fill_rate_target, demand_type, demand_mean, **kwargs) -> tuple[int,float,float,float]:
     """Function for optimizing R at dealers.
+
+    Note! If demand_type = "Poisson", the demand variance, by definition, equals 
+    demand mean and the "demand_variance" parameter is not used.
     
     params:
         Q: int, given order quantity.
