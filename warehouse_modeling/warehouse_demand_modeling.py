@@ -68,7 +68,7 @@ def delta_func_NBD_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: f
         if d >= max_demand:
             prob_sum += np.sum(demand_probability_arr)
         else:
-            prob_sum += np.sum(demand_probability_arr[:d])
+            prob_sum += np.sum(demand_probability_arr[:d+1])
 
     delta = 1/Q_dealer * prob_sum
     return delta
@@ -190,14 +190,14 @@ def warehouse_demand_variance_term(Q_dealer:int,Q_subbatch:int,L_warehouse:float
     mu_nq_square = []
     for n in range(len(f_nq)):
         mu_nq_square.append(math.pow(mu_0_dealer-n*q,2)) 
-
+        
     return f_nq.dot(np.array(mu_nq_square))
 
 def warehouse_demand_mean_approximation(dealer_mean_demand: np.ndarray, L_warehouse: float, Q_subbatch:int):
     """Calculates warehouse mean.
     
     params:
-        dealer_mean_demand: Array containing all dealer mean demand estimations.
+        dealer_mean_demand: Array containing all dealer mean demand per time unit estimations.
         L_warehouse: Constant lead time from outside supplier to warehouse.
         Q_subbatch: Size of the subbatch (smallest common divisor among batch-sizes).
 
@@ -214,7 +214,7 @@ def warehouse_demand_variance_approximation(Q_dealer_array: np.ndarray, mu_deale
     
     params:
         Q_dealer_array: Dealers batch-quantities in units. 
-        mu_dealer_array: Dealers mean demand.
+        mu_dealer_array: Dealers mean demand per time unit.
         sigma_dealer_array: Dealers demand variances.
 
     returns: 
