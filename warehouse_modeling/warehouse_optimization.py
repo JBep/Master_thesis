@@ -33,7 +33,7 @@ def positive_inventory(Q: int, Q_0: int, R_0: int, f_u_arr: np.ndarray):
     return (Q/Q_0)*pos_inv
 
 
-def negative_inventory(Q: int, Q_0: int, R_0: int, f_u_arr: np.ndarray):
+def negative_inventory(Q: int, Q_0: int, R_0: int, f_u_arr: np.ndarray, method = 1):
     """Calculates the expected negative inventory-level at the RDC.
 
     reference: BM 2014 eq. 11
