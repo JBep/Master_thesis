@@ -14,6 +14,7 @@ from single_echelon_utils.demand_models import *
 IMPLEMENTED_DEMAND_TYPES = ["Normal","NBD","Poisson"]
 THRESHOLD = 1e-6
 
+
 def delta_func_Normal_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: float, n: int) -> float:
     """Computes the delta-function value of n for a specific dealer.
     
@@ -145,7 +146,7 @@ def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: fl
     # u = 1*q_i,2*q_i,3*q_i ...
     n = 1
     d_n_1 = f_0
-    while cumulative_prob < 1 - THRESHOLD:
+    while cumulative_prob < 1 - 1e-6:
         d_n =  globals()[delta_func_str](Q_dealer = Q_dealer,L_warehouse = L_warehouse, mu = mu, n = n, sigma = sigma)
         f_u = d_n-d_n_1 
         probability_array.append(f_u)
@@ -250,10 +251,16 @@ def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_d
     mu_L = warehouse_demand_mean_approximation(mu_dealer_array,L_warehouse,Q_subbatch)
     sigma2_L = warehouse_demand_variance_approximation(Q_dealer_array,mu_dealer_array,
         sigma_dealer_array,demand_type_array,L_warehouse,Q_subbatch)
+    
+    #sigma2_L = 2.0364792**2
 
     if sigma2_L/mu_L > 1:
         #NBD-dist
+<<<<<<< HEAD
         probability_arr = demand_prob_arr_negative_binomial(1,mu_L,sigma2_L)
+=======
+        probability_arr = demand_prob_arr_negative_binomial(1,mu_L,sigma2_L) # Function requires mean demand during time unit, workaround by putting L = 1.
+>>>>>>> ec190a0a39fdaab56c8f96e64111366c640bd336
         warehouse_demand_type = "NBD"
 
     else:
@@ -268,23 +275,25 @@ def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_d
             F = lambda x: stats.gamma.cdf(x, a = alpha, scale = 1/rate)
             warehouse_demand_type = "Gamma"
 
+        # Computing pmf-array for normal or gamma.
         probability_list = []
-
         # Separately handling f_u (u = 0)
-        f_0 = F(0.5)
-        probability_list.append(f_0)
-
-        cumulative_prob = f_0
-
+        #neg_prob = F(-0.5)
+        #f_0_marklund = (F(0.5)-F(-0.5))/(1-neg_prob) #CHANGE HERE
+        f_0 = F(0.5)  
+        probability_list.append(f_0) #CHANGE HERE
+        cumulative_prob = f_0 # CHANGE HERE
+        
         u = 1
         f_u_1 = f_0 # Keeping last computed value.
         while cumulative_prob < 1-THRESHOLD:
             #Discrete approximation
             f_u_2 = F(u+0.5)
-            f_u = f_u_2-f_u_1
-            probability_list.append(f_u)
-            cumulative_prob += f_u
+            f_u = (f_u_2-f_u_1)
+            #f_u_marklund = (F(u+0.5)-F(u-0.5))/(1-neg_prob) #CHANGE HERE
 
+            probability_list.append(f_u) #HANGE HERE
+            cumulative_prob += f_u #HANGE HERE
             u += 1
             f_u_1 = f_u_2
 
