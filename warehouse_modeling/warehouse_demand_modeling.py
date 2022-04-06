@@ -256,11 +256,7 @@ def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_d
 
     if sigma2_L/mu_L > 1:
         #NBD-dist
-<<<<<<< HEAD
-        probability_arr = demand_prob_arr_negative_binomial(1,mu_L,sigma2_L)
-=======
         probability_arr = demand_prob_arr_negative_binomial(1,mu_L,sigma2_L) # Function requires mean demand during time unit, workaround by putting L = 1.
->>>>>>> ec190a0a39fdaab56c8f96e64111366c640bd336
         warehouse_demand_type = "NBD"
 
     else:
