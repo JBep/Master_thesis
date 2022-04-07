@@ -188,7 +188,7 @@ def warehouse_demand_variance_term(Q_dealer:int,Q_subbatch:int,L_warehouse:float
 
     f_nq = pmf_func_warehouse_subbatch_demand(Q_dealer,L_warehouse,mu,sigma,demand_type)
     mu_nq_square = []
-    for n in range(len(f_nq)):
+    for n in range(len(f_nq)): 
         mu_nq_square.append(math.pow(mu_0_dealer-n*q,2)) 
         
     return f_nq.dot(np.array(mu_nq_square))
@@ -249,10 +249,11 @@ def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_d
         warehouse subbarch demand variance.
     """
     mu_L = warehouse_demand_mean_approximation(mu_dealer_array,L_warehouse,Q_subbatch)
-    sigma2_L = warehouse_demand_variance_approximation(Q_dealer_array,mu_dealer_array,
-        sigma_dealer_array,demand_type_array,L_warehouse,Q_subbatch)
+    #sigma2_L = warehouse_demand_variance_approximation(Q_dealer_array,mu_dealer_array,
+     #  sigma_dealer_array,demand_type_array,L_warehouse,Q_subbatch)
     
-    #sigma2_L = 2.0364792**2
+    sigma2_L = 2.0364792**2
+    #sigma2_L = 2.785532573**2
 
     if sigma2_L/mu_L > 1:
         #NBD-dist
