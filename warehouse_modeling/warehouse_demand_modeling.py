@@ -99,7 +99,7 @@ def delta_func_Poisson_demand(Q_dealer: int, L_warehouse: float, mu: float, n: i
         if d >= max_demand:
             prob_sum += np.sum(demand_probability_arr)
         else:
-            prob_sum += np.sum(demand_probability_arr[:d])
+            prob_sum += np.sum(demand_probability_arr[:d+1])
 
     delta = 1/Q_dealer * prob_sum
     return delta
