@@ -107,10 +107,6 @@ def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: f
 
 
 
-
-
-    pass
-
 def demand_prob_arr_poisson(L: int, E_z: float, threshold = THRESHOLD) -> np.ndarray:
     """Returns probability array for poisson demand.
     Axsäter 5.1

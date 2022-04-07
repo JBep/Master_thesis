@@ -73,7 +73,7 @@ def fill_rate_poisson_demand(pos_IL_probability_array: np.array) -> float:
 def ready_rate_discrete_demand(pos_IL_probability_array: np.array) -> float:
     """Calculates the ready rate for discrete demand.
     
-    By definition probability of inventory level zero or above, equals sum of 
+    By definition probability of inventory levels of one and above, equals sum of 
         all probabilities greater than zero.
 
     Reference: Axsäter (2006), Inventory control 2nd edition, equation 5.50
@@ -83,7 +83,7 @@ def ready_rate_discrete_demand(pos_IL_probability_array: np.array) -> float:
             equal to j, (j = index).
     """
 
-    return np.sum(pos_IL_probability_array)
+    return np.sum(pos_IL_probability_array[1:])
 
 def undershoot_adjustment_normal(R: int, Q: int, mean_normal: int, std_dev_normal: int, demand_prob_array: np.array) -> float:
     """Calculates fill rate with undershoot adjustment U1 in BM (2014)
