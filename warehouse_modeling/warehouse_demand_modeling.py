@@ -249,11 +249,9 @@ def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_d
         warehouse subbarch demand variance.
     """
     mu_L = warehouse_demand_mean_approximation(mu_dealer_array,L_warehouse,Q_subbatch)
-    #sigma2_L = warehouse_demand_variance_approximation(Q_dealer_array,mu_dealer_array,
-     #  sigma_dealer_array,demand_type_array,L_warehouse,Q_subbatch)
+    sigma2_L = warehouse_demand_variance_approximation(Q_dealer_array,mu_dealer_array,
+        sigma_dealer_array,demand_type_array,L_warehouse,Q_subbatch)
     
-    sigma2_L = 2.0364792**2
-    #sigma2_L = 2.785532573**2
 
     if sigma2_L/mu_L > 1:
         #NBD-dist
