@@ -32,15 +32,14 @@ def lead_time_demand_variance_M2(V_z, E_z, V_L, E_L) -> float:
 
 def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: float, 
     compounding_dist_arr:np.ndarray, customer_threshold = THRESHOLD, lead_time_demand_method = "M1", lead_time_variance = None) -> np.ndarray:
-    """"WORK IN PROGRESS
-    Compound poisson distribution with empiric compounding.
+    """Compound poisson distribution with empiric compounding.
 
     Params:
         L: Lead-time
         E_z: mean demand during a time-unit.
         V_z: demand variance during a time-unit.
         compounding_dist_arr: numpy.ndarray with probabilities that one customer 
-            orders index+1 goods. Observe that index 0 regards orderinge 1 item.
+            orders index+1 goods. Observe that index 0 regards ordering 1 item.
         customer_threshold: Computations stop when cumulative probability of
             customers reaches 1-threshold.
         lead_time_demand_method: "M1" or "M2" methods of computing lead time demand variance.
@@ -62,8 +61,7 @@ def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: f
     # compute lambda from axsäter 5.4
     j_arr = np.arange(start=1,stop=len(compounding_dist_arr)+1)
     lam = mu/j_arr.dot(compounding_dist_arr)
-    print(f"j-values: {j_arr} \n compound values: {compounding_dist_arr} \n mu: {mu} \n sum: {j_arr.dot(compounding_dist_arr)} \n lambda: {lam})")
-
+    
     # Compute p(D=d) from axsäter 5.2 and 5.3
     # First compute vector of probability of k customers which is poisson distributed.
     customer_prob_arr = []
@@ -72,8 +70,6 @@ def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: f
 
     while cumulative_prob < 1-customer_threshold:
         p_k = (math.pow(lam,k)/math.factorial(k))*np.exp(-lam)
-        #print(f"np.exp is {np.exp(-lam)}")
-        print(f"Cumulative prob after {k} values is: {cumulative_prob}, p_k is: {p_k}, k is {k}")
         cumulative_prob += p_k
         customer_prob_arr.append(p_k)
         k += 1
@@ -82,26 +78,36 @@ def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: f
     customer_prob_arr = np.array(customer_prob_arr)
 
     # Create f_k_j-matrix
-    k_max = len(customer_prob_arr) #k goes to max customers+1 as 0 customers is possible.
+    k_max = len(customer_prob_arr)-1 #k goes to max customers+1 as 0 customers is possible.
     j_max = k_max*len(compounding_dist_arr)
-    print(k_max)
-    print(j_max)
-    f_k_j = np.zeros((k_max,j_max))
+
     
-    # Insert case of 1 customer.
-    f_k_j[1,0:len(compounding_dist_arr)] = compounding_dist_arr
+    f_k_j = np.zeros((j_max,k_max)) 
+    
+    #Generating matrix of probabilities of k customers (columns) buying a total of j units (rows)
+    #Index j = 0 is 1 unit. index k = 0 is 1 customer. case of demand = 0 handled separately.
+    # # Insert case of 1 customer.
+    f_k_j[0:len(compounding_dist_arr),0] = compounding_dist_arr
+
 
     # From k = 2 to k_max-1 customers.
-    for k in range(2,k_max):
+    for k in range(1,k_max):
         # k customers buying j wares.
-        for j in range(1,j_max):
+        for j in range(j_max):
             f_k_j_temp = 0
-            for i in range(k-1,j-1):
-                f_k_j_temp += f_k_j[k-1,i]*f_k_j[1,j-i]
-            f_k_j[k,j]=f_k_j_temp
+            for i in range(k,j+1):
+                fa = f_k_j[i-1,k-1]
+                fb = f_k_j[j-i,0]
+                f_k_j_temp += fa*fb
+             
+            f_k_j[j,k]=f_k_j_temp
 
 
-    demand_prob_arr = customer_prob_arr.dot(f_k_j)
+
+    demand_prob_arr = np.array(f_k_j).dot(customer_prob_arr[1:]) #Convoluting probability of customer with the probability of different order sizes.
+    demand_prob_arr = np.concatenate((customer_prob_arr[0:1],demand_prob_arr)) # Adding probability of 0 demand (=0 customers)
+
+    assert np.sum(demand_prob_arr) > 1-customer_threshold-1e-6 and np.sum(demand_prob_arr) <= 1, f"Demand array is not close enough to 1, it sums to: {np.sum(demand_prob_arr)}"
 
     return demand_prob_arr
 

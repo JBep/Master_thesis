@@ -11,7 +11,7 @@ sys.path.append(parentdir)
 
 from single_echelon_utils.demand_models import *
 
-IMPLEMENTED_DEMAND_TYPES = ["Normal","NBD","Poisson"]
+IMPLEMENTED_DEMAND_TYPES = ["Normal","NBD","Poisson","Empiric Compound Poisson"]
 THRESHOLD = 1e-6
 
 
@@ -61,7 +61,6 @@ def delta_func_NBD_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: f
     demand_probability_arr = demand_prob_arr_negative_binomial(L_warehouse,mu,math.pow(sigma,2))
     max_demand = len(demand_probability_arr)
 
-    # Somewhere here is prbably a good place to find bugs
     prob_sum = 0
     for x in range(1,Q_dealer+1):
         d = n*Q_dealer+x-1
@@ -73,7 +72,7 @@ def delta_func_NBD_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: f
     delta = 1/Q_dealer * prob_sum
     return delta
 
-def delta_func_Poisson_demand(Q_dealer: int, L_warehouse: float, mu: float, n: int, sigma: float, ):
+def delta_func_Poisson_demand(Q_dealer: int, L_warehouse: float, mu: float, n: int, sigma: float):
     """Computes the delta-function value of n for a specific dealer of Poisson demand.
     
     The delta-value is interpreted as the probability of a dealer ordering at most
@@ -92,7 +91,6 @@ def delta_func_Poisson_demand(Q_dealer: int, L_warehouse: float, mu: float, n: i
     demand_probability_arr = demand_prob_arr_poisson(L_warehouse,mu)
     max_demand = len(demand_probability_arr)
 
-    # Somewhere here is prbably a good place to find bugs
     prob_sum = 0
     for x in range(1,Q_dealer+1):
         d = n*Q_dealer+x-1
@@ -103,7 +101,41 @@ def delta_func_Poisson_demand(Q_dealer: int, L_warehouse: float, mu: float, n: i
 
     delta = 1/Q_dealer * prob_sum
     return delta
+def delta_func_Empiric_Compound_Poisson_demand(Q_dealer: int, L_warehouse: float, 
+    mu: float, sigma: float, n: int, compounding_dist_arr: np.ndarray):
+    """Computes the delta-function value of n for a specific dealer of Poisson demand.
+    
+    The delta-value is interpreted as the probability of a dealer ordering at most
+    n orders during the warehouse lead time. Assumes demand faced by dealer to be
+    normally distributed.
 
+    reference: Berling and Marklund (2014) eq. 7.
+    
+    params:
+        Q_dealer: Batch quantity at dealer in units.
+        L_warehouse: lead time to warehouse, assumed constant.
+        mu: mean demand per one time unit at the dealer.
+        sigma: standard deviance of demand per one time unit at the dealer.
+        compounding_dist_arr: numpy.ndarray with probabilities that one customer 
+            orders index+1 goods. Observe that index 0 regards ordering 1 item.
+        n: integer value.
+
+    """
+    demand_probability_arr = demand_probability_array_empiric_compound_poisson(L = L_warehouse, 
+        E_z = mu, V_z = math.pow(sigma,2),compounding_dist_arr = compounding_dist_arr)
+    max_demand = len(demand_probability_arr)
+
+    prob_sum = 0
+    for x in range(1,Q_dealer+1):
+        d = n*Q_dealer+x-1
+        if d >= max_demand:
+            prob_sum += np.sum(demand_probability_arr)
+        else:
+            prob_sum += np.sum(demand_probability_arr[:d+1])
+
+    delta = 1/Q_dealer * prob_sum
+    return delta
+    
 def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: float, demand_type: str) -> np.ndarray:
     """Computes the pmf array for all possible subbatches u (u = n*q_i) demanded 
     at the warehouse by a dealer (retailer).

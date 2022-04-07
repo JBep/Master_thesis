@@ -1,7 +1,7 @@
 from demand_models import *
 import numpy as np
 import random
-
+from timeit import default_timer as timer
 # Testing negative binomial
 
 def test_NBD():
@@ -83,7 +83,7 @@ def test_Poisson():
     #print(diff)      
 
 
-def test_compound_poisson(lam = 1, comp_dist_arr = [0.5,0.5], L = 5, threshold = 1e-4):
+def test_compound_poisson(lam = 0.4, comp_dist_arr = [0.5,0.5], L = 3, threshold = 1e-4):
     # Computing E_z and V_z according to Axsäter eq 5.4 and 5.6
     j_arr = np.arange(start=1,stop=len(comp_dist_arr)+1)   
     E_z = lam*j_arr.dot(comp_dist_arr)
@@ -102,24 +102,36 @@ def test_compound_poisson(lam = 1, comp_dist_arr = [0.5,0.5], L = 5, threshold =
     print("Testing cumulative probability.")
     assert np.sum(prob_array) >= 1-threshold and np.sum(prob_array) <= 1, f"The probabilities doesn't add to one, they add to: {np.sum(prob_array)}."
     print(f"The cumulative probability is: {np.sum(prob_array)}")
-    
-    # Simulation test
-    sim_size = 10000
-    simulation_run_customers = np.random.poisson(lam = lam, size = sim_size)
-    simulation_run = np.zeors_like(simulation_run_customers)
-    
-    for k in simulation_run_customers:
-        for customer in range(k):
-            rand_number = np.random.uniform()
-            demand_size_temp = 1
-            p = 0
-            for prob in comp_dist_arr:
-                p += prob
-                if prob > 0 and rand_number <= p:
-                    demand_size = demand_size_temp
-                demand_size_temp += 1
 
-            simulation_run[k] += demand_size
+    # Simulation test
+    print("Doing simulation test.")
+    # First, create two arrays to handle order sizes and their probabilities.
+    possible_order_sizes_arr = []
+    order_size_cumulative_probabilities_arr = []
+
+    cumulative_prob = 0
+    for i,p in enumerate(comp_dist_arr):
+        if p > 0:
+            cumulative_prob += p
+            possible_order_sizes_arr.append(i+1)
+            order_size_cumulative_probabilities_arr.append(cumulative_prob)
+
+
+    # Generate no of customers for sim_size lead times (time units).
+    sim_size = 100000
+    simulation_run_customers = np.random.poisson(lam = lam*L, size = sim_size)
+    simulation_run = np.zeros_like(simulation_run_customers)
+    
+    for index,k in enumerate(simulation_run_customers):
+        for _ in range(k):
+            #print(k)
+            rand_number = np.random.uniform()
+            #print(rand_number)
+            for i,cum_prob in enumerate(order_size_cumulative_probabilities_arr):
+                if rand_number <= cum_prob:
+                    demand_size = possible_order_sizes_arr[i]
+                    break
+            simulation_run[index] += demand_size
 
     simulation_count = [0]*len(prob_array)
     simulation_prob = [0]*len(prob_array)
@@ -132,13 +144,50 @@ def test_compound_poisson(lam = 1, comp_dist_arr = [0.5,0.5], L = 5, threshold =
 
     diff = simulation_prob - prob_array
 
-    diff_threshold = 1e-3
-    assert any(abs(diff) > diff_threshold), "Differences is larger than: {diff_threshold} for some value."
-    #print(diff)  
+    diff_threshold = 1e-2
+    assert all(abs(diff) < diff_threshold), f"Differences is larger than: {diff_threshold} for some value. \n {diff}"
+    print(f"""Simulation test done, \n probabilities analytical: {prob_array} 
+    probabilities simulated {simulation_prob} \n count simulated {simulation_count}, 
+    Difference: {diff}""")  
+    print("All tests done!")
 
+def time_test_compound_poisson(lam = 0.4, comp_dist_arr = [0.5,0.5], L = 3, threshold = 1e-4, n = 100):
+    # Computing E_z and V_z according to Axsäter eq 5.4 and 5.6
+    j_arr = np.arange(start=1,stop=len(comp_dist_arr)+1)   
+    E_z = lam*j_arr.dot(comp_dist_arr)
+
+    j2_arr = np.power(j_arr,2*np.ones(shape = len(j_arr))) 
+    V_z = lam*j2_arr.dot(comp_dist_arr)
+    start = timer()
+    for i in range(n):
+        p_arr = demand_probability_array_empiric_compound_poisson(L,E_z,V_z,
+        comp_dist_arr,customer_threshold = threshold)
+    end = timer()
+
+    return (end-start)/n
+
+def test_time_comp_poisson_sparse_vs_dense(lam = 0.4, comp_dist_arr = [0.5,0.5], L = 3, threshold = 1e-4, n = 100):
+    for i in range(1,101,10):
+        comp_dist_arr = np.random.uniform(size = i)
+        comp_dist_arr = comp_dist_arr/np.sum(comp_dist_arr)
+        print(f"Order size:{i} Dense: {time_test_compound_poisson(lam,comp_dist_arr,L,threshold,n)} seconds.")
+
+        comp_dist_arr = np.zeros_like(comp_dist_arr)
+        for k in range(0,len(comp_dist_arr),10):
+            comp_dist_arr[k] = 5*np.random.uniform()
+        comp_dist_arr = comp_dist_arr/np.sum(comp_dist_arr)
+        print(f"Order size:{i} Sparse: {time_test_compound_poisson(lam,comp_dist_arr,L,threshold,n)} seconds.")
 
 def main():
-    test_compound_poisson()
+    lam = 0.4 
+    comp_dist_arr = np.random.uniform(size = 100)
+    comp_dist_arr = comp_dist_arr/np.sum(comp_dist_arr)
+    print(f"Sum is: {np.sum(comp_dist_arr)}")
+    L = 3 
+    threshold = 1e-4
+    test_compound_poisson(lam,comp_dist_arr,L,threshold)
+
+        
 
 if __name__ == "__main__":
     main()
