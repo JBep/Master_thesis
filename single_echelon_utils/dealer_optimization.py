@@ -21,7 +21,7 @@ def dealer_R_optimization(Q, L_est, fill_rate_target, demand_type, demand_mean, 
         demand_mean: float, mean demand during a time unit.
         demand_variance: float, variance of demand during a time unit. Not
             required if demand_type is "Poisson".
-        demand_size_probabilities: Array of demand size probabilities used for 
+        compounding_dist_arr: Array of demand size probabilities used for 
             demand_type = "Compound_Poisson_empiric".
     
     returns:
@@ -29,7 +29,7 @@ def dealer_R_optimization(Q, L_est, fill_rate_target, demand_type, demand_mean, 
     """
     func_name = f"dealer_R_optimization_{demand_type}"
     
-    return globals()[func_name](Q, L_est, fill_rate_target, demand_mean, **kwargs)
+    return globals()[func_name](Q, L_est, fill_rate_target, demand_mean, kwargs['demand_variance'],kwargs['compounding_dist_arr'])
 
 
 
@@ -124,8 +124,37 @@ def dealer_R_optimization_Normal(Q: int, L_est: float, fill_rate_target: float, 
 def dealer_R_optimization_Normal_adjusted(Q, L_est, fill_rate_target, demand_mean, **kwargs):
     pass
 
-def dealer_R_optimization_Compound_Poisson_empiric(Q, L_est, fill_rate_target, demand_mean, **kwargs):
-    pass
+def dealer_R_optimization_Empiric_Compound_Poisson(Q, L_est, fill_rate_target, 
+    demand_mean, demand_variance, compounding_dist_arr):
+    """Function finds minimum R that fulfils target service level for empiric compound poisson.
+    
+    Params:
+        Q: Given order quantity.
+        L_est: Lead time estimate
+        fill_rate_target
+        demand_mean: Mean demand during a time unit.
+        demand_variance: Variance of demand during a time unit.
+        compounding_dist_arr: Array of probabilities of order sizes.
+        
+    Returns:
+        R, Q, fill_rate, E_IL
+        """
+    demand_arr = demand_probability_array_empiric_compound_poisson(L = L_est,E_z = demand_mean ,
+        V_z = demand_variance,compounding_dist_arr=compounding_dist_arr, **kwargs)
+    demand_size_prob_arr = compounding_dist_arr
+    R = -Q
+    fill_rate = 0
+    while fill_rate < fill_rate_target:
+        R += 1
+        IL_prob_arr = IL_prob_array_discrete_positive(R,Q,demand_arr)
+        fill_rate = fill_rate_compound_poisson_demand(demand_size_prob_arr,IL_prob_arr)
+    
+    #Computing E_IL = IL
+    exp_stock_on_hand = 0
+    for i,p_IL in enumerate(IL_prob_arr):
+        exp_stock_on_hand += i*p_IL
+
+    return (R, Q, fill_rate, exp_stock_on_hand)
 
 
 def main():

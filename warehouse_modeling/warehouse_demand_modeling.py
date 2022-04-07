@@ -11,11 +11,11 @@ sys.path.append(parentdir)
 
 from single_echelon_utils.demand_models import *
 
-IMPLEMENTED_DEMAND_TYPES = ["Normal","NBD","Poisson","Empiric Compound Poisson"]
+IMPLEMENTED_DEMAND_TYPES = ["Normal","NBD","Poisson","Empiric_Compound_Poisson"]
 THRESHOLD = 1e-6
 
 
-def delta_func_Normal_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: float, n: int) -> float:
+def delta_func_Normal_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: float, n: int, **kwargs) -> float:
     """Computes the delta-function value of n for a specific dealer.
     
     The delta-value is interpreted as the probability of a dealer ordering at most
@@ -42,7 +42,7 @@ def delta_func_Normal_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma
     delta = 1/Q_dealer * (a + b + c)
     return delta
 
-def delta_func_NBD_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: float, n: int):
+def delta_func_NBD_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: float, n: int, **kwargs):
     """Computes the delta-function value of n for a specific dealer with NBD demand.
     
     The delta-value is interpreted as the probability of a dealer ordering at most
@@ -72,7 +72,7 @@ def delta_func_NBD_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: f
     delta = 1/Q_dealer * prob_sum
     return delta
 
-def delta_func_Poisson_demand(Q_dealer: int, L_warehouse: float, mu: float, n: int, sigma: float):
+def delta_func_Poisson_demand(Q_dealer: int, L_warehouse: float, mu: float, n: int, **kwargs):
     """Computes the delta-function value of n for a specific dealer of Poisson demand.
     
     The delta-value is interpreted as the probability of a dealer ordering at most
@@ -102,7 +102,7 @@ def delta_func_Poisson_demand(Q_dealer: int, L_warehouse: float, mu: float, n: i
     delta = 1/Q_dealer * prob_sum
     return delta
 def delta_func_Empiric_Compound_Poisson_demand(Q_dealer: int, L_warehouse: float, 
-    mu: float, sigma: float, n: int, compounding_dist_arr: np.ndarray):
+    mu: float, sigma: float, n: int, compounding_dist_arr: np.ndarray, **kwargs):
     """Computes the delta-function value of n for a specific dealer of Poisson demand.
     
     The delta-value is interpreted as the probability of a dealer ordering at most
@@ -122,7 +122,7 @@ def delta_func_Empiric_Compound_Poisson_demand(Q_dealer: int, L_warehouse: float
 
     """
     demand_probability_arr = demand_probability_array_empiric_compound_poisson(L = L_warehouse, 
-        E_z = mu, V_z = math.pow(sigma,2),compounding_dist_arr = compounding_dist_arr)
+        E_z = mu, V_z = math.pow(sigma,2), compounding_dist_arr=compounding_dist_arr)
     max_demand = len(demand_probability_arr)
 
     prob_sum = 0
@@ -136,7 +136,8 @@ def delta_func_Empiric_Compound_Poisson_demand(Q_dealer: int, L_warehouse: float
     delta = 1/Q_dealer * prob_sum
     return delta
     
-def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: float, demand_type: str) -> np.ndarray:
+def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: float, 
+    sigma: float, demand_type: str, compounding_dist_arr) -> np.ndarray:
     """Computes the pmf array for all possible subbatches u (u = n*q_i) demanded 
     at the warehouse by a dealer (retailer).
 
@@ -162,6 +163,9 @@ def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: fl
         mu: mean demand per one time unit.
         sigma: standard deviance of demand per one time unit.
         demand_type: Check "IMPLEMENTED_DEMAND_TYPES" for available inputs.
+        compounding_dist_arr: numpy.ndarray with probabilities that one customer 
+            orders index+1 goods. Observe that index 0 regards ordering 1 item. 
+            Required for Empiric_Compound_Poisson demand.
 
     returns:
         numpy.ndarray of probabilities of a dealer demanding n*q subbatches. index = n.
@@ -171,7 +175,8 @@ def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: fl
     probability_array = []
 
     # Doing u = 0, (n = 0), separately.
-    f_0 = globals()[delta_func_str](Q_dealer = Q_dealer,L_warehouse = L_warehouse, mu = mu, n = 0, sigma = sigma)
+    f_0 = globals()[delta_func_str](Q_dealer = Q_dealer,L_warehouse = L_warehouse, 
+    mu = mu, n = 0, sigma = sigma, compounding_dist_arr = compounding_dist_arr)
     probability_array.append(f_0)
     cumulative_prob += f_0
 
@@ -179,7 +184,8 @@ def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: fl
     n = 1
     d_n_1 = f_0
     while cumulative_prob < 1 - 1e-6:
-        d_n =  globals()[delta_func_str](Q_dealer = Q_dealer,L_warehouse = L_warehouse, mu = mu, n = n, sigma = sigma)
+        d_n =  globals()[delta_func_str](Q_dealer = Q_dealer,L_warehouse = L_warehouse, 
+        mu = mu, n = n, sigma = sigma, compounding_dist_arr = compounding_dist_arr)
         f_u = d_n-d_n_1 
         probability_array.append(f_u)
         cumulative_prob += f_u
@@ -190,7 +196,8 @@ def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: fl
 
     return np.array(probability_array)
 
-def warehouse_demand_variance_term(Q_dealer:int,Q_subbatch:int,L_warehouse:float,mu:float,sigma:float,demand_type:str):
+def warehouse_demand_variance_term(Q_dealer:int,Q_subbatch:int,L_warehouse:float,
+mu:float,sigma:float,demand_type:str, compounding_dist_arr:np.ndarray):
     """Calculates the subbatch demand variance term from a dealer.
     
     reference: Berling and Marklund (2014) p. 3336
@@ -204,7 +211,11 @@ def warehouse_demand_variance_term(Q_dealer:int,Q_subbatch:int,L_warehouse:float
         mu: mean demand per one time unit.
         sigma: standard deviance of demand per one time unit.
         demand_type: Check "IMPLEMENTED_DEMAND_TYPES" for available inputs.
-
+        compounding_dist_arr: numpy.ndarray with probabilities that one customer 
+            orders index+1 goods. Observe that index 0 regards ordering 1 item. 
+            Required for Empiric_Compound_Poisson demand. Req. for demand
+            type Empiric_Compound_Poisson
+    
     returns:
         sigma2: Variance contribution of a single dealer to the total variance faced
             by the warehouse.
@@ -218,7 +229,7 @@ def warehouse_demand_variance_term(Q_dealer:int,Q_subbatch:int,L_warehouse:float
     if not q.is_integer():
         raise ValueError("Q_subbatch should be a divisor of Q_dealer.")
 
-    f_nq = pmf_func_warehouse_subbatch_demand(Q_dealer,L_warehouse,mu,sigma,demand_type)
+    f_nq = pmf_func_warehouse_subbatch_demand(Q_dealer,L_warehouse,mu,sigma,demand_type,compounding_dist_arr)
     mu_nq_square = []
     for n in range(len(f_nq)): 
         mu_nq_square.append(math.pow(mu_0_dealer-n*q,2)) 
@@ -239,7 +250,9 @@ def warehouse_demand_mean_approximation(dealer_mean_demand: np.ndarray, L_wareho
 
     return np.sum(dealer_mean_demand)*L_warehouse/Q_subbatch
 
-def warehouse_demand_variance_approximation(Q_dealer_array: np.ndarray, mu_dealer_array: np.ndarray, sigma_dealer_array: np.ndarray, demand_type_array: np.ndarray, L_warehouse: float, Q_subbatch: int) -> float:
+def warehouse_demand_variance_approximation(Q_dealer_array: np.ndarray, mu_dealer_array: np.ndarray, 
+sigma_dealer_array: np.ndarray, demand_type_array: np.ndarray, L_warehouse: float, 
+Q_subbatch: int, compounding_dist_matrix: np.ndarray) -> float:
     """Computes the warehouse demand variance estimate.
     
     reference: Berling and Marklund 2014 p. 3336
@@ -248,6 +261,10 @@ def warehouse_demand_variance_approximation(Q_dealer_array: np.ndarray, mu_deale
         Q_dealer_array: Dealers batch-quantities in units. 
         mu_dealer_array: Dealers mean demand per time unit.
         sigma_dealer_array: Dealers demand variances.
+        L_warehouse: Warehouse leadtime.
+        Q_subbatch: Subbatch size (smallest common divisor of Q's)
+        compounding_dist_matrix: np.ndarray of dimension 2 with compounding distributions 
+            for each retailer on the respective column.
 
     returns: 
         warehouse demand variance. 
@@ -255,13 +272,17 @@ def warehouse_demand_variance_approximation(Q_dealer_array: np.ndarray, mu_deale
 
     warehouse_demand_variance = 0
 
-    for Q,mu,sigma,demand_type in zip(Q_dealer_array,mu_dealer_array,sigma_dealer_array,demand_type_array):
-        warehouse_demand_variance += warehouse_demand_variance_term(Q,Q_subbatch,L_warehouse,mu,sigma,demand_type)
+    for Q,mu,sigma,demand_type,compounding_dist_arr in zip(Q_dealer_array,mu_dealer_array,
+    sigma_dealer_array,demand_type_array,compounding_dist_matrix):
+        warehouse_demand_variance += warehouse_demand_variance_term(Q,Q_subbatch,
+        L_warehouse,mu,sigma,demand_type,compounding_dist_arr)
     
     return warehouse_demand_variance
 
 
-def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_dealer_array: np.ndarray, sigma_dealer_array: np.ndarray, demand_type_array: np.ndarray, L_warehouse: float, Q_subbatch: int):
+def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_dealer_array: np.ndarray, 
+    sigma_dealer_array: np.ndarray, demand_type_array: np.ndarray, L_warehouse: float, 
+    Q_subbatch: int, compounding_dist_matrix: np.ndarray):
     """Computes the warehouse subbatch demand probability array estimates.
     
     reference: Berling and Marklund 2014 p. 3336
@@ -274,6 +295,8 @@ def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_d
         sigma_dealer_array: Dealers demand variances.
         L_warehouse: Warehouse leadtime.
         Q_subbatch: Subbatch size (smallest common divisor of Q's)
+        compounding_dist_matrix: np.ndarray of dimension 2 with compounding distributions 
+            for each retailer on the respective row.
 
     returns: 
         Warehouse subbatch demand probability array with probabilities of u = 0,1,2,...
@@ -282,7 +305,7 @@ def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_d
     """
     mu_L = warehouse_demand_mean_approximation(mu_dealer_array,L_warehouse,Q_subbatch)
     sigma2_L = warehouse_demand_variance_approximation(Q_dealer_array,mu_dealer_array,
-        sigma_dealer_array,demand_type_array,L_warehouse,Q_subbatch)
+        sigma_dealer_array,demand_type_array,L_warehouse,Q_subbatch,compounding_dist_matrix)
     
 
     if sigma2_L/mu_L > 1:
