@@ -13,7 +13,7 @@ from single_echelon_utils.dealer_optimization import *
 from utils import *
 
 excel_path_indata = "/Users/AlexanderLarsson/documents/VSCode/test_indata.xlsx"
-indata_sheet = "test_case_5_whNBD_poisson"
+indata_sheet = "test_case_2_whNBD_NBD"
 indataDF = pd.read_excel(excel_path_indata,indata_sheet)
 outdataDF = indataDF.copy()
 indataDF
@@ -27,6 +27,7 @@ L_wh = float(indataDF.get(indataDF["Type"]=="RDC").get("Transport time"))
 
 rdc_f_u_probability_array, wh_dist, mu_L, sigma2_L = warehouse_subbatch_demand_probability_array(Q_dealer_arr, mu_dealer_arr, 
     sigma_dealer_arr, demand_type_arr, L_wh, Q_subbatch_size)
+#sigma2_L = 4.223623849
 
 outdataDF.loc[outdataDF["Type"] == "Dealer","Q, subbatches"] = Q_dealer_arr/Q_subbatch_size
 
@@ -34,7 +35,7 @@ outdataDF.loc[outdataDF["Type"] == "RDC","Demand type"] = wh_dist
 outdataDF.loc[outdataDF["Type"] == "RDC","Lead time demand mean"] = mu_L * Q_subbatch_size
 outdataDF.loc[outdataDF["Type"] == "RDC","Lead time demand stdev"] = math.sqrt(sigma2_L) * Q_subbatch_size
 outdataDF.loc[outdataDF["Type"] == "RDC","Demand mean"] = mu_L * Q_subbatch_size/L_wh
-outdataDF.loc[outdataDF["Type"] == "RDC","Demand stdev"] = math.sqrt(sigma2_L) * Q_subbatch_size/L_wh
+outdataDF.loc[outdataDF["Type"] == "RDC","Demand stdev"] = math.sqrt(sigma2_L) * Q_subbatch_size/L_wh  
 outdataDF.loc[outdataDF["Type"] == "RDC", "Demand variance"] = sigma2_L * Q_subbatch_size/L_wh
 
 outdataDF
