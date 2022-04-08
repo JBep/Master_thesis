@@ -2,11 +2,15 @@ import os, sys
 currentdir = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(currentdir)
 
+from scipy.stats import norm
+
 from service_level_computation import *
 from inventory_level_computation import *
 from demand_models import *
 
-def dealer_R_optimization(Q, L_est, fill_rate_target, demand_type, demand_mean, **kwargs) -> tuple[int,float,float,float]:
+def dealer_R_optimization(Q: int, L_est: float, fill_rate_target: float, demand_type: str, 
+    demand_mean: float, demand_variance: float = -1, compounding_dist_arr: np.ndarray = -1*np.ones(10), 
+    name: str = "No name passed.") -> tuple[int,float,float]:
     """Function for optimizing R at dealers.
 
     Note! If demand_type = "Poisson", the demand variance, by definition, equals 
@@ -17,24 +21,27 @@ def dealer_R_optimization(Q, L_est, fill_rate_target, demand_type, demand_mean, 
         L_est: float, Lead time estimate in time units.
         fill_rate_target: float.
         
-        demand_type: "Poisson","NBD","Normal","Normal_adjusted", "Compound_Poisson_empiric".
+        demand_type: "Poisson","NBD","Normal","Normal_Adjusted", "Compound_Poisson_empiric".
         demand_mean: float, mean demand during a time unit.
         demand_variance: float, variance of demand during a time unit. Not
             required if demand_type is "Poisson".
+
         compounding_dist_arr: Array of demand size probabilities used for 
-            demand_type = "Compound_Poisson_empiric".
+            demand_type = "Compound_Poisson_empiric" and "Normal_Adjusted".
     
     returns:
-        R, Q, realised_fill_rate, expected_stock_on_hand.
+        R_opt, realized_fill_rate, expected_stock_on_hand.
     """
     func_name = f"dealer_R_optimization_{demand_type}"
     
-    return globals()[func_name](Q, L_est, fill_rate_target, demand_mean, kwargs['demand_variance'],kwargs['compounding_dist_arr'])
+    return globals()[func_name](Q = Q, L_est = L_est, fill_rate_target = fill_rate_target, 
+        demand_mean = demand_mean, demand_variance = demand_variance, compounding_dist_arr = compounding_dist_arr,
+        name = name)
 
 
 
 
-def dealer_R_optimization_Poisson(Q: int, L_est: float, fill_rate_target: float, demand_mean: float, **kwargs) -> tuple[int,int,float,float]:
+def dealer_R_optimization_Poisson(**kwargs) -> tuple[int,float,float]:
     """Function finds minimum R that fulfils target service level.
     
     Params:
@@ -46,13 +53,13 @@ def dealer_R_optimization_Poisson(Q: int, L_est: float, fill_rate_target: float,
     Returns:
         R, realised_fill_rate, E_IL
         """
-    demand_arr = demand_prob_arr_poisson(L = L_est, E_z = demand_mean)
+    demand_arr = demand_prob_arr_poisson(L = kwargs["L_est"], E_z = kwargs["demand_mean"])
 
-    R = -Q
+    R = -kwargs["Q"]
     fill_rate = 0
-    while fill_rate < fill_rate_target:
+    while fill_rate < kwargs["fill_rate_target"]:
         R += 1
-        IL_prob_arr = IL_prob_array_discrete_positive(R,Q,demand_arr)
+        IL_prob_arr = IL_prob_array_discrete_positive(R,kwargs["Q"],demand_arr)
         fill_rate = fill_rate_poisson_demand(IL_prob_arr)
     
     #Computing E_IL = IL
@@ -60,9 +67,9 @@ def dealer_R_optimization_Poisson(Q: int, L_est: float, fill_rate_target: float,
     for i,p_IL in enumerate(IL_prob_arr):
         exp_stock_on_hand += i*p_IL
 
-    return (R, Q, fill_rate, exp_stock_on_hand)
+    return (R, fill_rate, exp_stock_on_hand)
 
-def dealer_R_optimization_NBD(Q: int, L_est: float, fill_rate_target: float, demand_mean: float, **kwargs) -> tuple[int,int,float,float]:
+def dealer_R_optimization_NBD(**kwargs) -> tuple[int,float,float]:
     """Function finds minimum R that fulfils target service level.
     
     Params:
@@ -75,14 +82,16 @@ def dealer_R_optimization_NBD(Q: int, L_est: float, fill_rate_target: float, dem
     Returns:
         R, Q, fill_rate, E_IL
         """
-    demand_arr = demand_prob_arr_negative_binomial(L = L_est,E_z = demand_mean ,V_z = kwargs['demand_variance'])
-    demand_size_prob_arr = demand_size_arr_logarithmic(demand_mean,kwargs['demand_variance']) # demand mean and sigma2 can be of any time unit.
 
-    R = -Q
+    assert kwargs["demand_variance"] != -1, "Variance is -1 (default value), has the variance been entered correctly?"
+    demand_arr = demand_prob_arr_negative_binomial(L = kwargs["L_est"],E_z = kwargs["demand_mean"] ,V_z = kwargs["demand_variance"])
+    demand_size_prob_arr = demand_size_arr_logarithmic(E_z = kwargs["demand_mean"],V_z = kwargs["demand_variance"]) # demand mean and sigma2 can be of any time unit.
+
+    R = -kwargs["Q"]
     fill_rate = 0
-    while fill_rate < fill_rate_target:
+    while fill_rate < kwargs["fill_rate_target"]:
         R += 1
-        IL_prob_arr = IL_prob_array_discrete_positive(R,Q,demand_arr)
+        IL_prob_arr = IL_prob_array_discrete_positive(R,kwargs["Q"],demand_arr)
         fill_rate = fill_rate_compound_poisson_demand(demand_size_prob_arr,IL_prob_arr)
     
     #Computing E_IL = IL
@@ -90,9 +99,9 @@ def dealer_R_optimization_NBD(Q: int, L_est: float, fill_rate_target: float, dem
     for i,p_IL in enumerate(IL_prob_arr):
         exp_stock_on_hand += i*p_IL
 
-    return (R, Q, fill_rate, exp_stock_on_hand)
+    return (R, fill_rate, exp_stock_on_hand)
 
-def dealer_R_optimization_Normal(Q: int, L_est: float, fill_rate_target: float, demand_mean: float, **kwargs) -> tuple[int,int,float,float]:
+def dealer_R_optimization_Normal(**kwargs) -> tuple[int,float,float]:
     """Function finds minimum R that fulfils target service level.
     
     Params:
@@ -106,26 +115,31 @@ def dealer_R_optimization_Normal(Q: int, L_est: float, fill_rate_target: float, 
         R, Q, fill_rate, E_IL
         """
 
-    lt_demand_mean = lead_time_demand_mean(demand_mean,L_est)
-    lt_demand_variance = lead_time_demand_variance_M1(kwargs['demand_variance'],L_est)
+    assert kwargs["demand_variance"] != -1, "Variance is -1 (default value), has the variance been entered correctly?"
+    lt_demand_mean = lead_time_demand_mean(E_z = kwargs["demand_mean"],L = kwargs["L_est"])
+    lt_demand_variance = lead_time_demand_variance_M1(V_z = kwargs['demand_variance'],L = kwargs["L_est"])
 
-    R = -Q
+    prob_neg_demand = norm.cdf(0,loc = lt_demand_mean, scale = math.sqrt(lt_demand_variance))
+    if prob_neg_demand > 0.0001:
+        print(f"""Dealer {kwargs["name"]} model has a large probability for negative demand, 
+        F(0) = {prob_neg_demand}, consider using another demand model than the Normal approximation.""")
+
+    R = -kwargs["Q"]
     fill_rate = 0
-    while fill_rate < fill_rate_target:
+    while fill_rate < kwargs["fill_rate_target"]:
         R += 1
-        fill_rate = fill_rate_normal_demand(R,Q,lt_demand_mean,np.sqrt(lt_demand_variance))
+        fill_rate = fill_rate_normal_demand(R,kwargs["Q"],lt_demand_mean,np.sqrt(lt_demand_variance))
     
     # Computing E_IL = IL
     # Not implemented, (this formula is the fucker).
     exp_stock_on_hand = 0
 
-    return (R, Q, fill_rate, exp_stock_on_hand)
+    return (R, fill_rate, exp_stock_on_hand)
 
-def dealer_R_optimization_Normal_adjusted(Q, L_est, fill_rate_target, demand_mean, **kwargs):
+def dealer_R_optimization_Normal_adjusted(**kwargs):
     pass
 
-def dealer_R_optimization_Empiric_Compound_Poisson(Q, L_est, fill_rate_target, 
-    demand_mean, demand_variance, compounding_dist_arr):
+def dealer_R_optimization_Empiric_Compound_Poisson(**kwargs):
     """Function finds minimum R that fulfils target service level for empiric compound poisson.
     
     Params:
@@ -139,14 +153,20 @@ def dealer_R_optimization_Empiric_Compound_Poisson(Q, L_est, fill_rate_target,
     Returns:
         R, Q, fill_rate, E_IL
         """
-    demand_arr = demand_probability_array_empiric_compound_poisson(L = L_est,E_z = demand_mean ,
-        V_z = demand_variance,compounding_dist_arr=compounding_dist_arr, **kwargs)
-    demand_size_prob_arr = compounding_dist_arr
-    R = -Q
+
+    assert kwargs["demand_variance"] != -1, "Variance is -1 (default value), has the variance been entered correctly?"
+    demand_arr = demand_probability_array_empiric_compound_poisson(L = kwargs["L_est"],
+        E_z = kwargs["demand_mean"], V_z = kwargs["demand_variance"],
+        compounding_dist_arr = kwargs["compounding_dist_arr"])
+    
+    demand_size_prob_arr = kwargs["compounding_dist_arr"]
+    assert demand_size_prob_arr[0] != -1
+
+    R = -kwargs["Q"]
     fill_rate = 0
-    while fill_rate < fill_rate_target:
+    while fill_rate < kwargs["fill_rate_target"]:
         R += 1
-        IL_prob_arr = IL_prob_array_discrete_positive(R,Q,demand_arr)
+        IL_prob_arr = IL_prob_array_discrete_positive(R,kwargs["Q"],demand_arr)
         fill_rate = fill_rate_compound_poisson_demand(demand_size_prob_arr,IL_prob_arr)
     
     #Computing E_IL = IL
@@ -154,21 +174,21 @@ def dealer_R_optimization_Empiric_Compound_Poisson(Q, L_est, fill_rate_target,
     for i,p_IL in enumerate(IL_prob_arr):
         exp_stock_on_hand += i*p_IL
 
-    return (R, Q, fill_rate, exp_stock_on_hand)
+    return (R, fill_rate, exp_stock_on_hand)
 
 
 def main():
-    R,Q,fill_rate,E_IL = dealer_R_optimization(Q=10,L_est = 5,fill_rate_target = 0.95, 
+    R,fill_rate,E_IL = dealer_R_optimization(Q=10,L_est = 5,fill_rate_target = 0.95, 
         demand_type = 'Poisson', demand_mean = 5)
-    print(f"Poisson values: R = {R}, Q = {Q}, IFR = {fill_rate}, E_IL = {E_IL}")
+    print(f"Poisson values: R = {R}, IFR = {fill_rate}, E_IL = {E_IL}")
 
-    R,Q,fill_rate,E_IL = dealer_R_optimization(Q=5,L_est = 4,fill_rate_target = 0.25, 
+    R,fill_rate,E_IL = dealer_R_optimization(Q=5,L_est = 4,fill_rate_target = 0.25, 
         demand_type = 'NBD', demand_mean = 5, demand_variance = 10)
-    print(f"NBD values: R = {R}, Q = {Q}, IFR = {fill_rate}, E_IL = {E_IL}")
+    print(f"NBD values: R = {R}, IFR = {fill_rate}, E_IL = {E_IL}")
 
-    R,Q,fill_rate,E_IL = dealer_R_optimization(Q=10,L_est = 5,fill_rate_target = 0.95, 
+    R,fill_rate,E_IL = dealer_R_optimization(Q=10,L_est = 5,fill_rate_target = 0.95, 
         demand_type = 'Normal', demand_mean = 5, demand_variance = 10)
-    print(f"Normal values: R = {R}, Q = {Q}, IFR = {fill_rate}, E_IL = {E_IL}")
+    print(f"Normal values: R = {R}, IFR = {fill_rate}, E_IL = {E_IL}")
 
 
 
