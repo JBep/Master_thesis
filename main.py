@@ -206,4 +206,14 @@ def reorder_point_optimization(indata_excel_path: str, indata_sheet: str, indata
     if print_outdata:
         print(outdataDF)
 
-    
+def main():
+    indata_path = ""
+    indata_sheet = ""
+    indata_demand_size_sheet = ""
+
+    outdata_path = ""
+
+    reorder_point_optimization(indata_path,indata_sheet,indata_demand_size_sheet,outdata_path,True)
+
+if __name__ == "__main__":
+    main()
