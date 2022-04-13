@@ -60,7 +60,7 @@ def reorder_point_optimization(indata_excel_path: str, indata_sheet: str, indata
             sigma_dealer_list.append(math.sqrt(
                 indataDF.get(outdataDF["Installation id"]== id).get("Demand mean per time unit").to_numpy()))
         else:
-            sigma_dealer_list.append = indataDF.get(indataDF["Type"] == "Dealer").get("Demand stdev").to_numpy()          
+            sigma_dealer_list.append(indataDF.get(indataDF["Type"] == "Dealer").get("Demand stdev per time unit").to_numpy())        
     sigma_dealer_arr = np.array(sigma_dealer_list)
 
     #Find the smallest common divisor of Q.
@@ -119,6 +119,7 @@ def reorder_point_optimization(indata_excel_path: str, indata_sheet: str, indata
     # and backorders.
     R_0 = warehouse_optimization(Q_subbatch_size,Q_0,rdc_f_u_probability_array,h_rdc,beta_rdc)
     
+    R_0 = 100
     outdataDF.loc[outdataDF["Type"] == "RDC", "R optimal"] = R_0*Q_subbatch_size
     stock_on_hand_wh = positive_inventory(Q_subbatch_size,Q_0,R_0,rdc_f_u_probability_array)
     outdataDF.loc[outdataDF["Type"] == "RDC","Expected stock on hand"] = stock_on_hand_wh
@@ -134,12 +135,12 @@ def reorder_point_optimization(indata_excel_path: str, indata_sheet: str, indata
     outdataDF.loc[outdataDF["Type"] == "Dealer", "Lead time"] = lead_time_dealer_arr
 
     # Entering dealer lead time demand and standard deviation.
-    mu_L_dealer_array = outdataDF.get(outdataDF["Type"]== "Dealer").get("Lead time").to_numpy()*outdataDF.get(
-            outdataDF["Type"]== "Dealer").get("Demand mean").to_numpy()
+    mu_L_dealer_array = outdataDF.get(outdataDF["Type"] == "Dealer").get("Lead time").to_numpy()*outdataDF.get(
+            outdataDF["Type"] == "Dealer").get("Demand mean per time unit").to_numpy()
     outdataDF.loc[outdataDF["Type"] == "Dealer", "Lead time demand mean"] = mu_L_dealer_array
     
     sqrt_dealer_lead_time_arr = np.sqrt(lead_time_dealer_arr)
-    outdataDF.loc[outdataDF["Type"] == "Dealer", "Lead time demand stdev"] = sqrt_dealer_lead_time_arr*outdataDF.get(outdataDF["Type"]== "Dealer").get("Demand stdev").to_numpy()
+    outdataDF.loc[outdataDF["Type"] == "Dealer", "Lead time demand stdev"] = sqrt_dealer_lead_time_arr*outdataDF.get(outdataDF["Type"]== "Dealer").get("Demand stdev per time unit").to_numpy()
     
     # Entering central warehouse lead time as transport time for completeness.
     outdataDF.loc[outdataDF["Type"] == "RDC", "Lead time"] = indataDF.get(indataDF["Type"] == "RDC").get("Transport time")
@@ -151,7 +152,7 @@ def reorder_point_optimization(indata_excel_path: str, indata_sheet: str, indata
         compounding_dist_arr = compounding_dist_matrix[i]
         j_arr = np.arange(start=1,stop=len(compounding_dist_arr)+1)
         lam = mu/j_arr.dot(compounding_dist_arr)
-        MTBA_arr[i] = 1/lam
+        MTBA_arr[i] = 1/lam*lead_time_dealer_arr[i]
     outdataDF.loc[outdataDF["Type"]== "Dealer", "MTBA"] = MTBA_arr
 
     # Optimizing reorder points at dealer.
@@ -207,11 +208,11 @@ def reorder_point_optimization(indata_excel_path: str, indata_sheet: str, indata
         print(outdataDF)
 
 def main():
-    indata_path = ""
-    indata_sheet = ""
-    indata_demand_size_sheet = ""
+    indata_path = "/Volumes/GoogleDrive/.shortcut-targets-by-id/10oYqI9u7nCLK0q7xF2CvGGIQVokusjaI/Exjobb/9. Analytical modeling/test_simulation_runs.xlsx"
+    indata_sheet = "test_case_1"
+    indata_demand_size_sheet = "test_case_1_cd"
 
-    outdata_path = ""
+    outdata_path = "/Volumes/GoogleDrive/.shortcut-targets-by-id/10oYqI9u7nCLK0q7xF2CvGGIQVokusjaI/Exjobb/9. Analytical modeling/test_outdata.xlsx"
 
     reorder_point_optimization(indata_path,indata_sheet,indata_demand_size_sheet,outdata_path,True)
 

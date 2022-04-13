@@ -4,7 +4,7 @@ import math
 
 ## Test change
 
-THRESHOLD = 1e-6
+THRESHOLD = 1e-4
 
 def lead_time_demand_mean(E_z, L) -> float:
     """Calculates the lead time demand mean.
@@ -107,7 +107,7 @@ def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: f
     demand_prob_arr = np.array(f_k_j).dot(customer_prob_arr[1:]) #Convoluting probability of customer with the probability of different order sizes.
     demand_prob_arr = np.concatenate((customer_prob_arr[0:1],demand_prob_arr)) # Adding probability of 0 demand (=0 customers)
 
-    assert np.sum(demand_prob_arr) > 1-customer_threshold-1e-6 and np.sum(demand_prob_arr) <= 1, f"Demand array is not close enough to 1, it sums to: {np.sum(demand_prob_arr)}"
+    assert np.sum(demand_prob_arr) > 1-customer_threshold-1e-4 and np.sum(demand_prob_arr) <= 1, f"Demand array is not close enough to 1, it sums to: {np.sum(demand_prob_arr)}"
 
     return demand_prob_arr
 

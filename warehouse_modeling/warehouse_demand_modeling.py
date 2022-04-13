@@ -12,7 +12,7 @@ sys.path.append(parentdir)
 from single_echelon_utils.demand_models import *
 
 IMPLEMENTED_DEMAND_TYPES = ["Normal","NBD","Poisson","Empiric_Compound_Poisson"]
-THRESHOLD = 1e-6
+THRESHOLD = 1e-4
 
 
 def delta_func_Normal_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: float, n: int, **kwargs) -> float:
@@ -183,7 +183,7 @@ def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: fl
     # u = 1*q_i,2*q_i,3*q_i ...
     n = 1
     d_n_1 = f_0
-    while cumulative_prob < 1 - 1e-6:
+    while cumulative_prob < 1 - THRESHOLD:
         d_n =  globals()[delta_func_str](Q_dealer = Q_dealer,L_warehouse = L_warehouse, 
         mu = mu, n = n, sigma = sigma, compounding_dist_arr = compounding_dist_arr)
         f_u = d_n-d_n_1 
