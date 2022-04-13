@@ -260,7 +260,7 @@ Q_subbatch: int, compounding_dist_matrix: np.ndarray) -> float:
     params:
         Q_dealer_array: Dealers batch-quantities in units. 
         mu_dealer_array: Dealers mean demand per time unit.
-        sigma_dealer_array: Dealers demand variances.
+        sigma_dealer_array: Dealers demand standard dev per time unit.
         L_warehouse: Warehouse leadtime.
         Q_subbatch: Subbatch size (smallest common divisor of Q's)
         compounding_dist_matrix: np.ndarray of dimension 2 with compounding distributions 
@@ -291,8 +291,8 @@ def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_d
     
     params:
         Q_dealer_array: Dealers batch-quantities in units. 
-        mu_dealer_array: Dealers mean demand.
-        sigma_dealer_array: Dealers demand variances.
+        mu_dealer_array: Dealers mean demand per time unit.
+        sigma_dealer_array: Dealers demand standard deviance per time unit.
         L_warehouse: Warehouse leadtime.
         Q_subbatch: Subbatch size (smallest common divisor of Q's)
         compounding_dist_matrix: np.ndarray of dimension 2 with compounding distributions 
