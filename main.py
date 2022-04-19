@@ -56,11 +56,11 @@ def reorder_point_optimization(indata_excel_path: str, indata_sheet: str, indata
     # If demand type is poisson, retrieve 
     sigma_dealer_list = []
     for id in indataDF.get(indataDF["Type"] == "Dealer").get("Installation id"):
-        if indataDF.get(indataDF["Installation id"] == id).get("Demand type").to_numpy() == "Poisson":
+        if str(indataDF.get(indataDF["Installation id"] == id).get("Demand type")) == "Poisson":
             sigma_dealer_list.append(math.sqrt(
-                indataDF.get(outdataDF["Installation id"]== id).get("Demand mean per time unit").to_numpy()))
+                float(indataDF.get(outdataDF["Installation id"]== id).get("Demand mean per time unit"))))
         else:
-            sigma_dealer_list.append(indataDF.get(indataDF["Type"] == "Dealer").get("Demand stdev per time unit").to_numpy())        
+            sigma_dealer_list.append(float(indataDF.get(indataDF["Installation id"] == id).get("Demand stdev per time unit")))        
     sigma_dealer_arr = np.array(sigma_dealer_list)
 
     #Find the smallest common divisor of Q.
