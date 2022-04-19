@@ -71,6 +71,7 @@ def reorder_point_optimization(indata_excel_path: str, indata_sheet: str, indata
     compounding_dist_df = pd.read_excel(indata_excel_path,indata_demand_size_dist_sheet)
     compounding_dist_matrix = compounding_dist_df.to_numpy().T[1:] # Each array is a column in excel, transposing and removing first row holding item amounts.
     compounding_dist_matrix = np.nan_to_num(compounding_dist_matrix,copy = True)
+    
 
 
     #Read warehouse values.
@@ -208,11 +209,11 @@ def reorder_point_optimization(indata_excel_path: str, indata_sheet: str, indata
         print(outdataDF)
 
 def main():
-    indata_path = "/Volumes/GoogleDrive/.shortcut-targets-by-id/10oYqI9u7nCLK0q7xF2CvGGIQVokusjaI/Exjobb/9. Analytical modeling/test_simulation_runs.xlsx"
+    indata_path = "/Users/AlexanderLarsson/documents/VSCode/test_simulation_runs.xlsx"
     indata_sheet = "test_case_1"
     indata_demand_size_sheet = "test_case_1_cd"
 
-    outdata_path = "/Volumes/GoogleDrive/.shortcut-targets-by-id/10oYqI9u7nCLK0q7xF2CvGGIQVokusjaI/Exjobb/9. Analytical modeling/test_outdata.xlsx"
+    outdata_path = "/Users/AlexanderLarsson/documents/VSCode/outdata.xlsx"
 
     reorder_point_optimization(indata_path,indata_sheet,indata_demand_size_sheet,outdata_path,True)
 
