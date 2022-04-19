@@ -122,7 +122,7 @@ def delta_func_Empiric_Compound_Poisson_demand(Q_dealer: int, L_warehouse: float
 
     """
     demand_probability_arr = demand_probability_array_empiric_compound_poisson(L = L_warehouse, 
-        E_z = mu, V_z = math.pow(sigma,2), compounding_dist_arr=compounding_dist_arr)
+        E_z = mu, V_z = math.pow(sigma,2), compounding_dist_arr = compounding_dist_arr)
     max_demand = len(demand_probability_arr)
 
     prob_sum = 0
