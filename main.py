@@ -210,7 +210,7 @@ def reorder_point_optimization(indata_excel_path: str, indata_sheet: str, indata
 
 def main():
     indata_path = "/Users/AlexanderLarsson/documents/VSCode/test_simulation_runs.xlsx"
-    indata_sheet = "test_case_1"
+    indata_sheet = "test_case_2"
     indata_demand_size_sheet = "test_case_1_cd"
 
     outdata_path = "/Users/AlexanderLarsson/documents/VSCode/outdata.xlsx"
