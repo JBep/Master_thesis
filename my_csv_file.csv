@@ -1,0 +1,15 @@
+,Installation id,Type,Name,Transport time,Q,Unit cost,Target item fill rate,Demand type,Demand mean per time unit,Demand stdev per time unit,Demand type,Stocked,Demand distribution
+0,Bartlett,Dealer,Bartlett,5,11.0,140.09,0.98,Erratic,6.712,3.9006,Erratic,Yes,Empiric_Compound_Poisson
+1,Bloemfontein,Dealer,Bloemfontein,5,4.0,140.09,0.99,Fast,1.696,1.0616,Fast,Yes,Empiric_Compound_Poisson
+2,Capetown,Dealer,Capetown,5,9.0,140.09,0.98,Fast,5.3271,2.9309,Fast,Yes,Empiric_Compound_Poisson
+3,Durban,Dealer,Durban,5,7.0,140.09,0.98,Fast,3.696,3.1209,Fast,Yes,Empiric_Compound_Poisson
+4,George,Dealer,George,5,3.0,140.09,0.9,Slow,0.4167,0.5149,Slow,Yes,Empiric_Compound_Poisson
+5,Kimberley,Dealer,Kimberley,5,7.0,140.09,0.995,Fast,1.0688,1.2772,Fast,Yes,Empiric_Compound_Poisson
+6,Middelburg,Dealer,Middelburg,5,2.0,140.09,0.9,Slow,0.2727,0.4671,Slow,Yes,Empiric_Compound_Poisson
+7,Nelspruit,Dealer,Nelspruit,5,5.0,140.09,0.99,Erratic,1.392,1.64,Erratic,Yes,Empiric_Compound_Poisson
+8,Port Elizabeth,Dealer,Port Elizabeth,5,5.0,140.09,0.995,Fast,0.9824,1.3234,Fast,Yes,Empiric_Compound_Poisson
+9,Richards Bay,Dealer,Richards Bay,5,4.0,140.09,0.99,Fast,1.5458,1.8792,Fast,Yes,Empiric_Compound_Poisson
+10,Rustenburg,Dealer,Rustenburg,5,1.0,140.09,0.0,Slow,0.3333,0.4924,Slow,No,Empiric_Compound_Poisson
+11,Steelpoort,Dealer,Steelpoort,5,1.0,140.09,0.0,Slow,0.3333,0.4924,Slow,No,Empiric_Compound_Poisson
+12,Wolmaransstad,Dealer,Wolmaransstad,5,5.0,140.09,0.99,Fast,1.792,1.6882,Fast,Yes,Empiric_Compound_Poisson
+13,Johannesburg,RDC,Johannesburg,58,32.0,234.35,0.1,Erratic,32.1076,11.0236,Erratic,Yes,Empiric_Compound_Poisson
