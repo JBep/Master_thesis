@@ -72,7 +72,7 @@ def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: f
     k = 0
 
     while cumulative_prob < 1-customer_threshold:
-        p_k = (math.pow(lam,k)/math.factorial(k))*np.exp(-lam)
+        p_k = (math.pow(lam,k)/np.math.factorial(k))*np.exp(-lam)
         cumulative_prob += p_k
         customer_prob_arr.append(p_k)
         k += 1

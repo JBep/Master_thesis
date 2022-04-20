@@ -53,12 +53,12 @@ def reorder_point_optimization(indata_path: str, indata_sheet: str = None, indat
     capital_cost = 0.15
 
     # Retrieving the data about dealers.
-    Q_dealer_arr = indataDF.get(indataDF["Type"] == "Dealer").get("Q").to_numpy()
-    mu_dealer_arr = indataDF.get(indataDF["Type"] == "Dealer").get("Demand mean per time unit").to_numpy()
+    Q_dealer_arr = indataDF.get(indataDF["Type"] == "Dealer").get("Q").to_numpy().astype("int32")
+    mu_dealer_arr = indataDF.get(indataDF["Type"] == "Dealer").get("Demand mean per time unit").to_numpy().astype("float64")
     demand_type_arr = indataDF.get(indataDF["Type"] == "Dealer").get("Demand distribution").to_numpy()
-    h_dealer_arr = capital_cost * indataDF.get(indataDF["Type"] == "Dealer").get("Unit cost").to_numpy()
-    fill_rate_target_arr = indataDF.get(indataDF["Type"] == "Dealer").get("Target item fill rate").to_numpy()
-    l_dealer_arr = indataDF.get(indataDF["Type"] == "Dealer").get("Transport time").to_numpy()
+    h_dealer_arr = capital_cost * indataDF.get(indataDF["Type"] == "Dealer").get("Unit cost").to_numpy().astype("float64")
+    fill_rate_target_arr = indataDF.get(indataDF["Type"] == "Dealer").get("Target item fill rate").to_numpy().astype("float64")
+    l_dealer_arr = indataDF.get(indataDF["Type"] == "Dealer").get("Transport time").to_numpy().astype("float64")
 
     # If demand distribution is poisson, retrieve 
     sigma_dealer_list = []
@@ -76,7 +76,7 @@ def reorder_point_optimization(indata_path: str, indata_sheet: str = None, indat
     # Input compounding distribution arrays here!
     # Supposed to have one row per dealer.
     if indata_demand_size_dist_path[-3:] == "csv":
-        compounding_dist_arr = pd.read_csv(indata_demand_size_dist_path)
+        compounding_dist_df = pd.read_csv(indata_demand_size_dist_path)
     else:
         compounding_dist_df = pd.read_excel(indata_path,indata_demand_size_dist_path)
 
