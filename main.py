@@ -12,17 +12,19 @@ from single_echelon_utils.dealer_optimization import *
 
 from utils import *
 
-def reorder_point_optimization(indata_excel_path: str, indata_sheet: str, indata_demand_size_dist_sheet: str, 
-    outdata_excel_path: str = None, print_outdata: bool = False):
+def reorder_point_optimization(indata_path: str, indata_sheet: str = None, indata_demand_size_dist_path: str = None, 
+    outdata_path: str = None, print_outdata: bool = False):
     """Optimizing reorder points for a multi-echelon system according to the BM-model.
 
     params:
-        indata_excel_path: Path to indata excel-file.
+    =======
+        indata_excel_path: Path to indata csv or excel-file.
         indata_sheet: Indata sheet assumed to contain columns: 
             "Installation id", "Type", "Name", "Transport time", "Q", 
-            "Holding cost", "Target item fill rate", "Demand type",	
+            "Unit cost", "Target item fill rate", "Demand distribution",	
             "Demand mean per time unit", "Demand stdev per time unit"
-        indata_demand_size_dist_sheet: Sheet containing empiric demand size distributions.
+        indata_demand_size_dist_path: Path or Sheetname to excel (using same path
+            as indata) or csv-file containing empiric demand size distributions.
             Column A is order sizes, Column B an onwards is retailer ids/names.
         outdata_excel_path: Path to outdata excel-file. Beware that the program 
             overwrites this file if it already exists! If None this step is skipped.
@@ -31,32 +33,37 @@ def reorder_point_optimization(indata_excel_path: str, indata_sheet: str, indata
     ## Handling Inputs
     # --------------------------------------------------------------------------       
     # Ensuring indata path is not the same as outdata (outdata will erase current file.)
-    if indata_excel_path == outdata_excel_path:
+    if indata_path == outdata_path:
         raise ValueError('Indata path and outdata path should not be the same.')
 
-
-    indataDF = pd.read_excel(indata_excel_path,indata_sheet)
+    if indata_path[-4:] == "xlsx":
+        indataDF = pd.read_excel(indata_path,indata_sheet)
+    else:
+        indataDF = pd.read_csv(indata_path)
     outdataDF = indataDF.copy()
 
     # Ensure correct columns are present:
     required_columns = {"Installation id", "Type", "Name", "Transport time", "Q", 
-        "Holding cost", "Target item fill rate", "Demand type",	"Demand mean per time unit", "Demand stdev per time unit"}
+        "Unit cost", "Target item fill rate", "Demand distribution",	"Demand mean per time unit", "Demand stdev per time unit"}
     
     if not required_columns.issubset(set(indataDF.columns.to_list())):
         raise ValueError("Indata doesn't contain all required fields, see documentation.")
 
+    # Initiating capital cost value 
+    capital_cost = 0.15
+
     # Retrieving the data about dealers.
     Q_dealer_arr = indataDF.get(indataDF["Type"] == "Dealer").get("Q").to_numpy()
     mu_dealer_arr = indataDF.get(indataDF["Type"] == "Dealer").get("Demand mean per time unit").to_numpy()
-    demand_type_arr = indataDF.get(indataDF["Type"] == "Dealer").get("Demand type").to_numpy()
-    h_dealer_arr = indataDF.get(indataDF["Type"] == "Dealer").get("Holding cost").to_numpy()
+    demand_type_arr = indataDF.get(indataDF["Type"] == "Dealer").get("Demand distribution").to_numpy()
+    h_dealer_arr = capital_cost * indataDF.get(indataDF["Type"] == "Dealer").get("Unit cost").to_numpy()
     fill_rate_target_arr = indataDF.get(indataDF["Type"] == "Dealer").get("Target item fill rate").to_numpy()
     l_dealer_arr = indataDF.get(indataDF["Type"] == "Dealer").get("Transport time").to_numpy()
 
-    # If demand type is poisson, retrieve 
+    # If demand distribution is poisson, retrieve 
     sigma_dealer_list = []
     for id in indataDF.get(indataDF["Type"] == "Dealer").get("Installation id"):
-        if str(indataDF.get(indataDF["Installation id"] == id).get("Demand type")) == "Poisson":
+        if str(indataDF.get(indataDF["Installation id"] == id).get("Demand distribution")) == "Poisson":
             sigma_dealer_list.append(math.sqrt(
                 float(indataDF.get(outdataDF["Installation id"]== id).get("Demand mean per time unit"))))
         else:
@@ -68,7 +75,11 @@ def reorder_point_optimization(indata_excel_path: str, indata_sheet: str, indata
     
     # Input compounding distribution arrays here!
     # Supposed to have one row per dealer.
-    compounding_dist_df = pd.read_excel(indata_excel_path,indata_demand_size_dist_sheet)
+    if indata_demand_size_dist_path[-3:] == "csv":
+        compounding_dist_arr = pd.read_csv(indata_demand_size_dist_path)
+    else:
+        compounding_dist_df = pd.read_excel(indata_path,indata_demand_size_dist_path)
+
     compounding_dist_matrix = compounding_dist_df.to_numpy().T[1:] # Each array is a column in excel, transposing and removing first row holding item amounts.
     compounding_dist_matrix = np.nan_to_num(compounding_dist_matrix,copy = True)
     
@@ -76,7 +87,7 @@ def reorder_point_optimization(indata_excel_path: str, indata_sheet: str, indata
 
     #Read warehouse values.
     L_wh = float(indataDF.get(indataDF["Type"]=="RDC").get("Transport time"))
-    h_rdc = float(indataDF.get(indataDF["Type"] == "RDC").get("Holding cost"))
+    h_rdc = capital_cost*float(indataDF.get(indataDF["Type"] == "RDC").get("Unit cost"))
     Q_0 = int(int(indataDF.get(indataDF["Type"] == "RDC").get("Q"))/Q_subbatch_size) # Observe, Q_0 is in subbatches.
 
     # Central warehouse demand
@@ -88,7 +99,7 @@ def reorder_point_optimization(indata_excel_path: str, indata_sheet: str, indata
         Q_dealer_arr, mu_dealer_arr, sigma_dealer_arr, demand_type_arr, L_wh, Q_subbatch_size, 
         compounding_dist_matrix)
 
-    outdataDF.loc[outdataDF["Type"] == "RDC","Demand type"] = wh_dist
+    outdataDF.loc[outdataDF["Type"] == "RDC","Demand distribution"] = wh_dist
     outdataDF.loc[outdataDF["Type"] == "RDC","Lead time demand mean"] = mu_L * Q_subbatch_size
     outdataDF.loc[outdataDF["Type"] == "RDC","Lead time demand stdev"] = math.sqrt(sigma2_L) * Q_subbatch_size
     outdataDF.loc[outdataDF["Type"] == "RDC","Demand mean per time unit"] = mu_L * Q_subbatch_size/L_wh
@@ -110,6 +121,7 @@ def reorder_point_optimization(indata_excel_path: str, indata_sheet: str, indata
     mu_wh = mu_L/L_wh * Q_subbatch_size
     beta_rdc = weighting_backorder_cost(mu_dealer_arr,mu_wh,beta_arr)
     
+    outdataDF.loc[outdataDF["Type"] == "Dealer", "Holding cost"] = h_dealer_arr
     outdataDF.loc[outdataDF["Type"] == "Dealer", "Estimated shortage cost"] = p_dealer_arr
     outdataDF.loc[outdataDF["Type"] == "RDC", "Beta"] = beta_rdc
     outdataDF.loc[outdataDF["Type"] == "Dealer", "Beta"] = beta_arr
@@ -120,7 +132,6 @@ def reorder_point_optimization(indata_excel_path: str, indata_sheet: str, indata
     # and backorders.
     R_0 = warehouse_optimization(Q_subbatch_size,Q_0,rdc_f_u_probability_array,h_rdc,beta_rdc)
     
-    R_0 = 100
     outdataDF.loc[outdataDF["Type"] == "RDC", "R optimal"] = R_0*Q_subbatch_size
     stock_on_hand_wh = positive_inventory(Q_subbatch_size,Q_0,R_0,rdc_f_u_probability_array)
     outdataDF.loc[outdataDF["Type"] == "RDC","Expected stock on hand"] = stock_on_hand_wh
@@ -202,8 +213,11 @@ def reorder_point_optimization(indata_excel_path: str, indata_sheet: str, indata
     # Printing results.
     # --------------------------------------------------------------------------
     
-    if outdata_excel_path is not None:
-        outdataDF.to_excel(outdata_excel_path,sheet_name = "Outdata_latest_run")
+    if outdata_path is not None:
+        if outdata_path[-4:] == "xlsx":
+            outdataDF.to_excel(outdata_path,sheet_name = "Outdata_latest_run")
+        else:
+            outdataDF.to_csv(outdata_path)
 
     if print_outdata:
         print(outdataDF)
