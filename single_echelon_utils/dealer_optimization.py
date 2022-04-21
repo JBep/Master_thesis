@@ -7,7 +7,10 @@ from scipy.stats import norm
 from service_level_computation import *
 from inventory_level_computation import *
 from demand_models import *
+from my_log import *
 
+@log("default_log")
+@log("sparse_log")
 def dealer_R_optimization(Q: int, L_est: float, fill_rate_target: float, demand_type: str, 
     demand_mean: float, demand_variance: float = -1, compounding_dist_arr: np.ndarray = -1*np.ones(10), 
     name: str = "No name passed.") -> tuple[int,float,float]:
@@ -139,6 +142,7 @@ def dealer_R_optimization_Normal(**kwargs) -> tuple[int,float,float]:
 def dealer_R_optimization_Normal_adjusted(**kwargs):
     pass
 
+@log("default_log")
 def dealer_R_optimization_Empiric_Compound_Poisson(**kwargs):
     """Function finds minimum R that fulfils target service level for empiric compound poisson.
     
@@ -155,16 +159,16 @@ def dealer_R_optimization_Empiric_Compound_Poisson(**kwargs):
         """
 
     assert kwargs["demand_variance"] != -1, "Variance is -1 (default value), has the variance been entered correctly?"
-    demand_arr = demand_probability_array_empiric_compound_poisson(L = kwargs["L_est"],
+    demand_arr = demand_probability_arr_Empiric_Compound_Poisson(L = kwargs["L_est"],
         E_z = kwargs["demand_mean"], V_z = kwargs["demand_variance"],
         compounding_dist_arr = kwargs["compounding_dist_arr"])
     
     demand_size_prob_arr = kwargs["compounding_dist_arr"]
     assert demand_size_prob_arr[0] != -1
 
-    R = -kwargs["Q"]
+    R = -1
     IL_prob_arr = IL_prob_array_discrete_positive(R,kwargs["Q"],demand_arr)
-    fill_rate = 0
+    fill_rate = fill_rate_compound_poisson_demand(demand_size_prob_arr,IL_prob_arr)
     while fill_rate < kwargs["fill_rate_target"]:
         R += 1
         IL_prob_arr = IL_prob_array_discrete_positive(R,kwargs["Q"],demand_arr)
@@ -174,6 +178,7 @@ def dealer_R_optimization_Empiric_Compound_Poisson(**kwargs):
     exp_stock_on_hand = 0
     for i,p_IL in enumerate(IL_prob_arr):
         exp_stock_on_hand += i*p_IL
+
 
     return (R, fill_rate, exp_stock_on_hand)
 

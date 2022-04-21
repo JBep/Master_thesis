@@ -12,6 +12,7 @@ from single_echelon_utils.dealer_optimization import *
 
 from utils import *
 
+@log("default_log")
 def reorder_point_optimization(indata_path: str, indata_sheet: str = None, indata_demand_size_dist_path: str = None, 
     outdata_path: str = None, print_outdata: bool = False):
     """Optimizing reorder points for a multi-echelon system according to the BM-model.
@@ -50,7 +51,7 @@ def reorder_point_optimization(indata_path: str, indata_sheet: str = None, indat
         raise ValueError("Indata doesn't contain all required fields, see documentation.")
 
     # Initiating capital cost value 
-    capital_cost = 0.15
+    capital_cost = 0.15/365
 
     # Retrieving the data about dealers.
     Q_dealer_arr = indataDF.get(indataDF["Type"] == "Dealer").get("Q").to_numpy().astype("int32")
@@ -87,7 +88,7 @@ def reorder_point_optimization(indata_path: str, indata_sheet: str = None, indat
 
     #Read warehouse values.
     L_wh = float(indataDF.get(indataDF["Type"]=="RDC").get("Transport time"))
-    h_rdc = capital_cost*float(indataDF.get(indataDF["Type"] == "RDC").get("Unit cost"))
+    h_rdc = capital_cost*float(indataDF.get(indataDF["Type"] == "RDC").get("Unit cost"))*capital_cost
     Q_0 = int(int(indataDF.get(indataDF["Type"] == "RDC").get("Q"))/Q_subbatch_size) # Observe, Q_0 is in subbatches.
 
     # Central warehouse demand
@@ -121,6 +122,7 @@ def reorder_point_optimization(indata_path: str, indata_sheet: str = None, indat
     mu_wh = mu_L/L_wh * Q_subbatch_size
     beta_rdc = weighting_backorder_cost(mu_dealer_arr,mu_wh,beta_arr)
     
+    outdataDF.loc[outdataDF["Type"] == "RDC", "Holding cost"] = h_rdc
     outdataDF.loc[outdataDF["Type"] == "Dealer", "Holding cost"] = h_dealer_arr
     outdataDF.loc[outdataDF["Type"] == "Dealer", "Estimated shortage cost"] = p_dealer_arr
     outdataDF.loc[outdataDF["Type"] == "RDC", "Beta"] = beta_rdc

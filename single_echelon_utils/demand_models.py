@@ -1,10 +1,17 @@
 from decimal import DivisionByZero
 import numpy as np
+import pandas as pd
 import math
+import os, sys
+
+currentdir = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(currentdir)
+#from my_log import *
 
 ## Test change
 
 THRESHOLD = 1e-4
+
 
 def lead_time_demand_mean(E_z, L) -> float:
     """Calculates the lead time demand mean.
@@ -13,6 +20,7 @@ def lead_time_demand_mean(E_z, L) -> float:
     """
     mu = L*E_z
     return mu
+
 
 def lead_time_demand_variance_M1(V_z, L) -> float:
     """Calculates lead time demand variance by using assumption of constant L."""
@@ -29,8 +37,8 @@ def lead_time_demand_variance_M2(V_z, E_z, V_L, E_L) -> float:
 
     return sigma2
 
-
-def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: float, 
+#@log("default_log")
+def demand_probability_arr_Empiric_Compound_Poisson(L: int, E_z: float, V_z: float, 
     compounding_dist_arr: np.ndarray, customer_threshold = THRESHOLD, lead_time_demand_method = "M1", lead_time_variance = None) -> np.ndarray:
     """Compound poisson distribution with empiric compounding.
 
@@ -72,7 +80,9 @@ def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: f
     k = 0
 
     while cumulative_prob < 1-customer_threshold:
-        p_k = (math.pow(lam,k)/np.math.factorial(k))*np.exp(-lam)
+        k_ln_lam = k*math.log(lam)
+        ln_k_factorial = math.log(math.factorial(k))
+        p_k = np.exp(k_ln_lam-ln_k_factorial-lam)
         cumulative_prob += p_k
         customer_prob_arr.append(p_k)
         k += 1
@@ -81,8 +91,9 @@ def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: f
     customer_prob_arr = np.array(customer_prob_arr)
 
     # Create f_k_j-matrix
+    j_max_per_customer = len(compounding_dist_arr)
     k_max = len(customer_prob_arr)-1 #k goes to max customers+1 as 0 customers is possible.
-    j_max = k_max*len(compounding_dist_arr)
+    j_max = k_max*j_max_per_customer
 
     
     f_k_j = np.zeros((j_max,k_max)) 
@@ -92,11 +103,10 @@ def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: f
     # # Insert case of 1 customer.
     f_k_j[0:len(compounding_dist_arr),0] = compounding_dist_arr
 
-
     # From k = 2 to k_max-1 customers.
     for k in range(1,k_max):
         # k customers buying j wares.
-        for j in range(j_max):
+        for j in range(k,j_max_per_customer*(k+1)):
             f_k_j_temp = 0
             for i in range(k,j+1):
                 fa = f_k_j[i-1,k-1]
@@ -105,7 +115,10 @@ def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: f
              
             f_k_j[j,k]=f_k_j_temp
 
-
+        #print(k, iters)
+    #df = pd.DataFrame(f_k_j)
+    #df.to_excel("test_excel_file1.xlsx")
+    #print(iters)
 
     demand_prob_arr = np.array(f_k_j).dot(customer_prob_arr[1:]) #Convoluting probability of customer with the probability of different order sizes.
     demand_prob_arr = np.concatenate((customer_prob_arr[0:1],demand_prob_arr)) # Adding probability of 0 demand (=0 customers)
@@ -115,7 +128,7 @@ def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: f
     return demand_prob_arr
 
 
-
+#@log("default_log")
 def demand_prob_arr_poisson(L: int, E_z: float, threshold = THRESHOLD) -> np.ndarray:
     """Returns probability array for poisson demand.
     Axsäter 5.1
@@ -146,7 +159,7 @@ def demand_prob_arr_poisson(L: int, E_z: float, threshold = THRESHOLD) -> np.nda
     #TO-DO
     pass
 
-
+#@log("default_log")
 def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold = THRESHOLD, 
     lead_time_demand_method = "M1", lead_time_variance = None) -> np.ndarray:
     """Computes the array of demand probabilities under negative binomial dist 
@@ -217,6 +230,7 @@ def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold 
 
     return np.array(demand_prob_arr)
 
+#@log("default_log")
 def demand_size_arr_logarithmic(E_z: float, V_z:float, threshold = THRESHOLD) -> np.ndarray:
     """Calculates the logarithmic compounding distribution array.'
 
@@ -243,6 +257,7 @@ def demand_size_arr_logarithmic(E_z: float, V_z:float, threshold = THRESHOLD) ->
 
     return np.array(f_j_arr) 
 
+#@log("default_log")
 def logarithmic_alpha(E_z: float, V_z:float) -> float:
     """Calculates the alpha-value for the logarithmic distribution.
     
@@ -266,6 +281,7 @@ def logarithmic_alpha(E_z: float, V_z:float) -> float:
 
     return alpha
 
+#@log("default_log")
 def logarithmic_compound_params(E_z: float, V_z:float) -> tuple[float,float]:
     """Calculates the alpha-value for the logarithmic distribution.
     
@@ -285,6 +301,7 @@ def logarithmic_compound_params(E_z: float, V_z:float) -> tuple[float,float]:
 
     return lam, alpha
 
+#@log("default_log")
 def logarithmic_compound_mean_variance(lam: float, alpha: float) -> tuple[float,float]:
     """Converts lambda and alpha of compound poisson logarithmic distribution to 
     mean and variance.

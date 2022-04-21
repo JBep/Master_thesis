@@ -1,9 +1,15 @@
 from email.errors import InvalidMultipartContentTransferEncodingDefect
 import numpy as np
+import os, sys
+
+currentdir = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(currentdir)
+from my_log import *
 
 if __name__ == "__main__":
     from warehouse_demand_modeling import warehouse_subbatch_demand_probability_array
 
+@log("default_log")
 def positive_inventory(Q: int, Q_0: int, R_0: int, f_u_arr: np.ndarray):
     """Calculates the expected positive inventory-level at the RDC.
     
@@ -32,7 +38,7 @@ def positive_inventory(Q: int, Q_0: int, R_0: int, f_u_arr: np.ndarray):
 
     return (Q/Q_0)*pos_inv
 
-
+@log("default_log")
 def negative_inventory(Q: int, Q_0: int, R_0: int, f_u_arr: np.ndarray, method = 1):
     """Calculates the expected negative inventory-level at the RDC.
 
@@ -58,10 +64,13 @@ def negative_inventory(Q: int, Q_0: int, R_0: int, f_u_arr: np.ndarray, method =
 
     return (Q/Q_0)*neg_inv
 
+@log("default_log")
 def total_cost(Q: int, Q_0: int, R_0: int, f_u: np.array, h: float, b: float) -> float:
     total_cost  = h * positive_inventory(Q, Q_0, R_0, f_u) + b * negative_inventory(Q, Q_0, R_0, f_u)
     return total_cost
 
+@log("default_log")
+@log("sparse_log")
 def warehouse_optimization(Q: int, Q_0: int, f_u: np.array, h: float, b: float):
     """Calcutes the optimal reorder point for the RDC/warehouse.
     

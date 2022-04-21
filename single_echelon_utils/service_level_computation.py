@@ -5,15 +5,18 @@ import math
 import os, sys
 currentdir = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(currentdir)
+from my_log import *
 from inventory_level_computation import *
 
+
+@log("default_log")
 def fill_rate_compound_poisson_demand(demand_size_probability_array: np.array, pos_IL_probability_array: np.array) -> float:
     """Calculates the item fill rate under compound poisson demand.
     
     reference: Axsäter (2006) Inventory control 2nd edition, equation 5.51
     params:
         demand_size_probabilities: np.array of probabilities of demand size 
-            equals k, (k = index).
+            equals k, (k = index+1).
         pos_IL_probability_array: np.array of probabilities of inventory level 
             equal to j, (j = index).
 
@@ -23,7 +26,7 @@ def fill_rate_compound_poisson_demand(demand_size_probability_array: np.array, p
     """
 
     numerator, denominator = 0,0
-    for idx_k,f_k in enumerate(demand_size_probability_array[1:]):
+    for idx_k,f_k in enumerate(demand_size_probability_array):
         k = idx_k + 1
         denominator += k*f_k
         
@@ -35,6 +38,7 @@ def fill_rate_compound_poisson_demand(demand_size_probability_array: np.array, p
     item_fill_rate = numerator/denominator
     return item_fill_rate
 
+@log("default_log")
 def fill_rate_normal_demand(R: int, Q: int, mean_normal: float, std_dev_normal: float):
     """Calculates the item fill rate under normal demand.
     reference: Axsäter (2006) Inventory control 2nd edition, equation 5.52
@@ -70,6 +74,7 @@ def fill_rate_poisson_demand(pos_IL_probability_array: np.array) -> float:
     """
     return ready_rate_discrete_demand(pos_IL_probability_array)
 
+@log("default_log")
 def ready_rate_discrete_demand(pos_IL_probability_array: np.array) -> float:
     """Calculates the ready rate for discrete demand.
     
@@ -85,6 +90,7 @@ def ready_rate_discrete_demand(pos_IL_probability_array: np.array) -> float:
 
     return np.sum(pos_IL_probability_array[1:])
 
+@log("default_log")
 def undershoot_adjustment_normal(R: int, Q: int, mean_normal: int, std_dev_normal: int, demand_prob_array: np.array) -> float:
     """Calculates fill rate with undershoot adjustment U1 in BM (2014)
     

@@ -1,0 +1,23 @@
+2022-04-21 16:07:11,757 - default_log - DEBUG - Item: 1030-61460
+2022-04-21 16:07:11,758 - default_log - DEBUG - Item: 11033998
+2022-04-21 16:07:11,758 - default_log - DEBUG - Item: 11033999
+2022-04-21 16:07:11,759 - default_log - DEBUG - Item: 11110022
+2022-04-21 16:07:11,759 - default_log - DEBUG - Item: 11110023
+2022-04-21 16:07:11,759 - default_log - DEBUG - Item: 11110175
+2022-04-21 16:07:11,760 - default_log - DEBUG - Item: 11110176
+2022-04-21 16:07:11,760 - default_log - DEBUG - Item: 11110283
+2022-04-21 16:07:11,760 - default_log - DEBUG - Item: 11110532
+2022-04-21 16:07:11,761 - default_log - DEBUG - Item: 11110533
+2022-04-21 16:07:11,761 - default_log - DEBUG - Item: 11110668
+2022-04-21 16:07:11,761 - default_log - DEBUG - Item: 11110683
+2022-04-21 16:07:11,762 - default_log - DEBUG - Item: 11172907
+2022-04-21 16:07:11,762 - default_log - DEBUG - Item: 1141-00010
+2022-04-21 16:07:11,762 - default_log - DEBUG - Item: 11448509
+2022-04-21 16:07:11,763 - default_log - DEBUG - reorder_point_optimization
+2022-04-21 16:07:11,858 - default_log - DEBUG - new_function
+2022-04-21 16:07:11,860 - default_log - DEBUG - warehouse_demand_mean_approximation
+2022-04-21 16:07:11,861 - default_log - DEBUG - warehouse_demand_mean_approximation ended.
+2022-04-21 16:07:11,862 - default_log - DEBUG - warehouse_demand_variance_approximation
+2022-04-21 16:07:11,865 - default_log - DEBUG - warehouse_demand_variance_term
+2022-04-21 16:07:11,868 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
+2022-04-21 16:07:11,869 - default_log - DEBUG - demand_probability_arr_Empiric_Compound_Poisson

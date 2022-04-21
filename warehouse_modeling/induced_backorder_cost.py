@@ -1,6 +1,12 @@
 import numpy as np
 import math
+import os, sys
 
+currentdir = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(currentdir)
+from my_log import *
+
+@log("default_log")
 def norm_sigma(my: float, sigma: float, l: float) -> float:
     """Normalization of sigma
     
@@ -52,6 +58,7 @@ def k_factor(h: float, Q: int, p: float, my: float, l: float):
 
     return k_factor
 
+@log("default_log")
 def induced_backorder_cost_opt(h: float, Q: int, p: int, l: int, my: float, sigma: float) -> float:
     """Calculates optimal induced backorder cost faced by RDC from one dealer/retailer.
     
@@ -76,7 +83,7 @@ def induced_backorder_cost_opt(h: float, Q: int, p: int, l: int, my: float, sigm
 
     return beta_opt
 
-#Has not been tested
+@log("default_log")
 def weighting_backorder_cost(mu_i_array: np.ndarray, my_0: float, beta_opt_array: np.ndarray) -> float:
     """Weighting optimal induced backorder for non-identical retailers
     

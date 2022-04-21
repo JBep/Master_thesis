@@ -2,6 +2,7 @@ from scipy import stats
 import math
 import numpy as np
 import pandas as pd
+import logging
 
 import os, sys
 currentdir = os.path.dirname(os.path.realpath(__file__))
@@ -10,11 +11,12 @@ sys.path.append(parentdir)
 
 
 from single_echelon_utils.demand_models import *
+from my_log import *
 
 IMPLEMENTED_DEMAND_TYPES = ["Normal","NBD","Poisson","Empiric_Compound_Poisson"]
 THRESHOLD = 1e-4
 
-
+@log("default_log")
 def delta_func_Normal_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: float, n: int, **kwargs) -> float:
     """Computes the delta-function value of n for a specific dealer.
     
@@ -42,6 +44,7 @@ def delta_func_Normal_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma
     delta = 1/Q_dealer * (a + b + c)
     return delta
 
+@log("default_log")
 def delta_func_NBD_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: float, n: int, **kwargs):
     """Computes the delta-function value of n for a specific dealer with NBD demand.
     
@@ -72,6 +75,7 @@ def delta_func_NBD_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: f
     delta = 1/Q_dealer * prob_sum
     return delta
 
+@log("default_log")
 def delta_func_Poisson_demand(Q_dealer: int, L_warehouse: float, mu: float, n: int, **kwargs):
     """Computes the delta-function value of n for a specific dealer of Poisson demand.
     
@@ -101,8 +105,9 @@ def delta_func_Poisson_demand(Q_dealer: int, L_warehouse: float, mu: float, n: i
 
     delta = 1/Q_dealer * prob_sum
     return delta
-def delta_func_Empiric_Compound_Poisson_demand(Q_dealer: int, L_warehouse: float, 
-    mu: float, sigma: float, n: int, compounding_dist_arr: np.ndarray, **kwargs):
+
+@log("default_log")
+def delta_func_Empiric_Compound_Poisson_demand(Q_dealer: int, demand_probability_arr: np.ndarray, n: int, **kwargs):
     """Computes the delta-function value of n for a specific dealer of Poisson demand.
     
     The delta-value is interpreted as the probability of a dealer ordering at most
@@ -113,16 +118,9 @@ def delta_func_Empiric_Compound_Poisson_demand(Q_dealer: int, L_warehouse: float
     
     params:
         Q_dealer: Batch quantity at dealer in units.
-        L_warehouse: lead time to warehouse, assumed constant.
-        mu: mean demand per one time unit at the dealer.
-        sigma: standard deviance of demand per one time unit at the dealer.
-        compounding_dist_arr: numpy.ndarray with probabilities that one customer 
-            orders index+1 goods. Observe that index 0 regards ordering 1 item.
-        n: integer value.
+        demand_probability_arr: numpy.ndarray of probabilities of lead time demands.
 
     """
-    demand_probability_arr = demand_probability_array_empiric_compound_poisson(L = L_warehouse, 
-        E_z = mu, V_z = math.pow(sigma,2), compounding_dist_arr = compounding_dist_arr)
     max_demand = len(demand_probability_arr)
 
     prob_sum = 0
@@ -135,7 +133,8 @@ def delta_func_Empiric_Compound_Poisson_demand(Q_dealer: int, L_warehouse: float
 
     delta = 1/Q_dealer * prob_sum
     return delta
-    
+
+@log("default_log")
 def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: float, 
     sigma: float, demand_type: str, compounding_dist_arr) -> np.ndarray:
     """Computes the pmf array for all possible subbatches u (u = n*q_i) demanded 
@@ -170,13 +169,17 @@ def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: fl
     returns:
         numpy.ndarray of probabilities of a dealer demanding n*q subbatches. index = n.
     """
+    demand_func_str =f"demand_probability_arr_{demand_type}"
     delta_func_str = f"delta_func_{demand_type}_demand"
     cumulative_prob = 0
     probability_array = []
 
+    ## Räkna ut demand-array här ge som input till delta func.
+    demand_probability_arr = globals()[demand_func_str](L = L_warehouse, 
+        E_z = mu, V_z = math.pow(sigma,2), compounding_dist_arr = compounding_dist_arr)
+   
     # Doing u = 0, (n = 0), separately.
-    f_0 = globals()[delta_func_str](Q_dealer = Q_dealer,L_warehouse = L_warehouse, 
-    mu = mu, n = 0, sigma = sigma, compounding_dist_arr = compounding_dist_arr)
+    f_0 = globals()[delta_func_str](Q_dealer = Q_dealer, n = 0, demand_probability_arr = demand_probability_arr)
     probability_array.append(f_0)
     cumulative_prob += f_0
 
@@ -184,8 +187,7 @@ def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: fl
     n = 1
     d_n_1 = f_0
     while cumulative_prob < 1 - THRESHOLD:
-        d_n =  globals()[delta_func_str](Q_dealer = Q_dealer,L_warehouse = L_warehouse, 
-        mu = mu, n = n, sigma = sigma, compounding_dist_arr = compounding_dist_arr)
+        d_n =  globals()[delta_func_str](Q_dealer = Q_dealer, n = n, demand_probability_arr = demand_probability_arr)
         f_u = d_n-d_n_1 
         probability_array.append(f_u)
         cumulative_prob += f_u
@@ -196,6 +198,7 @@ def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: fl
 
     return np.array(probability_array)
 
+@log("default_log")
 def warehouse_demand_variance_term(Q_dealer:int,Q_subbatch:int,L_warehouse:float,
 mu:float,sigma:float,demand_type:str, compounding_dist_arr:np.ndarray):
     """Calculates the subbatch demand variance term from a dealer.
@@ -236,6 +239,7 @@ mu:float,sigma:float,demand_type:str, compounding_dist_arr:np.ndarray):
         
     return f_nq.dot(np.array(mu_nq_square))
 
+@log("default_log")
 def warehouse_demand_mean_approximation(dealer_mean_demand: np.ndarray, L_warehouse: float, Q_subbatch:int):
     """Calculates warehouse mean.
     
@@ -250,6 +254,7 @@ def warehouse_demand_mean_approximation(dealer_mean_demand: np.ndarray, L_wareho
 
     return np.sum(dealer_mean_demand)*L_warehouse/Q_subbatch
 
+@log("default_log")
 def warehouse_demand_variance_approximation(Q_dealer_array: np.ndarray, mu_dealer_array: np.ndarray, 
 sigma_dealer_array: np.ndarray, demand_type_array: np.ndarray, L_warehouse: float, 
 Q_subbatch: int, compounding_dist_matrix: np.ndarray) -> float:
@@ -279,7 +284,8 @@ Q_subbatch: int, compounding_dist_matrix: np.ndarray) -> float:
     
     return warehouse_demand_variance
 
-
+@log("default_log")
+@log("sparse_log")
 def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_dealer_array: np.ndarray, 
     sigma_dealer_array: np.ndarray, demand_type_array: np.ndarray, L_warehouse: float, 
     Q_subbatch: int, compounding_dist_matrix: np.ndarray):
