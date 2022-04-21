@@ -58,6 +58,9 @@ def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: f
     else:
         raise ValueError("lead_time_demand_method needs to be 'M1' or 'M2'")
 
+    # Then scrap zeros from the end of compounding_dist_arr
+    compounding_dist_arr = np.trim_zeros(compounding_dist_arr, 'b')
+
     # compute lambda from axsäter 5.4
     j_arr = np.arange(start=1,stop=len(compounding_dist_arr)+1)
     lam = mu/j_arr.dot(compounding_dist_arr)
@@ -69,7 +72,7 @@ def demand_probability_array_empiric_compound_poisson(L: int, E_z: float, V_z: f
     k = 0
 
     while cumulative_prob < 1-customer_threshold:
-        p_k = (math.pow(lam,k)/math.factorial(k))*np.exp(-lam)
+        p_k = (math.pow(lam,k)/np.math.factorial(k))*np.exp(-lam)
         cumulative_prob += p_k
         customer_prob_arr.append(p_k)
         k += 1
@@ -310,6 +313,16 @@ def main():
     arr = demand_probability_array_empiric_compound_poisson(L = 5, E_z = 10, V_z = 10, compounding_dist_arr=compounding_dist)
     print(arr)
     print(f"sum is: {np.sum(arr)}")
+
+    compounding_dist= np.array([0,0,0.5,0,0,0,0.25,0.1,0.1,0.05,0,0,0,0,0,0,0])
+    arr2 = demand_probability_array_empiric_compound_poisson(L = 5, E_z = 10, V_z = 10, compounding_dist_arr=compounding_dist)
+    print(arr2)
+    print(f"sum is: {np.sum(arr2)}")
+
+    for i in range(len(arr)):
+        assert arr[i] == arr2[i]
+    assert len(arr) == len(arr2)
+    print("tests passed")
 
 
 

@@ -163,6 +163,7 @@ def dealer_R_optimization_Empiric_Compound_Poisson(**kwargs):
     assert demand_size_prob_arr[0] != -1
 
     R = -kwargs["Q"]
+    IL_prob_arr = IL_prob_array_discrete_positive(R,kwargs["Q"],demand_arr)
     fill_rate = 0
     while fill_rate < kwargs["fill_rate_target"]:
         R += 1
