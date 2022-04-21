@@ -133,7 +133,7 @@ def reorder_point_optimization(indata_path: str, indata_sheet: str = None, indat
     # Computing optimal reorder points as well as corresponding expected stock on hand 
     # and backorders.
     R_0 = warehouse_optimization(Q_subbatch_size,Q_0,rdc_f_u_probability_array,h_rdc,beta_rdc)
-    
+
     outdataDF.loc[outdataDF["Type"] == "RDC", "R optimal"] = R_0*Q_subbatch_size
     stock_on_hand_wh = positive_inventory(Q_subbatch_size,Q_0,R_0,rdc_f_u_probability_array)
     outdataDF.loc[outdataDF["Type"] == "RDC","Expected stock on hand"] = stock_on_hand_wh
@@ -226,7 +226,7 @@ def reorder_point_optimization(indata_path: str, indata_sheet: str = None, indat
 
 def main():
     indata_path = "/Users/AlexanderLarsson/documents/VSCode/test_simulation_runs.xlsx"
-    indata_sheet = "test_case_2"
+    indata_sheet = "test_case_1"
     indata_demand_size_sheet = "test_case_1_cd"
 
     outdata_path = "/Users/AlexanderLarsson/documents/VSCode/outdata.xlsx"
