@@ -118,7 +118,6 @@ def dealer_R_optimization_Normal(**kwargs) -> tuple[int,float,float]:
         R, Q, fill_rate, E_IL
         """
 
-    assert kwargs["demand_variance"] != -1, "Variance is -1 (default value), has the variance been entered correctly?"
     lt_demand_mean = lead_time_demand_mean(E_z = kwargs["demand_mean"],L = kwargs["L_est"])
     lt_demand_variance = lead_time_demand_variance_M1(V_z = kwargs['demand_variance'],L = kwargs["L_est"])
 
