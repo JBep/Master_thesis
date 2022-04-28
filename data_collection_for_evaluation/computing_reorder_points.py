@@ -42,7 +42,7 @@ for i,item_code in enumerate(items["item code"]):
     input_path = f"{data_dir}{input_dir}/item_{item_code}_input.csv"
     demand_size_dist_path = f"{data_dir}{demand_size_dist_dir}/item_{item_code}_d_size_dist.csv"
 
-    output_dir = "/Volumes/GoogleDrive/.shortcut-targets-by-id/10oYqI9u7nCLK0q7xF2CvGGIQVokusjaI/Exjobb/7. Data collection/outdata_csv_files"
+    output_dir = "/Volumes/GoogleDrive/.shortcut-targets-by-id/10oYqI9u7nCLK0q7xF2CvGGIQVokusjaI/Exjobb/7. Data collection/outdata_multi_echelon_csv_files"
     output_path = f"{output_dir}/item_{item_code}_output.csv"
     print("Starting optimization...")
     # optimization
