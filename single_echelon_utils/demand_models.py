@@ -37,7 +37,7 @@ def lead_time_demand_variance_M2(V_z, E_z, V_L, E_L) -> float:
 
     return sigma2
 
-#@log("default_log")
+##@log("default_log")
 def demand_probability_arr_Empiric_Compound_Poisson(L: int, E_z: float, V_z: float, 
     compounding_dist_arr: np.ndarray, customer_threshold = THRESHOLD, lead_time_demand_method = "M1", lead_time_variance = None) -> np.ndarray:
     """Compound poisson distribution with empiric compounding.
@@ -128,7 +128,7 @@ def demand_probability_arr_Empiric_Compound_Poisson(L: int, E_z: float, V_z: flo
     return demand_prob_arr
 
 
-#@log("default_log")
+##@log("default_log")
 def demand_prob_arr_poisson(L: int, E_z: float, threshold = THRESHOLD) -> np.ndarray:
     """Returns probability array for poisson demand.
     Axsäter 5.1
@@ -159,7 +159,7 @@ def demand_prob_arr_poisson(L: int, E_z: float, threshold = THRESHOLD) -> np.nda
     #TO-DO
     pass
 
-#@log("default_log")
+##@log("default_log")
 def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold = THRESHOLD, 
     lead_time_demand_method = "M1", lead_time_variance = None) -> np.ndarray:
     """Computes the array of demand probabilities under negative binomial dist 
@@ -230,7 +230,7 @@ def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold 
 
     return np.array(demand_prob_arr)
 
-#@log("default_log")
+##@log("default_log")
 def demand_size_arr_logarithmic(E_z: float, V_z:float, threshold = THRESHOLD) -> np.ndarray:
     """Calculates the logarithmic compounding distribution array.'
 
@@ -257,7 +257,7 @@ def demand_size_arr_logarithmic(E_z: float, V_z:float, threshold = THRESHOLD) ->
 
     return np.array(f_j_arr) 
 
-#@log("default_log")
+##@log("default_log")
 def logarithmic_alpha(E_z: float, V_z:float) -> float:
     """Calculates the alpha-value for the logarithmic distribution.
     
@@ -281,7 +281,7 @@ def logarithmic_alpha(E_z: float, V_z:float) -> float:
 
     return alpha
 
-#@log("default_log")
+##@log("default_log")
 def logarithmic_compound_params(E_z: float, V_z:float) -> tuple[float,float]:
     """Calculates the alpha-value for the logarithmic distribution.
     
@@ -301,7 +301,7 @@ def logarithmic_compound_params(E_z: float, V_z:float) -> tuple[float,float]:
 
     return lam, alpha
 
-#@log("default_log")
+##@log("default_log")
 def logarithmic_compound_mean_variance(lam: float, alpha: float) -> tuple[float,float]:
     """Converts lambda and alpha of compound poisson logarithmic distribution to 
     mean and variance.

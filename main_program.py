@@ -365,10 +365,10 @@ def reorder_point_optimization_single_echelon(indata_path: str, indata_sheet: st
 
     # Adding expected backorders at retailers.
     exp_backorders_arr = [ 
-        expected_backorders_discrete(R,Q,lt_mu,exp_stock_on_hand) for 
-        R,Q,lt_mu,exp_stock_on_hand in zip(R_opt_list,Q_arr,
+        expected_backorders_discrete(R,Q,lt_mu,exp_stock_on_hand,demand_type) for 
+        R,Q,lt_mu,exp_stock_on_hand,demand_type in zip(R_opt_list,Q_arr,
         outdataDF.get("Lead time demand mean").to_numpy(),
-        exp_stock_on_hand_list) ]
+        exp_stock_on_hand_list,demand_type_arr) ]
     outdataDF["Expected backorders"] = exp_backorders_arr
 
     # Computing cost expressions

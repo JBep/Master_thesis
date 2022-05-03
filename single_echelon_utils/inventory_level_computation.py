@@ -4,9 +4,9 @@ import os, sys
 
 currentdir = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(currentdir)
-from my_log import *
+#from my_log import *
 
-@log("default_log")
+##@log("default_log")
 def IL_prob_array_discrete_positive(R: int, Q: int,demand_probability_array: np.ndarray) -> float:
     """Calculates the inventory level distribution for all positive values.
     
@@ -39,13 +39,13 @@ def IL_prob_array_discrete_positive(R: int, Q: int,demand_probability_array: np.
     
     return IL_prob_array
 
-@log("default_log")
+#@log("default_log")
 def IL_prob_array_discrete_negative():
     # Implement if needed, probably not.
     pass
 
-@log("default_log")
-def expected_backorders_discrete(R,Q,leadtime_demand_mean,exp_stock_on_hand):
+#@log("default_log")
+def expected_backorders_discrete(R,Q,leadtime_demand_mean,exp_stock_on_hand,demand_type = None):
     """Returns expected backorders for discrete demand distributions.
     
     params: 
@@ -57,12 +57,15 @@ def expected_backorders_discrete(R,Q,leadtime_demand_mean,exp_stock_on_hand):
     returns:
         Expected amount of backorders.
     """
-
-    exp_backorders = exp_stock_on_hand - (R+(Q+1)/2-leadtime_demand_mean) 
+    if demand_type == "Normal":
+        Q_used = Q
+    else:
+        Q_used = Q+1
+    exp_backorders = exp_stock_on_hand - (R+(Q_used)/2-leadtime_demand_mean) 
 
     return exp_backorders
 
-@log("default_log")
+#@log("default_log")
 def IL_distribution_normal(R: int, Q: int, mean_normal: int, std_dev_normal: int, x: int) -> float: 
     """Computes an array of IL probabilities.
     
@@ -84,7 +87,7 @@ def IL_distribution_normal(R: int, Q: int, mean_normal: int, std_dev_normal: int
 
     return IL_dist
 
-@log("default_log")
+#@log("default_log")
 def loss_function(x: int):
     """Computes loss function G(x)
     
@@ -98,7 +101,7 @@ def loss_function(x: int):
 
     return function
 
-@log("default_log")
+#@log("default_log")
 def prob_undershoot_normal(u: int, Q: int, demand_prob_array: np.array) -> float:
     """Computes probability for undershoot u
     

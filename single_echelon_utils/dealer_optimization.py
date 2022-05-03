@@ -3,14 +3,16 @@ currentdir = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(currentdir)
 
 from scipy.stats import norm
+import numpy as np
 
+from my_log import *
 from service_level_computation import *
 from inventory_level_computation import *
 from demand_models import *
-from my_log import *
 
-@log("default_log")
-@log("sparse_log")
+
+#@log("default_log")
+#@log("sparse_log")
 def dealer_R_optimization(Q: int, L_est: float, fill_rate_target: float, demand_type: str, 
     demand_mean: float, demand_variance: float = -1, compounding_dist_arr: np.ndarray = -1*np.ones(10), 
     name: str = "No name passed.") -> tuple[int,float,float]:
@@ -134,14 +136,31 @@ def dealer_R_optimization_Normal(**kwargs) -> tuple[int,float,float]:
     
     # Computing E_IL = IL
     # Not implemented, (this formula is the fucker).
-    exp_stock_on_hand = 0
+    exp_stock_on_hand = normal_stock_on_hand(R,kwargs["Q"],lt_demand_mean,np.sqrt(lt_demand_variance))
 
     return (R, fill_rate, exp_stock_on_hand)
+
+def normal_stock_on_hand(R, Q, mu_L, sigma_L):
+    """Calculates stock on hand.
+    
+    Uses eq. 5.62 and 5.65 in Axsäter 2003.
+
+    params:
+    mu_L: mean lead time demand
+    sigma_L: stdev of lead time demand
+    R: reorder point
+    Q: order quantity
+    """
+
+    H = lambda x : 0.5*( (math.pow(x,2)+1) * (1-norm.cdf(x)) - x * norm.pdf(x) )
+
+    return R + Q/2 - mu_L + math.pow(sigma_L,2)/Q * ( H( (R-mu_L)/sigma_L ) - H( (R+Q-mu_L)/sigma_L ) )
+    
 
 def dealer_R_optimization_Normal_adjusted(**kwargs):
     pass
 
-@log("default_log")
+#@log("default_log")
 def dealer_R_optimization_Empiric_Compound_Poisson(**kwargs):
     """Function finds minimum R that fulfils target service level for empiric compound poisson.
     
@@ -183,13 +202,13 @@ def dealer_R_optimization_Empiric_Compound_Poisson(**kwargs):
 
 
 def main():
-    R,fill_rate,E_IL = dealer_R_optimization(Q=10,L_est = 5,fill_rate_target = 0.95, 
-        demand_type = 'Poisson', demand_mean = 5)
-    print(f"Poisson values: R = {R}, IFR = {fill_rate}, E_IL = {E_IL}")
+    #R,fill_rate,E_IL = dealer_R_optimization(Q=10,L_est = 5,fill_rate_target = 0.95, 
+    #    demand_type = 'Poisson', demand_mean = 5)
+    #print(f"Poisson values: R = {R}, IFR = {fill_rate}, E_IL = {E_IL}")
 
-    R,fill_rate,E_IL = dealer_R_optimization(Q=5,L_est = 4,fill_rate_target = 0.25, 
-        demand_type = 'NBD', demand_mean = 5, demand_variance = 10)
-    print(f"NBD values: R = {R}, IFR = {fill_rate}, E_IL = {E_IL}")
+    #R,fill_rate,E_IL = dealer_R_optimization(Q=5,L_est = 4,fill_rate_target = 0.25, 
+    #    demand_type = 'NBD', demand_mean = 5, demand_variance = 10)
+    #print(f"NBD values: R = {R}, IFR = {fill_rate}, E_IL = {E_IL}")
 
     R,fill_rate,E_IL = dealer_R_optimization(Q=10,L_est = 5,fill_rate_target = 0.95, 
         demand_type = 'Normal', demand_mean = 5, demand_variance = 10)
