@@ -264,7 +264,9 @@ def reorder_point_optimization_single_echelon(indata_path: str, indata_sheet: st
 
     # Ensure correct columns are present:
     required_columns = {"Installation id", "Type", "Name", "Transport time", "Q", 
-        "Unit cost", "Target item fill rate", "Demand distribution",	"Demand mean per time unit", "Demand stdev per time unit"}
+        "Unit cost", "Target item fill rate", "Demand distribution",	
+        "Demand mean per time unit", "Demand stdev per time unit",
+        "Inventory policy"}
     
     if not required_columns.issubset(set(indataDF.columns.to_list())):
         raise ValueError("Indata doesn't contain all required fields, see documentation.")
@@ -343,11 +345,36 @@ def reorder_point_optimization_single_echelon(indata_path: str, indata_sheet: st
     # --------------------------------------------------------------------------
     # Computing optimal reorder point, expected realised fill rate, and expected 
     # stock on hand level.
-    opt_list = []
-    for Q,L_est,fill_rate_target,demand_type,mu,sigma,compounding_dist_arr in zip(Q_arr,
-        l_arr,fill_rate_target_arr,demand_type_arr, mu_arr,sigma_arr, compounding_dist_matrix):
-        opt_list.append(dealer_R_optimization(Q,L_est,fill_rate_target,demand_type,
-            mu,demand_variance = math.pow(sigma,2),compounding_dist_arr=compounding_dist_arr))
+    
+    inv_policy = indataDF.get(indataDF["Installation id"] == 'Johannesburg').get("Inventory policy").values
+
+    if inv_policy == "PDCZA_Johannesburg_Combined_IP":
+        opt_list = []
+        for Q,L_est,fill_rate_target,demand_type,mu,sigma,compounding_dist_arr in zip(Q_arr[:-1],
+            l_arr[:-1],fill_rate_target_arr[:-1],demand_type_arr[:-1], mu_arr[:-1],
+            sigma_arr[:-1], compounding_dist_matrix[:-1]):
+            R = int(np.round(mu*(L_est + 26)))
+            demand_arr = demand_probability_arr_Empiric_Compound_Poisson(L_est,mu,
+            math.pow(sigma,2),compounding_dist_arr)
+            IL_prob_arr = IL_prob_array_discrete_positive(R,Q,demand_arr)
+            fill_rate = fill_rate_compound_poisson_demand(compounding_dist_arr,IL_prob_arr)
+
+            exp_stock_on_hand = 0
+            for i,p_IL in enumerate(IL_prob_arr):
+                exp_stock_on_hand += i*p_IL
+            
+            opt_list.append((R,fill_rate,exp_stock_on_hand))
+
+        opt_list.append(dealer_R_optimization(Q_arr[-1],
+            l_arr[-1],fill_rate_target_arr[-1],demand_type_arr[-1], mu_arr[-1],
+            demand_variance = math.pow(sigma_arr[-1],2), compounding_dist_arr = compounding_dist_matrix[-1]))
+        
+    else:
+        opt_list = []
+        for Q,L_est,fill_rate_target,demand_type,mu,sigma,compounding_dist_arr in zip(Q_arr,
+            l_arr,fill_rate_target_arr,demand_type_arr, mu_arr,sigma_arr, compounding_dist_matrix):
+            opt_list.append(dealer_R_optimization(Q,L_est,fill_rate_target,demand_type,
+                mu,demand_variance = math.pow(sigma,2),compounding_dist_arr=compounding_dist_arr))
 
     R_opt_list,fill_rate_list,exp_stock_on_hand_list = [],[],[]
     for tup in opt_list:
@@ -392,13 +419,13 @@ def reorder_point_optimization_single_echelon(indata_path: str, indata_sheet: st
         print(outdataDF)
 
 def main():
-    indata_path = "/Users/AlexanderLarsson/documents/VSCode/test_simulation_runs.xlsx"
-    indata_sheet = "test_case_1"
-    indata_demand_size_sheet = "test_case_1_cd"
+    indata_path = "/Users/jakobbengtsson/Desktop/test.xlsx"
+    indata_sheet = "Sheet1"
+    indata_demand_size_sheet = "Sheet2"
 
-    outdata_path = "/Users/AlexanderLarsson/documents/VSCode/outdata.xlsx"
+    outdata_path = "/Users/jakobbengtsson/Desktop/test_out.xlsx"
 
-    reorder_point_optimization(indata_path,indata_sheet,indata_demand_size_sheet,outdata_path,True)
+    reorder_point_optimization_single_echelon(indata_path,indata_sheet,indata_demand_size_sheet,outdata_path,True)
 
 if __name__ == "__main__":
     main()

@@ -122,6 +122,7 @@ def dealer_R_optimization_Normal(**kwargs) -> tuple[int,float,float]:
 
     lt_demand_mean = lead_time_demand_mean(E_z = kwargs["demand_mean"],L = kwargs["L_est"])
     lt_demand_variance = lead_time_demand_variance_M1(V_z = kwargs['demand_variance'],L = kwargs["L_est"])
+    print(lt_demand_variance)
 
     prob_neg_demand = norm.cdf(0,loc = lt_demand_mean, scale = math.sqrt(lt_demand_variance))
     if prob_neg_demand > 0.0001:

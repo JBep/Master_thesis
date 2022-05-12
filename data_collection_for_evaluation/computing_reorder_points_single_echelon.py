@@ -12,7 +12,7 @@ from my_log import *
 
 
 # Initiating excel-writer
-excel_path = "/Volumes/GoogleDrive/.shortcut-targets-by-id/10oYqI9u7nCLK0q7xF2CvGGIQVokusjaI/Exjobb/7. Data collection/item_outputs_new_items_single_echelon.xlsx"
+excel_path = "/Volumes/GoogleDrive/.shortcut-targets-by-id/10oYqI9u7nCLK0q7xF2CvGGIQVokusjaI/Exjobb/7. Data collection/item_outputs_single_echelon.xlsx"
 writer = pd.ExcelWriter(excel_path)
 
 investigated_items_path = "/Volumes/GoogleDrive/.shortcut-targets-by-id/10oYqI9u7nCLK0q7xF2CvGGIQVokusjaI/Exjobb/7. Data collection/investigated_items.xlsx"
@@ -34,10 +34,10 @@ for i,item_code in enumerate(items["item code"]):
     logger = logging.getLogger("sparse_log")
     logger.debug(f"Item: {item_code}")
     
-    #if(item_code in slow_items or item_code in broken_items):
-    #    continue
-    if(item_code not in new_items):
+    if(item_code in slow_items or item_code in broken_items):
         continue
+    #if(item_code not in new_items):
+    #    continue
 
     print(f"Now running item no {i} with id: {item_code}")
     data_dir = "/Volumes/GoogleDrive/.shortcut-targets-by-id/10oYqI9u7nCLK0q7xF2CvGGIQVokusjaI/Exjobb/7. Data collection"
