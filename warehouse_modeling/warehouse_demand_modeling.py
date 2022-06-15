@@ -24,8 +24,8 @@ def delta_func_Normal_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma
     n orders during the warehouse lead time. Assumes demand faced by dealer to be
     normally distributed.
 
-    reference: Berling and Marklund (2014) eq. 7.
-    
+    Reference: For equation see (55)
+
     params:
         Q_dealer: Batch quantity at dealer in units.
         L_warehouse: lead time to warehouse, assumed constant.
@@ -52,7 +52,7 @@ def delta_func_NBD_demand(Q_dealer: int, L_warehouse: float, mu: float, sigma: f
     n orders during the warehouse lead time. Assumes demand faced by dealer to be
     normally distributed.
 
-    reference: Berling and Marklund (2014) eq. 7.
+    Reference: For equation see (54)
     
     params:
         Q_dealer: Batch quantity at dealer in units.
@@ -83,7 +83,7 @@ def delta_func_Poisson_demand(Q_dealer: int, L_warehouse: float, mu: float, n: i
     n orders during the warehouse lead time. Assumes demand faced by dealer to be
     normally distributed.
 
-    reference: Berling and Marklund (2014) eq. 7.
+    Reference: For equation see (54)
     
     params:
         Q_dealer: Batch quantity at dealer in units.
@@ -114,7 +114,7 @@ def delta_func_Empiric_Compound_Poisson_demand(Q_dealer: int, demand_probability
     n orders during the warehouse lead time. Assumes demand faced by dealer to be
     normally distributed.
 
-    reference: Berling and Marklund (2014) eq. 7.
+    Reference: For equation see (54)
     
     params:
         Q_dealer: Batch quantity at dealer in units.
@@ -150,8 +150,7 @@ def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: fl
     q is Q_dealer in units of a common divisor (sub-batch) Q_divisor:
         Q_dealer = q*Q_divisor.
 
-    reference: Berling and Marklund (2014) eq. 8. or Berling and Marklund (2013)
-        eq. 10. Notation from B&M 2014.
+    Reference: For equation see (56)
 
     When cumulative probability reaches above 1-THRESHOLD, THRESHOLD is 1e-4, the iteration stops.
         All u's above are assumed to have probability 0.
@@ -174,7 +173,7 @@ def pmf_func_warehouse_subbatch_demand(Q_dealer: int, L_warehouse: float, mu: fl
     cumulative_prob = 0
     probability_array = []
 
-    ## Räkna ut demand-array här ge som input till delta func.
+    ## Calculate demand-array here and then provide this as input to delta func.
     demand_probability_arr = globals()[demand_func_str](L = L_warehouse, 
         E_z = mu, V_z = math.pow(sigma,2), compounding_dist_arr = compounding_dist_arr)
    
@@ -203,7 +202,7 @@ def warehouse_demand_variance_term(Q_dealer:int,Q_subbatch:int,L_warehouse:float
 mu:float,sigma:float,demand_type:str, compounding_dist_arr:np.ndarray):
     """Calculates the subbatch demand variance term from a dealer.
     
-    reference: Berling and Marklund (2014) p. 3336
+    Reference: For equation see (58)
 
     When cumulative probability reaches above 1-THRESHOLD, THRESHOLD is 1e-4, the iteration stops.
         All u's above are assumed to have probability 0.
@@ -242,6 +241,8 @@ mu:float,sigma:float,demand_type:str, compounding_dist_arr:np.ndarray):
 @log("default_log")
 def warehouse_demand_mean_approximation(dealer_mean_demand: np.ndarray, L_warehouse: float, Q_subbatch:int):
     """Calculates warehouse mean.
+
+    Reference: For equation see (57)
     
     params:
         dealer_mean_demand: Array containing all dealer mean demand per time unit estimations.
@@ -260,7 +261,7 @@ sigma_dealer_array: np.ndarray, demand_type_array: np.ndarray, L_warehouse: floa
 Q_subbatch: int, compounding_dist_matrix: np.ndarray) -> float:
     """Computes the warehouse demand variance estimate.
     
-    reference: Berling and Marklund 2014 p. 3336
+    Reference: for equation see (58)
     
     params:
         Q_dealer_array: Dealers batch-quantities in units. 
@@ -291,7 +292,7 @@ def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_d
     Q_subbatch: int, compounding_dist_matrix: np.ndarray):
     """Computes the warehouse subbatch demand probability array estimates.
     
-    reference: Berling and Marklund 2014 p. 3336
+    Reference: Equation for discrete approximations of continous distributions see (59)
 
     OBSERVE! Subbatch demand is not equal to unit demand, e.g. mu_unit = mu_subbatch*subbatch_size.
     
@@ -307,7 +308,7 @@ def warehouse_subbatch_demand_probability_array(Q_dealer_array: np.ndarray, mu_d
     returns: 
         Warehouse subbatch demand probability array with probabilities of u = 0,1,2,...
         and warehouse demand type, warehouse mean subbatch demand, 
-        warehouse subbarch demand variance.
+        warehouse subbatch demand variance.
     """
     mu_L = warehouse_demand_mean_approximation(mu_dealer_array,L_warehouse,Q_subbatch)
     sigma2_L = warehouse_demand_variance_approximation(Q_dealer_array,mu_dealer_array,

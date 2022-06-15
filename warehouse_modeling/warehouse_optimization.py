@@ -13,7 +13,7 @@ if __name__ == "__main__":
 def positive_inventory(Q: int, Q_0: int, R_0: int, f_u_arr: np.ndarray):
     """Calculates the expected positive inventory-level at the RDC.
     
-    reference BM 2014 eq. 10
+    Reference: For equation see (61)
     
     params:
         Q: Subbatch size.
@@ -42,7 +42,7 @@ def positive_inventory(Q: int, Q_0: int, R_0: int, f_u_arr: np.ndarray):
 def negative_inventory(Q: int, Q_0: int, R_0: int, f_u_arr: np.ndarray, method = 1):
     """Calculates the expected negative inventory-level at the RDC.
 
-    reference: BM 2014 eq. 11
+    Reference: For equation see (62)
     
     params:
         Q: Subbatch size.
@@ -73,6 +73,8 @@ def total_cost(Q: int, Q_0: int, R_0: int, f_u: np.array, h: float, b: float) ->
 @log("sparse_log")
 def warehouse_optimization(Q: int, Q_0: int, f_u: np.array, h: float, b: float):
     """Calcutes the optimal reorder point for the RDC/warehouse.
+
+    Reference: For optimality condition see (63)
     
     params:
         Q: Subbatch size

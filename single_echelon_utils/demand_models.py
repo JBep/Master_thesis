@@ -17,7 +17,10 @@ def lead_time_demand_mean(E_z, L) -> float:
     """Calculates the lead time demand mean.
     
     Multiplies L with E_z.
+
+    Reference: For equation see (27)
     """
+
     mu = L*E_z
     return mu
 
@@ -28,9 +31,12 @@ def lead_time_demand_variance_M1(V_z, L) -> float:
     sigma2 = L*V_z
     return sigma2
 
-#kan vara fel, kolla!
 def lead_time_demand_variance_M2(V_z, E_z, V_L, E_L) -> float:
-    """Calculates lead time demand variance under stochastic lead times."""
+    """Calculates lead time demand variance under stochastic lead times.
+    
+    Reference: For equation see (28)
+    """
+
     if V_L == None:
         raise ValueError("Supply lead time variance if using method M2.")
     sigma2 = V_z*E_L + E_z**2 * V_L
@@ -41,6 +47,8 @@ def lead_time_demand_variance_M2(V_z, E_z, V_L, E_L) -> float:
 def demand_probability_arr_Empiric_Compound_Poisson(L: int, E_z: float, V_z: float, 
     compounding_dist_arr: np.ndarray, customer_threshold = THRESHOLD, lead_time_demand_method = "M1", lead_time_variance = None) -> np.ndarray:
     """Compound poisson distribution with empiric compounding.
+
+    Reference: See section 4.5.4 
 
     Params:
         L: Lead-time
@@ -131,7 +139,8 @@ def demand_probability_arr_Empiric_Compound_Poisson(L: int, E_z: float, V_z: flo
 ##@log("default_log")
 def demand_prob_arr_poisson(L: int, E_z: float, threshold = THRESHOLD) -> np.ndarray:
     """Returns probability array for poisson demand.
-    Axsäter 5.1
+    
+    Reference: For equation see (8)
     
     params:
         L: Lead time.
@@ -168,7 +177,7 @@ def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold 
     This function actually uses the fact that logarithmic compound poisson is the 
     negative binomial distribution.
 
-    reference: Axsäter 2006, Inventory control, p. 81, eq 5.15-5.17
+    Reference: see section 4.5.2 
 
     Params:
         L: Lead time
@@ -234,7 +243,7 @@ def demand_prob_arr_negative_binomial(L: int, E_z: float, V_z: float, threshold 
 def demand_size_arr_logarithmic(E_z: float, V_z:float, threshold = THRESHOLD) -> np.ndarray:
     """Calculates the logarithmic compounding distribution array.'
 
-    reference: Axsäter 2006, eq. 5.13, 5.7
+    Reference: see section 4.5.2  
     
     params:
         E_z: demand mean during a time unit (or the lead time).
@@ -262,6 +271,8 @@ def logarithmic_alpha(E_z: float, V_z:float) -> float:
     """Calculates the alpha-value for the logarithmic distribution.
     
     Same as p-value for the NBD-dist.
+
+    Reference: for equation see (14)
     
     Params:
         E_z: demand mean during a time unit (or the lead time).
@@ -286,6 +297,8 @@ def logarithmic_compound_params(E_z: float, V_z:float) -> tuple[float,float]:
     """Calculates the alpha-value for the logarithmic distribution.
     
     Same as p-value for the NBD-dist.
+
+    Reference: For equations see (14) and (15)
     
     Params:
         E_z: demand mean during one time unit.
@@ -305,6 +318,8 @@ def logarithmic_compound_params(E_z: float, V_z:float) -> tuple[float,float]:
 def logarithmic_compound_mean_variance(lam: float, alpha: float) -> tuple[float,float]:
     """Converts lambda and alpha of compound poisson logarithmic distribution to 
     mean and variance.
+
+    Reference: For equations see (14) and (15)
     
     params:
         lam: Lambda of compound poisson distribution (regarding one time unit).

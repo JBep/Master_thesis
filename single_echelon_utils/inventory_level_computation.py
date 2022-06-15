@@ -11,7 +11,7 @@ def IL_prob_array_discrete_positive(R: int, Q: int,demand_probability_array: np.
     """Calculates the inventory level distribution for all positive values.
     
     Assumes discrete demand distribution.
-    Reference: Axsäter (2006) Inventory control, eq 5.36
+    Reference: For equation see (34)
 
     Params: 
         R: Re-order point.
@@ -47,6 +47,8 @@ def IL_prob_array_discrete_negative():
 #@log("default_log")
 def expected_backorders_discrete(R,Q,leadtime_demand_mean,exp_stock_on_hand,demand_type = None):
     """Returns expected backorders for discrete demand distributions.
+
+    Reference: For equation see (7)
     
     params: 
         R: reorder point.
@@ -68,6 +70,8 @@ def expected_backorders_discrete(R,Q,leadtime_demand_mean,exp_stock_on_hand,dema
 #@log("default_log")
 def IL_distribution_normal(R: int, Q: int, mean_normal: int, std_dev_normal: int, x: int) -> float: 
     """Computes an array of IL probabilities.
+
+    Reference: For equation see (36)
     
     Params:
         R: Reorder point
@@ -90,6 +94,8 @@ def IL_distribution_normal(R: int, Q: int, mean_normal: int, std_dev_normal: int
 #@log("default_log")
 def loss_function(x: int):
     """Computes loss function G(x)
+
+    Reference: For equations see (37) and (38)
     
     Params:
         x: variable
@@ -104,6 +110,8 @@ def loss_function(x: int):
 #@log("default_log")
 def prob_undershoot_normal(u: int, Q: int, demand_prob_array: np.array) -> float:
     """Computes probability for undershoot u
+
+    Reference: For equation see (65) and (66)
     
     Params:
         u: undershoot at retailer
@@ -116,7 +124,7 @@ def prob_undershoot_normal(u: int, Q: int, demand_prob_array: np.array) -> float
     #Create variable for undershoot prob
     undershoot_prob = 0
 
-    #Calculate probability of an undershoot of size u using eq. 20 in BM (2014) (u+Q+1 to compenate for only going to u+Q-1)
+    #Calculate probability of an undershoot of size u using eq. 20 in BM (2014) (u+Q+1 to compensate for only going to u+Q-1)
     for k in range(u+1, u+Q+1):
         undershoot_prob = undershoot_prob + (1/Q)*demand_prob_array(k)
         #print(undershoot_prob)
