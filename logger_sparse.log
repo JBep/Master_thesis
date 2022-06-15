@@ -1,77 +1,32 @@
-2022-05-05 10:10:28,972 - sparse_log - DEBUG - Item: 1030-61460
-2022-05-05 10:10:29,201 - sparse_log - DEBUG - Item: 11033998
-2022-05-05 10:10:29,211 - sparse_log - DEBUG - Item: 11033999
-2022-05-05 10:10:29,213 - sparse_log - DEBUG - Item: 11110022
-2022-05-05 10:10:29,607 - sparse_log - DEBUG - Item: 11110023
-2022-05-05 10:10:29,982 - sparse_log - DEBUG - Item: 11110175
-2022-05-05 10:10:30,432 - sparse_log - DEBUG - Item: 11110176
-2022-05-05 10:10:30,818 - sparse_log - DEBUG - Item: 11110283
-2022-05-05 10:10:31,085 - sparse_log - DEBUG - Item: 11110532
-2022-05-05 10:10:31,089 - sparse_log - DEBUG - Item: 11110533
-2022-05-05 10:10:31,091 - sparse_log - DEBUG - Item: 11110668
-2022-05-05 10:10:31,480 - sparse_log - DEBUG - Item: 11110683
-2022-05-05 10:10:31,480 - sparse_log - DEBUG - Item: 11172907
-2022-05-05 10:10:31,481 - sparse_log - DEBUG - Item: 1141-00010
-2022-05-05 10:10:31,772 - sparse_log - DEBUG - Item: 11448509
-2022-05-05 10:10:31,772 - sparse_log - DEBUG - Item: 11700375
-2022-05-05 10:10:32,109 - sparse_log - DEBUG - Item: 11703980
-2022-05-05 10:10:32,110 - sparse_log - DEBUG - Item: 11707077
-2022-05-05 10:10:32,111 - sparse_log - DEBUG - Item: 11708551
-2022-05-05 10:10:32,280 - sparse_log - DEBUG - Item: 11708555
-2022-05-05 10:10:32,281 - sparse_log - DEBUG - Item: 11709050
-2022-05-05 10:10:32,422 - sparse_log - DEBUG - Item: 11709051
-2022-05-05 10:10:32,582 - sparse_log - DEBUG - Item: 11709133
-2022-05-05 10:10:32,719 - sparse_log - DEBUG - Item: 11709302
-2022-05-05 10:10:32,992 - sparse_log - DEBUG - Item: 11713240
-2022-05-05 10:10:32,995 - sparse_log - DEBUG - Item: 11715254
-2022-05-05 10:10:33,171 - sparse_log - DEBUG - Item: 11716790
-2022-05-05 10:10:33,309 - sparse_log - DEBUG - Item: 11882353
-2022-05-05 10:10:33,485 - sparse_log - DEBUG - Item: 11883618
-2022-05-05 10:10:33,666 - sparse_log - DEBUG - Item: 11988555
-2022-05-05 10:10:33,902 - sparse_log - DEBUG - Item: 13947627
-2022-05-05 10:10:34,317 - sparse_log - DEBUG - Item: 13947628
-2022-05-05 10:10:34,704 - sparse_log - DEBUG - Item: 13947630
-2022-05-05 10:10:35,578 - sparse_log - DEBUG - Item: 13960248
-2022-05-05 10:10:35,579 - sparse_log - DEBUG - Item: 14503269
-2022-05-05 10:10:35,806 - sparse_log - DEBUG - Item: 14508017
-2022-05-05 10:10:36,034 - sparse_log - DEBUG - Item: 14509379
-2022-05-05 10:10:36,246 - sparse_log - DEBUG - Item: 14511215
-2022-05-05 10:10:36,521 - sparse_log - DEBUG - Item: 14519261
-2022-05-05 10:10:36,714 - sparse_log - DEBUG - Item: 14524170
-2022-05-05 10:10:37,057 - sparse_log - DEBUG - Item: 14524171
-2022-05-05 10:10:37,262 - sparse_log - DEBUG - Item: 14596399
-2022-05-05 10:10:37,456 - sparse_log - DEBUG - Item: 14622355
-2022-05-05 10:10:38,181 - sparse_log - DEBUG - Item: 14688861
-2022-05-05 10:10:38,524 - sparse_log - DEBUG - Item: 14689735
-2022-05-05 10:10:39,075 - sparse_log - DEBUG - Item: 14690316
-2022-05-05 10:10:39,390 - sparse_log - DEBUG - Item: 14711981
-2022-05-05 10:10:39,855 - sparse_log - DEBUG - Item: 14750657
-2022-05-05 10:10:40,259 - sparse_log - DEBUG - Item: 14881276
-2022-05-05 10:10:40,472 - sparse_log - DEBUG - Item: 15052786
-2022-05-05 10:10:40,473 - sparse_log - DEBUG - Item: 15073006
-2022-05-05 10:10:40,475 - sparse_log - DEBUG - Item: 15126069
-2022-05-05 10:10:40,484 - sparse_log - DEBUG - Item: 15188150
-2022-05-05 10:10:40,485 - sparse_log - DEBUG - Item: 1522293
-2022-05-05 10:10:40,659 - sparse_log - DEBUG - Item: 11007069
-2022-05-05 10:10:40,945 - sparse_log - DEBUG - Item: 11034156
-2022-05-05 10:10:41,171 - sparse_log - DEBUG - Item: 11034514
-2022-05-05 10:10:41,371 - sparse_log - DEBUG - Item: 11035032
-2022-05-05 10:10:41,562 - sparse_log - DEBUG - Item: 11035608
-2022-05-05 10:10:41,854 - sparse_log - DEBUG - Item: 11037342
-2022-05-05 10:10:42,140 - sparse_log - DEBUG - Item: 11050176
-2022-05-05 10:10:42,346 - sparse_log - DEBUG - Item: 11062774
-2022-05-05 10:10:42,550 - sparse_log - DEBUG - Item: 11121121
-2022-05-05 10:10:43,039 - sparse_log - DEBUG - Item: 11143309
-2022-05-05 10:10:43,372 - sparse_log - DEBUG - Item: 14511327
-2022-05-05 10:10:44,083 - sparse_log - DEBUG - Item: 14519262
-2022-05-05 10:10:44,324 - sparse_log - DEBUG - Item: 14523932
-2022-05-05 10:10:44,468 - sparse_log - DEBUG - Item: 14530988
-2022-05-05 10:10:44,574 - sparse_log - DEBUG - Item: 14535304
-2022-05-05 10:10:45,343 - sparse_log - DEBUG - Item: 14639653
-2022-05-05 10:10:45,459 - sparse_log - DEBUG - Item: 14663703
-2022-05-05 10:11:13,137 - sparse_log - DEBUG - Item: 14669821
-2022-05-05 10:11:13,273 - sparse_log - DEBUG - Item: 14691909
-2022-05-05 10:11:13,415 - sparse_log - DEBUG - Item: 14725906
-2022-05-05 10:11:13,541 - sparse_log - DEBUG - Item: 14750657
-2022-05-05 10:11:13,805 - sparse_log - DEBUG - Item: 15035179
-2022-05-05 10:11:13,956 - sparse_log - DEBUG - Item: 15072023
+2022-05-25 09:27:13,181 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array
+2022-05-25 09:27:14,617 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array ended.
+2022-05-25 09:27:14,871 - sparse_log - DEBUG - warehouse_optimization
+2022-05-25 09:27:17,173 - sparse_log - DEBUG - warehouse_optimization ended.
+2022-05-25 09:28:11,881 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array
+2022-05-25 09:28:13,227 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array ended.
+2022-05-25 09:28:13,483 - sparse_log - DEBUG - warehouse_optimization
+2022-05-25 09:28:15,474 - sparse_log - DEBUG - warehouse_optimization ended.
+2022-05-25 09:32:19,866 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array
+2022-05-25 09:32:20,898 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array ended.
+2022-05-25 09:32:21,099 - sparse_log - DEBUG - warehouse_optimization
+2022-05-25 09:32:23,499 - sparse_log - DEBUG - warehouse_optimization ended.
+2022-05-25 09:34:47,402 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array
+2022-05-25 09:34:50,888 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array ended.
+2022-05-25 09:34:51,103 - sparse_log - DEBUG - warehouse_optimization
+2022-05-25 09:34:57,442 - sparse_log - DEBUG - warehouse_optimization ended.
+2022-05-25 09:36:42,340 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array
+2022-05-25 09:36:45,655 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array ended.
+2022-05-25 09:36:45,808 - sparse_log - DEBUG - warehouse_optimization
+2022-05-25 09:36:50,874 - sparse_log - DEBUG - warehouse_optimization ended.
+2022-05-25 13:40:18,083 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array
+2022-05-25 13:40:35,571 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array ended.
+2022-05-25 13:40:36,719 - sparse_log - DEBUG - warehouse_optimization
+2022-05-25 13:40:49,381 - sparse_log - DEBUG - warehouse_optimization ended.
+2022-05-25 13:42:46,585 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array
+2022-05-25 13:42:54,676 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array ended.
+2022-05-25 13:42:55,390 - sparse_log - DEBUG - warehouse_optimization
+2022-05-25 13:43:02,534 - sparse_log - DEBUG - warehouse_optimization ended.
+2022-05-25 13:49:11,213 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array
+2022-05-25 13:49:14,700 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array ended.
+2022-05-25 13:49:14,881 - sparse_log - DEBUG - warehouse_optimization
+2022-05-25 13:49:19,013 - sparse_log - DEBUG - warehouse_optimization ended.
