@@ -8,7 +8,9 @@ from my_log import *
 
 @log("default_log")
 def norm_sigma(my: float, sigma: float, l: float) -> float:
-    """Normalization of sigma
+    """Normalization of sigma. 
+    
+    Reference: For conversion formula see Table 3.
     
     my = expected demand per time unit
     sigma = standard deviation of demand per time unit
@@ -22,8 +24,20 @@ def norm_sigma(my: float, sigma: float, l: float) -> float:
     sigma_norm = 100 * sigma/(my*np.sqrt(l))
     return sigma_norm
 
-#Calculate g factor with input normalized Q and p (is necessary for testing against tabulated numbers, maybe remove later)
 def g_factor(h: float, Q: int, p: float, my: float, l: float):
+    """Calculate g factor with input normalized Q and p (is necessary for testing against tabulated numbers) 
+    
+    Reference: For normalized conversion formula see Table 3.
+               For equation see (51). 
+    
+    Q = order quantity
+    p = shortage cost
+
+    return:
+        g factor
+
+    """
+
     #normalize Q
     Q_norm = Q*100*my/l
 
@@ -40,9 +54,23 @@ def g_factor(h: float, Q: int, p: float, my: float, l: float):
 
     return g_factor
    
-#Calculate k factor with input normalized Q and p (is necessary for testing against tabulated numbers, maybe remove later)
+#Calculate k factor with input normalized Q and p (is necessary for testing against tabulated numbers)
+#See eq. (52)
 def k_factor(h: float, Q: int, p: float, my: float, l: float):
-     #normalize Q
+    """Calculate k factor with input normalized Q and p (is necessary for testing against tabulated numbers) 
+    
+    Reference: For normalized conversion formula see Table 3.
+               For equation see (52). 
+    
+    Q = order quantity
+    p = shortage cost
+    my = standard deviation of customer demand
+
+    return:
+        k factor
+
+    """
+    #normalize Q
     Q_norm = Q*100*my/l
 
     #normalize p
@@ -61,6 +89,8 @@ def k_factor(h: float, Q: int, p: float, my: float, l: float):
 @log("default_log")
 def induced_backorder_cost_opt(h: float, Q: int, p: int, l: int, my: float, sigma: float) -> float:
     """Calculates optimal induced backorder cost faced by RDC from one dealer/retailer.
+    
+    Reference: For equation see (49)
     
     params:
         h = holding cost at the dealer.
@@ -86,6 +116,8 @@ def induced_backorder_cost_opt(h: float, Q: int, p: int, l: int, my: float, sigm
 @log("default_log")
 def weighting_backorder_cost(mu_i_array: np.ndarray, my_0: float, beta_opt_array: np.ndarray) -> float:
     """Weighting optimal induced backorder for non-identical retailers
+    
+    Reference: For equation see (53)
     
      my_i = mean demand at retailer i-1
      my_0 = mean demand at supplying warehouse

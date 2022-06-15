@@ -13,7 +13,8 @@ from inventory_level_computation import *
 def fill_rate_compound_poisson_demand(demand_size_probability_array: np.array, pos_IL_probability_array: np.array) -> float:
     """Calculates the item fill rate under compound poisson demand.
     
-    reference: Axsäter (2006) Inventory control 2nd edition, equation 5.51
+    Reference: For equation see (33)
+
     params:
         demand_size_probabilities: np.array of probabilities of demand size 
             equals k, (k = index+1).
@@ -41,7 +42,9 @@ def fill_rate_compound_poisson_demand(demand_size_probability_array: np.array, p
 #@log("default_log")
 def fill_rate_normal_demand(R: int, Q: int, mean_normal: float, std_dev_normal: float):
     """Calculates the item fill rate under normal demand.
-    reference: Axsäter (2006) Inventory control 2nd edition, equation 5.52
+    
+    Reference: For equation see (35)
+    
     params:
         R: Reorder point
         Q: order quantity
@@ -65,9 +68,6 @@ def fill_rate_poisson_demand(pos_IL_probability_array: np.array) -> float:
     For poisson demand the item fill rate degenerates to the expression of
     ready rate.
 
-    Reference: Axsäter (2006) Inventory control 2nd edition, equation 5.51 
-        (ready rate equation 5.50)
-
     params:
         pos_IL_probability_array: np.array of probabilities of inventory level 
             equal to j, (j = index).
@@ -80,8 +80,6 @@ def ready_rate_discrete_demand(pos_IL_probability_array: np.array) -> float:
     
     By definition probability of inventory levels of one and above, equals sum of 
         all probabilities greater than zero.
-
-    Reference: Axsäter (2006), Inventory control 2nd edition, equation 5.50
 
     params:
         pos_IL_probability_array: np.array of probabilities of inventory level 

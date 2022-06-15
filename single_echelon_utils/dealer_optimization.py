@@ -44,10 +44,10 @@ def dealer_R_optimization(Q: int, L_est: float, fill_rate_target: float, demand_
         name = name)
 
 
-
-
 def dealer_R_optimization_Poisson(**kwargs) -> tuple[int,float,float]:
-    """Function finds minimum R that fulfils target service level.
+    """Function finds minimum R that fulfills target service level.
+
+    Reference: see section 4.7.3
     
     Params:
         Q: Given order quantity.
@@ -76,6 +76,8 @@ def dealer_R_optimization_Poisson(**kwargs) -> tuple[int,float,float]:
 
 def dealer_R_optimization_NBD(**kwargs) -> tuple[int,float,float]:
     """Function finds minimum R that fulfils target service level.
+
+    Reference: see section 4.7.3
     
     Params:
         Q: Given order quantity.
@@ -108,6 +110,8 @@ def dealer_R_optimization_NBD(**kwargs) -> tuple[int,float,float]:
 
 def dealer_R_optimization_Normal(**kwargs) -> tuple[int,float,float]:
     """Function finds minimum R that fulfils target service level.
+
+    Reference: see section 4.7.3
     
     Params:
         Q: Given order quantity.
@@ -143,8 +147,6 @@ def dealer_R_optimization_Normal(**kwargs) -> tuple[int,float,float]:
 
 def normal_stock_on_hand(R, Q, mu_L, sigma_L):
     """Calculates stock on hand.
-    
-    Uses eq. 5.62 and 5.65 in Axsäter 2003.
 
     params:
     mu_L: mean lead time demand
@@ -164,6 +166,8 @@ def dealer_R_optimization_Normal_adjusted(**kwargs):
 #@log("default_log")
 def dealer_R_optimization_Empiric_Compound_Poisson(**kwargs):
     """Function finds minimum R that fulfils target service level for empiric compound poisson.
+
+    Reference: see section 4.7.3
     
     Params:
         Q: Given order quantity.
