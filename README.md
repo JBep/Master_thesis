@@ -40,5 +40,3 @@ We wrote this program in 2022, here's some changes I would make if I would redo 
 - Main scripts for the reorder point optimization
 
 - try_me.ipynb: runs the main script with the test data and displays the results
-
-# Learnings (from a coding perspective)
