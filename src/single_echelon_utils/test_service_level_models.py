@@ -26,7 +26,7 @@ def test_ready_rate_discrete():
     pass
 
 def main():
-    test_fill_rate_adj_normal(14, 6, 7.84, 5.3, #insert array)
+    test_fill_rate_adj_normal(14, 6, 7.84, 5.3) #insert array)
     test_fill_rate_normal(14, 6, 7.84, 5.3)
 
 if __name__ == "__main__":

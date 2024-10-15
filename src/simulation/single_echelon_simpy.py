@@ -1,5 +1,3 @@
-
-
 import simpy
 
 class Single_echelon_simpy_simulation:

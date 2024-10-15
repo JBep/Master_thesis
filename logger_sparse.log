@@ -1,8 +1,4 @@
-2022-06-15 11:06:07,140 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array
-2022-06-15 11:06:43,191 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array
-2022-06-15 11:09:34,230 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array
-2022-06-15 11:09:40,995 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array ended.
-2022-06-15 11:10:38,691 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array
-2022-06-15 11:10:48,350 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array ended.
-2022-06-15 11:18:27,506 - sparse_log - DEBUG - warehouse_optimization
-2022-06-15 11:18:36,259 - sparse_log - DEBUG - warehouse_optimization ended.
+2024-10-15 15:57:28,752 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array
+2024-10-15 15:57:29,383 - sparse_log - DEBUG - warehouse_subbatch_demand_probability_array ended.
+2024-10-15 15:57:29,419 - sparse_log - DEBUG - warehouse_optimization
+2024-10-15 15:57:29,970 - sparse_log - DEBUG - warehouse_optimization ended.

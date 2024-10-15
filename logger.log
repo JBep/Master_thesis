@@ -1,1338 +1,1092 @@
-2022-06-15 11:06:07,135 - default_log - DEBUG - new_function
-2022-06-15 11:06:07,143 - default_log - DEBUG - warehouse_demand_mean_approximation
-2022-06-15 11:06:07,147 - default_log - DEBUG - warehouse_demand_mean_approximation ended.
-2022-06-15 11:06:07,152 - default_log - DEBUG - warehouse_demand_variance_approximation
-2022-06-15 11:06:07,158 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:06:07,164 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:06:43,182 - default_log - DEBUG - new_function
-2022-06-15 11:06:43,195 - default_log - DEBUG - warehouse_demand_mean_approximation
-2022-06-15 11:06:43,198 - default_log - DEBUG - warehouse_demand_mean_approximation ended.
-2022-06-15 11:06:43,202 - default_log - DEBUG - warehouse_demand_variance_approximation
-2022-06-15 11:06:43,204 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:06:43,206 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:09:34,225 - default_log - DEBUG - new_function
-2022-06-15 11:09:34,234 - default_log - DEBUG - warehouse_demand_mean_approximation
-2022-06-15 11:09:34,240 - default_log - DEBUG - warehouse_demand_mean_approximation ended.
-2022-06-15 11:09:34,242 - default_log - DEBUG - warehouse_demand_variance_approximation
-2022-06-15 11:09:34,243 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:09:34,245 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:09:38,748 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:38,753 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:38,759 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:38,769 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:38,772 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:38,776 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:38,803 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:38,808 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:38,904 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:38,911 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:38,939 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:38,995 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,001 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,004 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,006 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,017 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,019 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,027 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,037 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,039 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,044 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,053 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,056 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,066 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,069 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:09:39,074 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:09:39,081 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:09:39,085 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:09:39,094 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,102 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,106 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,109 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,126 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,133 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,138 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,142 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,144 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,146 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,153 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,155 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,162 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:09:39,171 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:09:39,180 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:09:39,188 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:09:39,254 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,277 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,283 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,299 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,327 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,371 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,373 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,379 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,400 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,407 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,411 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,419 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,436 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,439 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,443 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,457 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,468 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:09:39,473 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:09:39,483 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:09:39,489 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:09:39,520 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,533 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,539 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,547 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,554 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,557 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,561 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,569 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,574 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,577 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,581 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,601 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,606 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:09:39,611 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:09:39,619 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:09:39,625 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:09:39,638 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,649 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,657 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,668 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,673 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,676 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,682 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,685 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,689 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,702 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,705 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:09:39,706 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:09:39,709 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:09:39,718 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:09:39,725 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,741 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,743 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,751 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,769 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,786 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,793 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,802 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,804 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,806 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,808 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,811 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,816 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,824 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,828 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:09:39,836 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:09:39,839 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:09:39,841 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:09:39,911 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,916 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,919 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,933 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,937 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,939 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,944 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,960 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,973 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:39,978 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:39,993 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,002 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,006 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:09:40,009 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:09:40,011 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:09:40,017 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:09:40,026 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,039 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,041 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,053 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,058 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,071 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,077 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,089 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,102 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,105 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,107 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:09:40,110 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:09:40,116 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:09:40,123 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:09:40,126 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,137 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,140 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,149 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,168 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,178 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,188 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,193 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,204 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,209 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,216 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,222 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,228 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:09:40,236 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:09:40,240 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:09:40,251 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:09:40,257 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,260 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,272 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,274 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,289 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,304 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,310 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,314 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,318 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,327 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,337 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:09:40,341 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:09:40,344 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:09:40,350 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:09:40,358 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,362 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,371 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,376 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,384 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,403 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,405 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:09:40,412 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:09:40,416 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:09:40,420 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:09:40,466 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,474 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,488 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,504 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,506 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,511 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,520 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,523 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,542 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,554 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,559 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,573 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,581 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,589 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,603 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,612 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,616 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,622 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,634 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,639 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,641 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,651 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,668 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,693 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,706 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,711 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,719 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,759 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,770 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:09:40,776 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:09:40,779 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:09:40,789 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:09:40,802 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,807 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,808 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,816 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,818 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,905 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,917 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,932 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,939 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,942 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,950 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:09:40,957 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:09:40,962 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:09:40,966 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:09:40,970 - default_log - DEBUG - warehouse_demand_variance_approximation ended.
-2022-06-15 11:09:41,000 - default_log - DEBUG - new_function ended.
-2022-06-15 11:10:38,687 - default_log - DEBUG - new_function
-2022-06-15 11:10:38,695 - default_log - DEBUG - warehouse_demand_mean_approximation
-2022-06-15 11:10:38,697 - default_log - DEBUG - warehouse_demand_mean_approximation ended.
-2022-06-15 11:10:38,699 - default_log - DEBUG - warehouse_demand_variance_approximation
-2022-06-15 11:10:38,701 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:10:38,703 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:10:45,604 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:45,607 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:45,618 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:45,631 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:45,633 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:45,636 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:45,638 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:45,641 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:45,644 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:45,649 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:45,656 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:45,666 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:45,681 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:45,696 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:45,700 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:45,705 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:45,720 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:45,724 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:45,727 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:45,733 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:45,736 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:45,786 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:45,796 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:45,825 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:45,829 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:10:45,834 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:10:45,837 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:10:45,845 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:10:45,905 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:45,920 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:45,939 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:45,956 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:45,975 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:45,977 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:45,981 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:45,999 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,004 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,008 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,027 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,044 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,057 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:10:46,068 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:10:46,078 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:10:46,100 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:10:46,196 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,203 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,210 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,216 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,225 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,233 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,244 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,247 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,265 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,279 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,283 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,314 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,334 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,338 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,342 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,345 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,349 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:10:46,360 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:10:46,363 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:10:46,372 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:10:46,396 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,400 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,401 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,404 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,410 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,425 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,432 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,435 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,439 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,445 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,462 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,467 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,476 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:10:46,498 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:10:46,500 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:10:46,513 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:10:46,546 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,567 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,586 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,602 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,615 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,639 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,647 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,682 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,696 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,713 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,739 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:10:46,745 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:10:46,747 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:10:46,756 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:10:46,764 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,770 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,777 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,798 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,807 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,815 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,825 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,832 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,835 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,838 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,843 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,861 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,870 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,875 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,879 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:10:46,885 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:10:46,896 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:10:46,901 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:10:46,963 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,967 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,971 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,974 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:46,979 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:46,989 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,000 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,004 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,022 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,024 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,040 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,053 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,064 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:10:47,067 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:10:47,081 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:10:47,087 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:10:47,100 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,104 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,153 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,167 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,174 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,182 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,203 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,206 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,238 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,268 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,283 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:10:47,297 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:10:47,309 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:10:47,327 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:10:47,344 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,347 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,367 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,370 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,376 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,380 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,384 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,390 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,397 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,413 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,454 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,466 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,468 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:10:47,472 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:10:47,487 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:10:47,500 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:10:47,535 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,550 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,567 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,602 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,607 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,610 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,614 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,620 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,632 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,637 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,650 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:10:47,663 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:10:47,670 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:10:47,699 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:10:47,717 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,723 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,736 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,753 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,770 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,800 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,814 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:10:47,819 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:10:47,824 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:10:47,831 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:10:47,871 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,875 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,878 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,900 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,933 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,943 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,950 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,967 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,973 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,978 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,980 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:47,983 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:47,994 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:48,002 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:48,008 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:48,018 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:48,026 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:48,034 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:48,037 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:48,056 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:48,066 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:48,071 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:48,074 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:48,081 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:48,085 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:48,097 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:48,099 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:48,102 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:48,104 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:10:48,108 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:10:48,113 - default_log - DEBUG - warehouse_demand_variance_term
-2022-06-15 11:10:48,119 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
-2022-06-15 11:10:48,225 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:48,238 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:48,259 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:48,262 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:48,266 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:48,271 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:48,275 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:48,278 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:48,281 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:48,297 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:48,303 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
-2022-06-15 11:10:48,308 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
-2022-06-15 11:10:48,315 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
-2022-06-15 11:10:48,319 - default_log - DEBUG - warehouse_demand_variance_term ended.
-2022-06-15 11:10:48,322 - default_log - DEBUG - warehouse_demand_variance_approximation ended.
-2022-06-15 11:10:48,364 - default_log - DEBUG - new_function ended.
-2022-06-15 11:11:51,823 - default_log - DEBUG - induced_backorder_cost_opt
-2022-06-15 11:11:51,828 - default_log - DEBUG - norm_sigma
-2022-06-15 11:11:51,833 - default_log - DEBUG - norm_sigma ended.
-2022-06-15 11:11:51,835 - default_log - DEBUG - induced_backorder_cost_opt ended.
-2022-06-15 11:11:51,836 - default_log - DEBUG - induced_backorder_cost_opt
-2022-06-15 11:11:51,838 - default_log - DEBUG - norm_sigma
-2022-06-15 11:11:51,840 - default_log - DEBUG - norm_sigma ended.
-2022-06-15 11:11:51,842 - default_log - DEBUG - induced_backorder_cost_opt ended.
-2022-06-15 11:11:51,848 - default_log - DEBUG - induced_backorder_cost_opt
-2022-06-15 11:11:51,850 - default_log - DEBUG - norm_sigma
-2022-06-15 11:11:51,854 - default_log - DEBUG - norm_sigma ended.
-2022-06-15 11:11:51,855 - default_log - DEBUG - induced_backorder_cost_opt ended.
-2022-06-15 11:11:51,859 - default_log - DEBUG - induced_backorder_cost_opt
-2022-06-15 11:11:51,861 - default_log - DEBUG - norm_sigma
-2022-06-15 11:11:51,862 - default_log - DEBUG - norm_sigma ended.
-2022-06-15 11:11:51,865 - default_log - DEBUG - induced_backorder_cost_opt ended.
-2022-06-15 11:11:51,867 - default_log - DEBUG - induced_backorder_cost_opt
-2022-06-15 11:11:51,870 - default_log - DEBUG - norm_sigma
-2022-06-15 11:11:51,874 - default_log - DEBUG - norm_sigma ended.
-2022-06-15 11:11:51,877 - default_log - DEBUG - induced_backorder_cost_opt ended.
-2022-06-15 11:11:51,882 - default_log - DEBUG - induced_backorder_cost_opt
-2022-06-15 11:11:51,891 - default_log - DEBUG - norm_sigma
-2022-06-15 11:11:51,898 - default_log - DEBUG - norm_sigma ended.
-2022-06-15 11:11:51,901 - default_log - DEBUG - induced_backorder_cost_opt ended.
-2022-06-15 11:11:51,903 - default_log - DEBUG - induced_backorder_cost_opt
-2022-06-15 11:11:51,906 - default_log - DEBUG - norm_sigma
-2022-06-15 11:11:51,910 - default_log - DEBUG - norm_sigma ended.
-2022-06-15 11:11:51,912 - default_log - DEBUG - induced_backorder_cost_opt ended.
-2022-06-15 11:11:51,920 - default_log - DEBUG - induced_backorder_cost_opt
-2022-06-15 11:11:51,928 - default_log - DEBUG - norm_sigma
-2022-06-15 11:11:51,931 - default_log - DEBUG - norm_sigma ended.
-2022-06-15 11:11:51,933 - default_log - DEBUG - induced_backorder_cost_opt ended.
-2022-06-15 11:11:51,935 - default_log - DEBUG - induced_backorder_cost_opt
-2022-06-15 11:11:51,940 - default_log - DEBUG - norm_sigma
-2022-06-15 11:11:51,942 - default_log - DEBUG - norm_sigma ended.
-2022-06-15 11:11:51,951 - default_log - DEBUG - induced_backorder_cost_opt ended.
-2022-06-15 11:11:51,954 - default_log - DEBUG - induced_backorder_cost_opt
-2022-06-15 11:11:51,959 - default_log - DEBUG - norm_sigma
-2022-06-15 11:11:51,962 - default_log - DEBUG - norm_sigma ended.
-2022-06-15 11:11:51,964 - default_log - DEBUG - induced_backorder_cost_opt ended.
-2022-06-15 11:11:51,971 - default_log - DEBUG - induced_backorder_cost_opt
-2022-06-15 11:11:51,977 - default_log - DEBUG - norm_sigma
-2022-06-15 11:11:51,984 - default_log - DEBUG - norm_sigma ended.
-2022-06-15 11:11:51,993 - default_log - DEBUG - induced_backorder_cost_opt ended.
-2022-06-15 11:11:51,997 - default_log - DEBUG - induced_backorder_cost_opt
-2022-06-15 11:11:52,008 - default_log - DEBUG - norm_sigma
-2022-06-15 11:11:52,021 - default_log - DEBUG - norm_sigma ended.
-2022-06-15 11:11:52,027 - default_log - DEBUG - induced_backorder_cost_opt ended.
-2022-06-15 11:11:52,030 - default_log - DEBUG - induced_backorder_cost_opt
-2022-06-15 11:11:52,034 - default_log - DEBUG - norm_sigma
-2022-06-15 11:11:52,040 - default_log - DEBUG - norm_sigma ended.
-2022-06-15 11:11:52,044 - default_log - DEBUG - induced_backorder_cost_opt ended.
-2022-06-15 11:11:52,055 - default_log - DEBUG - weighting_backorder_cost
-2022-06-15 11:11:52,059 - default_log - DEBUG - weighting_backorder_cost ended.
-2022-06-15 11:18:27,495 - default_log - DEBUG - new_function
-2022-06-15 11:18:27,512 - default_log - DEBUG - total_cost
-2022-06-15 11:18:27,514 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:27,526 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:27,527 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:27,531 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:27,533 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:27,535 - default_log - DEBUG - total_cost
-2022-06-15 11:18:27,536 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:27,538 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:27,539 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:27,544 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:27,547 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:27,549 - default_log - DEBUG - total_cost
-2022-06-15 11:18:27,564 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:27,566 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:27,567 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:27,571 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:27,573 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:27,574 - default_log - DEBUG - total_cost
-2022-06-15 11:18:27,575 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:27,578 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:27,583 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:27,600 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:27,605 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:27,631 - default_log - DEBUG - total_cost
-2022-06-15 11:18:27,632 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:27,636 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:27,638 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:27,644 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:27,647 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:27,653 - default_log - DEBUG - total_cost
-2022-06-15 11:18:27,658 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:27,670 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:27,690 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:27,703 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:27,706 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:27,711 - default_log - DEBUG - total_cost
-2022-06-15 11:18:27,720 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:27,727 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:27,739 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:27,745 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:27,757 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:27,765 - default_log - DEBUG - total_cost
-2022-06-15 11:18:27,768 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:27,780 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:27,790 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:27,803 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:27,815 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:27,833 - default_log - DEBUG - total_cost
-2022-06-15 11:18:27,835 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:27,856 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:27,872 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:27,888 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:27,903 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:27,908 - default_log - DEBUG - total_cost
-2022-06-15 11:18:27,943 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:27,950 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:27,963 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:27,976 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:27,985 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:28,003 - default_log - DEBUG - total_cost
-2022-06-15 11:18:28,032 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:28,038 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:28,042 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:28,071 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:28,108 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:28,110 - default_log - DEBUG - total_cost
-2022-06-15 11:18:28,125 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:28,129 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:28,134 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:28,177 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:28,198 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:28,202 - default_log - DEBUG - total_cost
-2022-06-15 11:18:28,208 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:28,216 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:28,226 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:28,239 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:28,242 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:28,246 - default_log - DEBUG - total_cost
-2022-06-15 11:18:28,249 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:28,263 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:28,297 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:28,310 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:28,319 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:28,335 - default_log - DEBUG - total_cost
-2022-06-15 11:18:28,337 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:28,348 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:28,352 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:28,372 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:28,390 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:28,403 - default_log - DEBUG - total_cost
-2022-06-15 11:18:28,407 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:28,527 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:28,548 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:28,584 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:28,599 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:28,608 - default_log - DEBUG - total_cost
-2022-06-15 11:18:28,613 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:28,615 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:28,628 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:28,634 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:28,642 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:28,651 - default_log - DEBUG - total_cost
-2022-06-15 11:18:28,657 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:28,665 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:28,668 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:28,675 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:28,710 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:28,713 - default_log - DEBUG - total_cost
-2022-06-15 11:18:28,715 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:28,734 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:28,744 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:28,749 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:28,776 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:28,781 - default_log - DEBUG - total_cost
-2022-06-15 11:18:28,796 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:28,800 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:28,808 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:28,825 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:28,833 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:28,870 - default_log - DEBUG - total_cost
-2022-06-15 11:18:28,911 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:28,916 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:28,933 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:28,942 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:28,945 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:28,959 - default_log - DEBUG - total_cost
-2022-06-15 11:18:28,965 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:28,968 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:28,970 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:29,046 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:29,049 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:29,056 - default_log - DEBUG - total_cost
-2022-06-15 11:18:29,065 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:29,067 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:29,071 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:29,076 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:29,087 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:29,089 - default_log - DEBUG - total_cost
-2022-06-15 11:18:29,092 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:29,100 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:29,105 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:29,110 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:29,113 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:29,115 - default_log - DEBUG - total_cost
-2022-06-15 11:18:29,123 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:29,130 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:29,134 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:29,147 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:29,153 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:29,163 - default_log - DEBUG - total_cost
-2022-06-15 11:18:29,168 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:29,173 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:29,175 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:29,181 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:29,205 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:29,250 - default_log - DEBUG - total_cost
-2022-06-15 11:18:29,257 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:29,317 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:29,381 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:29,408 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:29,417 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:29,432 - default_log - DEBUG - total_cost
-2022-06-15 11:18:29,438 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:29,447 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:29,451 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:29,470 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:29,475 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:29,488 - default_log - DEBUG - total_cost
-2022-06-15 11:18:29,510 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:29,534 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:29,540 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:29,546 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:29,551 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:29,584 - default_log - DEBUG - total_cost
-2022-06-15 11:18:29,610 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:29,613 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:29,624 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:29,633 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:29,635 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:29,638 - default_log - DEBUG - total_cost
-2022-06-15 11:18:29,641 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:29,682 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:29,688 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:29,700 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:29,705 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:29,708 - default_log - DEBUG - total_cost
-2022-06-15 11:18:29,714 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:29,751 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:29,763 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:29,770 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:29,776 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:29,781 - default_log - DEBUG - total_cost
-2022-06-15 11:18:29,795 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:29,805 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:29,811 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:29,817 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:29,830 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:29,833 - default_log - DEBUG - total_cost
-2022-06-15 11:18:29,838 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:29,844 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:29,847 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:29,863 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:29,869 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:29,876 - default_log - DEBUG - total_cost
-2022-06-15 11:18:29,878 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:29,883 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:29,893 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:29,902 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:29,909 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:29,928 - default_log - DEBUG - total_cost
-2022-06-15 11:18:29,930 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:29,943 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:29,949 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:29,955 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:29,964 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:29,997 - default_log - DEBUG - total_cost
-2022-06-15 11:18:30,006 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:30,014 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:30,047 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:30,052 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:30,083 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:30,096 - default_log - DEBUG - total_cost
-2022-06-15 11:18:30,106 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:30,114 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:30,123 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:30,130 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:30,140 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:30,143 - default_log - DEBUG - total_cost
-2022-06-15 11:18:30,153 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:30,168 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:30,171 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:30,183 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:30,186 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:30,202 - default_log - DEBUG - total_cost
-2022-06-15 11:18:30,206 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:30,217 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:30,293 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:30,347 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:30,350 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:30,356 - default_log - DEBUG - total_cost
-2022-06-15 11:18:30,409 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:30,414 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:30,429 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:30,435 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:30,440 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:30,446 - default_log - DEBUG - total_cost
-2022-06-15 11:18:30,457 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:30,545 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:30,571 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:30,582 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:30,594 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:30,603 - default_log - DEBUG - total_cost
-2022-06-15 11:18:30,607 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:30,610 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:30,613 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:30,621 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:30,632 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:30,636 - default_log - DEBUG - total_cost
-2022-06-15 11:18:30,642 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:30,658 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:30,665 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:30,673 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:30,676 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:30,681 - default_log - DEBUG - total_cost
-2022-06-15 11:18:30,684 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:30,688 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:30,693 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:30,705 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:30,711 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:30,714 - default_log - DEBUG - total_cost
-2022-06-15 11:18:30,733 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:30,776 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:30,799 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:30,814 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:30,818 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:30,834 - default_log - DEBUG - total_cost
-2022-06-15 11:18:30,844 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:30,849 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:30,902 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:30,910 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:30,914 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:30,916 - default_log - DEBUG - total_cost
-2022-06-15 11:18:30,920 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:30,932 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:30,937 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:30,946 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:30,952 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:30,963 - default_log - DEBUG - total_cost
-2022-06-15 11:18:30,965 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:30,969 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:30,973 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:30,981 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:30,983 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:30,984 - default_log - DEBUG - total_cost
-2022-06-15 11:18:30,990 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:30,997 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:30,999 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:31,006 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:31,010 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:31,012 - default_log - DEBUG - total_cost
-2022-06-15 11:18:31,014 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:31,020 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:31,032 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:31,039 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:31,043 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:31,046 - default_log - DEBUG - total_cost
-2022-06-15 11:18:31,047 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:31,050 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:31,052 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:31,057 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:31,066 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:31,069 - default_log - DEBUG - total_cost
-2022-06-15 11:18:31,075 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:31,086 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:31,116 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:31,144 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:31,169 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:31,182 - default_log - DEBUG - total_cost
-2022-06-15 11:18:31,209 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:31,253 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:31,268 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:31,319 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:31,346 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:31,349 - default_log - DEBUG - total_cost
-2022-06-15 11:18:31,354 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:31,375 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:31,383 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:31,406 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:31,411 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:31,417 - default_log - DEBUG - total_cost
-2022-06-15 11:18:31,429 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:31,432 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:31,435 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:31,446 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:31,448 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:31,450 - default_log - DEBUG - total_cost
-2022-06-15 11:18:31,453 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:31,481 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:31,485 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:31,510 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:31,514 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:31,519 - default_log - DEBUG - total_cost
-2022-06-15 11:18:31,528 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:31,538 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:31,546 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:31,575 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:31,577 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:31,581 - default_log - DEBUG - total_cost
-2022-06-15 11:18:31,584 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:31,586 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:31,811 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:31,818 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:31,845 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:31,848 - default_log - DEBUG - total_cost
-2022-06-15 11:18:31,851 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:31,860 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:31,863 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:31,871 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:31,876 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:31,878 - default_log - DEBUG - total_cost
-2022-06-15 11:18:31,881 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:31,884 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:31,887 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:31,893 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:31,895 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:31,902 - default_log - DEBUG - total_cost
-2022-06-15 11:18:31,904 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:31,910 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:31,915 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:31,918 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:31,920 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:31,925 - default_log - DEBUG - total_cost
-2022-06-15 11:18:31,933 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:31,937 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:31,940 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:31,943 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:31,946 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:31,948 - default_log - DEBUG - total_cost
-2022-06-15 11:18:31,952 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:31,954 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:31,958 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:31,966 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:32,082 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:32,085 - default_log - DEBUG - total_cost
-2022-06-15 11:18:32,091 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:32,095 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:32,105 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:32,110 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:32,112 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:32,117 - default_log - DEBUG - total_cost
-2022-06-15 11:18:32,120 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:32,131 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:32,135 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:32,143 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:32,147 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:32,150 - default_log - DEBUG - total_cost
-2022-06-15 11:18:32,154 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:32,158 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:32,166 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:32,171 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:32,173 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:32,175 - default_log - DEBUG - total_cost
-2022-06-15 11:18:32,177 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:32,182 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:32,185 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:32,193 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:32,196 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:32,199 - default_log - DEBUG - total_cost
-2022-06-15 11:18:32,202 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:32,206 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:32,210 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:32,215 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:32,243 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:32,272 - default_log - DEBUG - total_cost
-2022-06-15 11:18:32,282 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:32,295 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:32,307 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:32,327 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:32,335 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:32,342 - default_log - DEBUG - total_cost
-2022-06-15 11:18:32,349 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:32,354 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:32,367 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:32,377 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:32,402 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:32,406 - default_log - DEBUG - total_cost
-2022-06-15 11:18:32,409 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:32,417 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:32,419 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:32,426 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:32,432 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:32,434 - default_log - DEBUG - total_cost
-2022-06-15 11:18:32,436 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:32,442 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:32,448 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:32,452 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:32,458 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:32,465 - default_log - DEBUG - total_cost
-2022-06-15 11:18:32,478 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:32,606 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:32,615 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:32,622 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:32,626 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:32,628 - default_log - DEBUG - total_cost
-2022-06-15 11:18:32,631 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:32,635 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:32,643 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:32,649 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:32,652 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:32,654 - default_log - DEBUG - total_cost
-2022-06-15 11:18:32,661 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:32,665 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:32,667 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:32,705 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:32,715 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:32,718 - default_log - DEBUG - total_cost
-2022-06-15 11:18:32,735 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:32,748 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:32,753 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:32,760 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:32,772 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:32,788 - default_log - DEBUG - total_cost
-2022-06-15 11:18:32,793 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:32,805 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:32,811 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:32,826 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:32,831 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:32,835 - default_log - DEBUG - total_cost
-2022-06-15 11:18:32,845 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:32,850 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:32,854 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:32,868 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:32,885 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:32,886 - default_log - DEBUG - total_cost
-2022-06-15 11:18:32,902 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:32,915 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:32,918 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:32,955 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:33,018 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:33,019 - default_log - DEBUG - total_cost
-2022-06-15 11:18:33,026 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:33,032 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:33,044 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:33,053 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:33,066 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:33,071 - default_log - DEBUG - total_cost
-2022-06-15 11:18:33,082 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:33,168 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:33,173 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:33,182 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:33,193 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:33,199 - default_log - DEBUG - total_cost
-2022-06-15 11:18:33,203 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:33,208 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:33,212 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:33,219 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:33,232 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:33,235 - default_log - DEBUG - total_cost
-2022-06-15 11:18:33,244 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:33,249 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:33,253 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:33,266 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:33,270 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:33,274 - default_log - DEBUG - total_cost
-2022-06-15 11:18:33,275 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:33,279 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:33,283 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:33,294 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:33,297 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:33,300 - default_log - DEBUG - total_cost
-2022-06-15 11:18:33,302 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:33,312 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:33,314 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:33,318 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:33,321 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:33,324 - default_log - DEBUG - total_cost
-2022-06-15 11:18:33,328 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:33,335 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:33,338 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:33,384 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:33,404 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:33,411 - default_log - DEBUG - total_cost
-2022-06-15 11:18:33,415 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:33,430 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:33,441 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:33,449 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:33,451 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:33,456 - default_log - DEBUG - total_cost
-2022-06-15 11:18:33,459 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:33,471 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:33,474 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:33,481 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:33,484 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:33,493 - default_log - DEBUG - total_cost
-2022-06-15 11:18:33,511 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:33,517 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:33,523 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:33,534 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:33,545 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:33,550 - default_log - DEBUG - total_cost
-2022-06-15 11:18:33,568 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:33,585 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:33,589 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:33,656 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:33,667 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:33,675 - default_log - DEBUG - total_cost
-2022-06-15 11:18:33,679 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:33,685 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:33,693 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:33,703 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:33,710 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:33,717 - default_log - DEBUG - total_cost
-2022-06-15 11:18:33,719 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:33,725 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:34,135 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:34,143 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:34,145 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:34,146 - default_log - DEBUG - total_cost
-2022-06-15 11:18:34,146 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:34,150 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:34,154 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:34,171 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:34,173 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:34,175 - default_log - DEBUG - total_cost
-2022-06-15 11:18:34,177 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:34,182 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:34,185 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:34,188 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:34,193 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:34,205 - default_log - DEBUG - total_cost
-2022-06-15 11:18:34,206 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:34,208 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:34,210 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:34,215 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:34,221 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:34,226 - default_log - DEBUG - total_cost
-2022-06-15 11:18:34,278 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:34,338 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:34,345 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:34,350 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:34,356 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:34,373 - default_log - DEBUG - total_cost
-2022-06-15 11:18:34,377 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:34,382 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:34,384 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:34,391 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:34,404 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:34,406 - default_log - DEBUG - total_cost
-2022-06-15 11:18:34,411 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:34,420 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:34,429 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:34,436 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:34,439 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:34,445 - default_log - DEBUG - total_cost
-2022-06-15 11:18:34,447 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:34,454 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:34,462 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:34,474 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:34,477 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:34,480 - default_log - DEBUG - total_cost
-2022-06-15 11:18:34,486 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:34,490 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:34,497 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:34,513 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:34,516 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:34,524 - default_log - DEBUG - total_cost
-2022-06-15 11:18:34,546 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:34,558 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:34,562 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:34,573 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:34,578 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:34,584 - default_log - DEBUG - total_cost
-2022-06-15 11:18:34,586 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:34,612 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:34,691 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:34,707 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:34,726 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:34,730 - default_log - DEBUG - total_cost
-2022-06-15 11:18:34,739 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:34,745 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:34,748 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:34,753 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:34,756 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:34,761 - default_log - DEBUG - total_cost
-2022-06-15 11:18:34,776 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:34,789 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:34,806 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:34,813 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:34,838 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:34,925 - default_log - DEBUG - total_cost
-2022-06-15 11:18:34,930 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:34,942 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:34,951 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:34,961 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:34,969 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:34,971 - default_log - DEBUG - total_cost
-2022-06-15 11:18:34,973 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:34,978 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:34,990 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:34,995 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:34,997 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,006 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,008 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,012 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,014 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:35,021 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:35,024 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,035 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,039 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,046 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,051 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:35,054 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:35,061 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,069 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,073 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,077 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,085 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:35,091 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:35,097 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,112 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,123 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,127 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,128 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:35,141 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:35,142 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,145 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,161 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,178 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,195 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:35,214 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:35,222 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,227 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,236 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,244 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,246 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:35,254 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:35,260 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,273 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,276 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,285 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,287 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:35,292 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:35,294 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,296 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,305 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,310 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,312 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:35,319 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:35,323 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,325 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,329 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,340 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,343 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:35,346 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:35,352 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,354 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,356 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,361 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,372 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:35,387 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:35,391 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,393 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,405 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,409 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,411 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:35,413 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:35,420 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,422 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,428 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,457 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,473 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:35,486 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:35,495 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,505 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,509 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,513 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,520 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:35,530 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:35,541 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,544 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,555 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,589 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,592 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:35,609 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:35,611 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,620 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,622 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,651 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,654 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:35,657 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:35,718 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,723 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,725 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,744 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,750 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:35,754 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:35,756 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,814 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,822 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,831 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,856 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:35,864 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:35,870 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,876 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,885 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,889 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,895 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:35,907 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:35,912 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,914 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,922 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,946 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,952 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:35,955 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:35,956 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:35,964 - default_log - DEBUG - total_cost
-2022-06-15 11:18:35,984 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:35,993 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:35,997 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:36,011 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:36,012 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:36,015 - default_log - DEBUG - total_cost
-2022-06-15 11:18:36,017 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:36,027 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:36,048 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:36,054 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:36,057 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:36,068 - default_log - DEBUG - total_cost
-2022-06-15 11:18:36,071 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:36,076 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:36,078 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:36,111 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:36,113 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:36,119 - default_log - DEBUG - total_cost
-2022-06-15 11:18:36,122 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:36,129 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:36,156 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:36,160 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:36,163 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:36,174 - default_log - DEBUG - total_cost
-2022-06-15 11:18:36,176 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:36,182 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:36,193 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:36,213 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:36,220 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:36,222 - default_log - DEBUG - total_cost
-2022-06-15 11:18:36,226 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:36,244 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:36,247 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:36,253 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:18:36,256 - default_log - DEBUG - total_cost ended.
-2022-06-15 11:18:36,264 - default_log - DEBUG - new_function ended.
-2022-06-15 11:18:36,329 - default_log - DEBUG - positive_inventory
-2022-06-15 11:18:36,340 - default_log - DEBUG - positive_inventory ended.
-2022-06-15 11:18:36,345 - default_log - DEBUG - negative_inventory
-2022-06-15 11:18:36,347 - default_log - DEBUG - negative_inventory ended.
-2022-06-15 11:20:16,752 - default_log - DEBUG - negative_inventory
-2022-06-15 11:20:16,774 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:28,727 - default_log - DEBUG - reorder_point_optimization
+2024-10-15 15:57:28,751 - default_log - DEBUG - new_function
+2024-10-15 15:57:28,752 - default_log - DEBUG - warehouse_demand_mean_approximation
+2024-10-15 15:57:28,753 - default_log - DEBUG - warehouse_demand_mean_approximation ended.
+2024-10-15 15:57:28,754 - default_log - DEBUG - warehouse_demand_variance_approximation
+2024-10-15 15:57:28,754 - default_log - DEBUG - warehouse_demand_variance_term
+2024-10-15 15:57:28,755 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
+2024-10-15 15:57:29,221 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,222 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,223 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,223 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,225 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,225 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,226 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,226 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,227 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,227 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,227 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,228 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,228 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,228 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,229 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,229 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,229 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,230 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,230 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,231 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,231 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,231 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,232 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,232 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,232 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
+2024-10-15 15:57:29,233 - default_log - DEBUG - warehouse_demand_variance_term ended.
+2024-10-15 15:57:29,233 - default_log - DEBUG - warehouse_demand_variance_term
+2024-10-15 15:57:29,234 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
+2024-10-15 15:57:29,236 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,237 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,238 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,239 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,240 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,241 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,242 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,242 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,243 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,244 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,245 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,247 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,247 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
+2024-10-15 15:57:29,247 - default_log - DEBUG - warehouse_demand_variance_term ended.
+2024-10-15 15:57:29,247 - default_log - DEBUG - warehouse_demand_variance_term
+2024-10-15 15:57:29,248 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
+2024-10-15 15:57:29,265 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,267 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,268 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,269 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,270 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,271 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,271 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,272 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,273 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,273 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,274 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,274 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,276 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,277 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,277 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,279 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,280 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
+2024-10-15 15:57:29,280 - default_log - DEBUG - warehouse_demand_variance_term ended.
+2024-10-15 15:57:29,281 - default_log - DEBUG - warehouse_demand_variance_term
+2024-10-15 15:57:29,281 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
+2024-10-15 15:57:29,287 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,288 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,288 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,289 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,290 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,290 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,291 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,292 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,293 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,294 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,295 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,296 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,296 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
+2024-10-15 15:57:29,297 - default_log - DEBUG - warehouse_demand_variance_term ended.
+2024-10-15 15:57:29,297 - default_log - DEBUG - warehouse_demand_variance_term
+2024-10-15 15:57:29,298 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
+2024-10-15 15:57:29,299 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,299 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,300 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,301 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,301 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,302 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,302 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,303 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,304 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,304 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,304 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
+2024-10-15 15:57:29,305 - default_log - DEBUG - warehouse_demand_variance_term ended.
+2024-10-15 15:57:29,305 - default_log - DEBUG - warehouse_demand_variance_term
+2024-10-15 15:57:29,306 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
+2024-10-15 15:57:29,306 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,307 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,307 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,308 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,308 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,309 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,309 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,310 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,310 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,311 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,311 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,312 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,312 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,313 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,313 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
+2024-10-15 15:57:29,314 - default_log - DEBUG - warehouse_demand_variance_term ended.
+2024-10-15 15:57:29,314 - default_log - DEBUG - warehouse_demand_variance_term
+2024-10-15 15:57:29,314 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
+2024-10-15 15:57:29,319 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,319 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,320 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,320 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,321 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,322 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,322 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,323 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,323 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,324 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,325 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,327 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,327 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
+2024-10-15 15:57:29,327 - default_log - DEBUG - warehouse_demand_variance_term ended.
+2024-10-15 15:57:29,328 - default_log - DEBUG - warehouse_demand_variance_term
+2024-10-15 15:57:29,328 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
+2024-10-15 15:57:29,329 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,329 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,329 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,330 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,330 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,331 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,332 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,332 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,333 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,333 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,334 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
+2024-10-15 15:57:29,334 - default_log - DEBUG - warehouse_demand_variance_term ended.
+2024-10-15 15:57:29,334 - default_log - DEBUG - warehouse_demand_variance_term
+2024-10-15 15:57:29,335 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
+2024-10-15 15:57:29,335 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,336 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,336 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,336 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,337 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,337 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,338 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,338 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,339 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,339 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,339 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,339 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,340 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
+2024-10-15 15:57:29,340 - default_log - DEBUG - warehouse_demand_variance_term ended.
+2024-10-15 15:57:29,341 - default_log - DEBUG - warehouse_demand_variance_term
+2024-10-15 15:57:29,341 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
+2024-10-15 15:57:29,342 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,343 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,344 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,344 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,345 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,345 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,346 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,346 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,346 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,347 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,347 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
+2024-10-15 15:57:29,347 - default_log - DEBUG - warehouse_demand_variance_term ended.
+2024-10-15 15:57:29,348 - default_log - DEBUG - warehouse_demand_variance_term
+2024-10-15 15:57:29,348 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
+2024-10-15 15:57:29,348 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,348 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,350 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,350 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,350 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,351 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,351 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
+2024-10-15 15:57:29,351 - default_log - DEBUG - warehouse_demand_variance_term ended.
+2024-10-15 15:57:29,352 - default_log - DEBUG - warehouse_demand_variance_term
+2024-10-15 15:57:29,352 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
+2024-10-15 15:57:29,357 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,358 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,358 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,359 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,360 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,360 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,361 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,362 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,362 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,362 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,363 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,363 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,365 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,365 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,366 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,366 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,367 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,367 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,368 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,368 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,369 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,369 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,369 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,370 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,370 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,370 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,371 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,371 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,371 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
+2024-10-15 15:57:29,372 - default_log - DEBUG - warehouse_demand_variance_term ended.
+2024-10-15 15:57:29,372 - default_log - DEBUG - warehouse_demand_variance_term
+2024-10-15 15:57:29,372 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand
+2024-10-15 15:57:29,374 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,376 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,376 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,377 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,378 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,378 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,378 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,379 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,379 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,380 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,380 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand
+2024-10-15 15:57:29,380 - default_log - DEBUG - delta_func_Empiric_Compound_Poisson_demand ended.
+2024-10-15 15:57:29,380 - default_log - DEBUG - pmf_func_warehouse_subbatch_demand ended.
+2024-10-15 15:57:29,381 - default_log - DEBUG - warehouse_demand_variance_term ended.
+2024-10-15 15:57:29,381 - default_log - DEBUG - warehouse_demand_variance_approximation ended.
+2024-10-15 15:57:29,384 - default_log - DEBUG - new_function ended.
+2024-10-15 15:57:29,388 - default_log - DEBUG - induced_backorder_cost_opt
+2024-10-15 15:57:29,388 - default_log - DEBUG - norm_sigma
+2024-10-15 15:57:29,389 - default_log - DEBUG - norm_sigma ended.
+2024-10-15 15:57:29,389 - default_log - DEBUG - induced_backorder_cost_opt ended.
+2024-10-15 15:57:29,389 - default_log - DEBUG - induced_backorder_cost_opt
+2024-10-15 15:57:29,390 - default_log - DEBUG - norm_sigma
+2024-10-15 15:57:29,390 - default_log - DEBUG - norm_sigma ended.
+2024-10-15 15:57:29,391 - default_log - DEBUG - induced_backorder_cost_opt ended.
+2024-10-15 15:57:29,392 - default_log - DEBUG - induced_backorder_cost_opt
+2024-10-15 15:57:29,392 - default_log - DEBUG - norm_sigma
+2024-10-15 15:57:29,393 - default_log - DEBUG - norm_sigma ended.
+2024-10-15 15:57:29,394 - default_log - DEBUG - induced_backorder_cost_opt ended.
+2024-10-15 15:57:29,395 - default_log - DEBUG - induced_backorder_cost_opt
+2024-10-15 15:57:29,395 - default_log - DEBUG - norm_sigma
+2024-10-15 15:57:29,396 - default_log - DEBUG - norm_sigma ended.
+2024-10-15 15:57:29,396 - default_log - DEBUG - induced_backorder_cost_opt ended.
+2024-10-15 15:57:29,397 - default_log - DEBUG - induced_backorder_cost_opt
+2024-10-15 15:57:29,398 - default_log - DEBUG - norm_sigma
+2024-10-15 15:57:29,398 - default_log - DEBUG - norm_sigma ended.
+2024-10-15 15:57:29,399 - default_log - DEBUG - induced_backorder_cost_opt ended.
+2024-10-15 15:57:29,399 - default_log - DEBUG - induced_backorder_cost_opt
+2024-10-15 15:57:29,400 - default_log - DEBUG - norm_sigma
+2024-10-15 15:57:29,400 - default_log - DEBUG - norm_sigma ended.
+2024-10-15 15:57:29,400 - default_log - DEBUG - induced_backorder_cost_opt ended.
+2024-10-15 15:57:29,401 - default_log - DEBUG - induced_backorder_cost_opt
+2024-10-15 15:57:29,401 - default_log - DEBUG - norm_sigma
+2024-10-15 15:57:29,401 - default_log - DEBUG - norm_sigma ended.
+2024-10-15 15:57:29,402 - default_log - DEBUG - induced_backorder_cost_opt ended.
+2024-10-15 15:57:29,402 - default_log - DEBUG - induced_backorder_cost_opt
+2024-10-15 15:57:29,402 - default_log - DEBUG - norm_sigma
+2024-10-15 15:57:29,403 - default_log - DEBUG - norm_sigma ended.
+2024-10-15 15:57:29,403 - default_log - DEBUG - induced_backorder_cost_opt ended.
+2024-10-15 15:57:29,403 - default_log - DEBUG - induced_backorder_cost_opt
+2024-10-15 15:57:29,404 - default_log - DEBUG - norm_sigma
+2024-10-15 15:57:29,404 - default_log - DEBUG - norm_sigma ended.
+2024-10-15 15:57:29,404 - default_log - DEBUG - induced_backorder_cost_opt ended.
+2024-10-15 15:57:29,405 - default_log - DEBUG - induced_backorder_cost_opt
+2024-10-15 15:57:29,406 - default_log - DEBUG - norm_sigma
+2024-10-15 15:57:29,407 - default_log - DEBUG - norm_sigma ended.
+2024-10-15 15:57:29,408 - default_log - DEBUG - induced_backorder_cost_opt ended.
+2024-10-15 15:57:29,408 - default_log - DEBUG - induced_backorder_cost_opt
+2024-10-15 15:57:29,409 - default_log - DEBUG - norm_sigma
+2024-10-15 15:57:29,410 - default_log - DEBUG - norm_sigma ended.
+2024-10-15 15:57:29,411 - default_log - DEBUG - induced_backorder_cost_opt ended.
+2024-10-15 15:57:29,411 - default_log - DEBUG - induced_backorder_cost_opt
+2024-10-15 15:57:29,412 - default_log - DEBUG - norm_sigma
+2024-10-15 15:57:29,412 - default_log - DEBUG - norm_sigma ended.
+2024-10-15 15:57:29,413 - default_log - DEBUG - induced_backorder_cost_opt ended.
+2024-10-15 15:57:29,413 - default_log - DEBUG - induced_backorder_cost_opt
+2024-10-15 15:57:29,413 - default_log - DEBUG - norm_sigma
+2024-10-15 15:57:29,414 - default_log - DEBUG - norm_sigma ended.
+2024-10-15 15:57:29,414 - default_log - DEBUG - induced_backorder_cost_opt ended.
+2024-10-15 15:57:29,414 - default_log - DEBUG - weighting_backorder_cost
+2024-10-15 15:57:29,415 - default_log - DEBUG - weighting_backorder_cost ended.
+2024-10-15 15:57:29,418 - default_log - DEBUG - new_function
+2024-10-15 15:57:29,419 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,420 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,420 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,420 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,421 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,421 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,421 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,422 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,422 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,422 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,423 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,424 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,424 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,425 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,426 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,427 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,429 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,429 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,430 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,430 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,431 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,431 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,432 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,432 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,433 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,433 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,433 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,433 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,434 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,434 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,435 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,435 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,435 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,436 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,437 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,438 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,438 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,439 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,439 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,439 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,441 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,441 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,442 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,443 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,443 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,444 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,444 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,445 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,446 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,446 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,446 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,448 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,449 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,450 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,450 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,450 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,451 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,451 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,452 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,452 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,452 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,453 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,453 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,454 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,454 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,455 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,455 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,455 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,456 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,456 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,458 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,459 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,459 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,460 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,461 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,462 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,462 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,463 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,463 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,463 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,464 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,464 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,465 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,465 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,465 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,466 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,466 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,467 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,468 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,469 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,469 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,469 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,470 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,470 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,471 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,471 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,471 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,472 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,472 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,473 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,473 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,474 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,475 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,477 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,477 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,478 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,479 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,480 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,481 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,481 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,481 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,482 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,482 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,483 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,483 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,483 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,484 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,484 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,485 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,485 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,485 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,486 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,486 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,486 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,487 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,487 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,488 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,488 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,489 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,489 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,490 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,491 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,493 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,494 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,495 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,495 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,497 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,497 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,497 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,497 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,498 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,498 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,499 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,499 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,500 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,500 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,501 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,502 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,503 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,503 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,503 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,503 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,504 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,504 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,505 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,505 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,506 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,506 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,506 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,508 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,509 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,510 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,510 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,511 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,512 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,513 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,514 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,515 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,515 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,515 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,516 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,516 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,517 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,517 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,517 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,518 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,518 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,518 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,519 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,519 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,520 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,520 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,521 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,521 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,522 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,523 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,524 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,525 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,525 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,526 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,527 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,528 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,528 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,528 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,529 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,529 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,530 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,531 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,531 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,531 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,532 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,533 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,534 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,535 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,535 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,535 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,536 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,536 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,537 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,537 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,537 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,538 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,538 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,539 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,540 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,540 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,540 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,541 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,542 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,543 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,544 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,545 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,545 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,546 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,547 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,547 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,548 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,548 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,548 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,549 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,549 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,549 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,550 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,550 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,551 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,551 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,552 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,553 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,554 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,555 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,555 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,555 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,556 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,556 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,557 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,557 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,558 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,559 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,560 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,561 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,562 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,562 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,563 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,565 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,565 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,566 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,567 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,567 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,567 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,568 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,568 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,568 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,569 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,569 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,569 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,570 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,570 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,570 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,571 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,572 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,572 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,573 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,574 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,575 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,576 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,577 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,578 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,578 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,579 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,579 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,580 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,580 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,581 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,581 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,581 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,581 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,582 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,582 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,583 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,583 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,584 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,584 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,585 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,587 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,587 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,587 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,588 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,588 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,589 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,589 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,590 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,590 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,591 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,592 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,593 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,594 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,594 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,595 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,596 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,596 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,598 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,598 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,599 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,599 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,599 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,600 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,600 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,601 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,601 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,601 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,602 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,602 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,603 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,603 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,604 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,604 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,605 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,606 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,607 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,608 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,608 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,609 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,610 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,611 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,612 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,612 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,613 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,613 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,614 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,614 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,615 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,615 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,616 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,617 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,618 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,619 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,619 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,620 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,620 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,620 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,621 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,621 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,622 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,622 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,623 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,623 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,624 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,624 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,625 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,627 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,628 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,628 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,629 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,629 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,631 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,631 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,631 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,632 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,632 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,633 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,633 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,634 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,634 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,635 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,635 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,636 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,637 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,637 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,638 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,638 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,639 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,639 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,640 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,640 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,641 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,641 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,642 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,643 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,646 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,647 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,649 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,650 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,650 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,650 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,652 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,654 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,655 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,656 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,658 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,659 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,660 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,661 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,663 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,665 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,667 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,668 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,669 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,670 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,671 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,672 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,673 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,674 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,675 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,676 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,677 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,678 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,679 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,679 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,681 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,681 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,682 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,683 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,683 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,685 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,686 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,687 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,688 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,689 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,690 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,691 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,692 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,693 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,694 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,696 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,697 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,697 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,698 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,699 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,699 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,699 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,700 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,700 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,701 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,701 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,701 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,702 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,702 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,703 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,704 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,705 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,706 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,706 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,706 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,707 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,708 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,709 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,709 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,710 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,711 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,711 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,712 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,712 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,713 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,714 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,715 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,715 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,716 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,716 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,717 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,717 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,718 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,718 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,718 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,718 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,719 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,720 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,720 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,720 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,721 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,721 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,722 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,722 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,723 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,725 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,726 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,728 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,729 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,730 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,731 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,731 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,733 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,733 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,734 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,735 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,736 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,737 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,738 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,739 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,740 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,740 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,741 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,742 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,743 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,744 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,745 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,746 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,747 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,748 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,749 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,749 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,749 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,749 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,750 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,750 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,750 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,751 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,751 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,751 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,752 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,752 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,753 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,753 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,753 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,753 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,754 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,755 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,756 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,757 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,757 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,758 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,759 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,760 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,761 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,762 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,762 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,762 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,763 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,764 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,764 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,765 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,765 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,766 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,767 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,768 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,769 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,769 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,769 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,770 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,770 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,770 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,771 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,771 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,772 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,772 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,773 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,773 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,774 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,775 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,776 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,777 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,778 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,778 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,779 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,779 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,780 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,780 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,781 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,782 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,783 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,783 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,784 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,784 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,785 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,785 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,786 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,786 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,786 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,787 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,787 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,788 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,789 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,790 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,791 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,791 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,792 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,794 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,795 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,795 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,796 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,796 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,797 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,797 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,798 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,799 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,800 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,800 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,801 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,801 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,802 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,802 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,803 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,803 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,804 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,804 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,804 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,805 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,805 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,805 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,806 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,808 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,809 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,810 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,811 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,811 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,812 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,813 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,813 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,814 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,814 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,815 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,815 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,815 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,816 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,817 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,817 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,818 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,818 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,819 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,820 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,821 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,822 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,823 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,825 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,826 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,828 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,828 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,830 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,831 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,832 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,833 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,835 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,836 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,837 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,838 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,839 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,840 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,841 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,843 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,844 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,846 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,847 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,848 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,849 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,849 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,849 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,850 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,851 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,851 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,852 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,854 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,855 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,856 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,857 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,858 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,859 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,860 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,861 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,862 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,863 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,865 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,866 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,867 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,868 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,868 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,869 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,870 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,872 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,873 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,873 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,875 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,876 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,877 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,878 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,879 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,880 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,880 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,881 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,882 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,883 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,884 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,884 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,884 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,885 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,886 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,887 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,888 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,888 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,889 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,890 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,890 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,891 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,891 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,892 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,892 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,893 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,894 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,894 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,895 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,895 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,896 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,896 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,896 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,897 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,898 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,899 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,899 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,901 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,901 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,902 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,903 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,903 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,904 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,905 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,905 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,906 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,906 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,907 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,908 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,909 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,911 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,911 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,912 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,912 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,912 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,913 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,913 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,915 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,916 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,916 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,917 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,919 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,920 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,921 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,922 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,923 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,923 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,924 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,925 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,926 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,927 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,928 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,928 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,929 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,931 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,932 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,933 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,936 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,938 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,940 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,941 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,942 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,943 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,944 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,945 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,947 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,947 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,948 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,949 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,949 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,951 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,952 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,952 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,954 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,954 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,955 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,956 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,957 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,957 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,958 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,958 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,959 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,960 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,961 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,962 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,964 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,965 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,966 - default_log - DEBUG - total_cost
+2024-10-15 15:57:29,967 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,968 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,969 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,969 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,970 - default_log - DEBUG - total_cost ended.
+2024-10-15 15:57:29,970 - default_log - DEBUG - new_function ended.
+2024-10-15 15:57:29,971 - default_log - DEBUG - positive_inventory
+2024-10-15 15:57:29,972 - default_log - DEBUG - positive_inventory ended.
+2024-10-15 15:57:29,973 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,973 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:29,976 - default_log - DEBUG - negative_inventory
+2024-10-15 15:57:29,977 - default_log - DEBUG - negative_inventory ended.
+2024-10-15 15:57:30,012 - default_log - DEBUG - reorder_point_optimization ended.
